@@ -2,6 +2,8 @@
     "name": "bedrock-menu-vue3",
     "version": "0.0.0",
     "scripts": {
+        "dev": "vite",
+        "preview": "vite preview",
         "---BUILD---": "-------------------------------------------------------",
         "build": "rimraf dist && NODE_ENV=production && npm run build:check && npm run sass:prod && vue-tsc && vite build",
         "build:dev" : "rimraf dist && npm run sass:debug && vite build",
