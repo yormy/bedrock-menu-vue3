@@ -16,7 +16,6 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "allowJs": true,
-    //"noImplicitAny": false,
     "types": [
       "vite/client"
     ]
