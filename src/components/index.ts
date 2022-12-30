@@ -3,3 +3,9 @@
 
 // @ts-ignore
 export * from './Atoms/exports.js';
+
+// @ts-ignore
+export * from './Blocks/exports.js';
+//
+// // @ts-ignore
+// export * from './Layouts/exports.js';
