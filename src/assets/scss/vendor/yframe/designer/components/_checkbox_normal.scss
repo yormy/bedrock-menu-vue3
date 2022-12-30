@@ -1,0 +1,89 @@
+
+    .checkbox{
+        color:inherit;
+        border:1px;
+        border-style:solid;
+        border-color:inherit;
+        height:1rem;
+        width:1rem;
+        box-sizing: border-box;
+    }
+
+    .y-checkbox--normal {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        /*--checkbox-check-color: inherit;*/
+        /*color: inherit;*/
+
+        &.is-info {
+            --checkbox-check-color: var(--color-info);
+            color: var(--color-info);
+        }
+
+        &.is-success {
+            --checkbox-check-color: var(--color-success);
+            color: var(--color-success);
+        }
+
+        &.is-warning {
+            --checkbox-check-color: var(--color-warning);
+            color: var(--color-warning);
+        }
+
+        &.is-danger {
+            --checkbox-check-color: var(--color-danger);
+            color: var(--color-danger);
+        }
+
+        &.is-error {
+            --checkbox-check-color: var(--color-danger);
+            color: var(--color-danger);
+        }
+
+        label.checkbox--label {
+            font-weight: 500;
+        }
+
+        .checkbox-input {
+            display:none;
+        }
+
+        .checkbox--help {
+            color: var(--color-disabled);
+            font-size: var(--font-size-small);
+            line-height: var(--font-size-small-line-height);
+            font-weight: 400;
+        }
+
+        .checkbox--validation {
+            font-size: var(--font-size-small);
+            line-height: var(--font-size-small-line-height);
+            font-weight: normal;
+        }
+
+        .checkbox {
+            display: flex;
+            margin-right: 0.5rem;
+            flex-shrink: 0;
+            justify-content: center;
+            align-items: center;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 0.25rem;
+            border-width: 2px;
+
+            svg.mark {
+                display: none;
+                width: 1rem;
+                height: 1rem;
+                pointer-events: none;
+                fill: var(--checkbox-check-color);
+            }
+
+            .checkbox-input:checked ~ svg.mark {
+                display: block;
+            }
+        }
+    }
+

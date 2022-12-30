@@ -1,0 +1,72 @@
+:root {
+  --tab-height: 100px;
+}
+
+.y-tab-container {
+  width: 70%;
+}
+.y-tab-container .tab {
+  display: flex;
+  background-color: #F9FAFB;
+  color: #1F2937;
+  border-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.y-tab-container .tab .icon {
+  display: flex;
+  font-size: 4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 5px;
+  vertical-align: middle;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+.y-tab-container .tab .content {
+  display: flex;
+  vertical-align: middle;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 15px;
+}
+.y-tab-container .tab .content .title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.y-tab-container .tab--content {
+  border-radius: 0.5rem;
+  height: var(--tab-height);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.y-tab-container .tab-checkbox-input-tab ~ .tab--content {
+  display: none;
+}
+.y-tab-container .tab-checkbox-input-tab:checked + .tab--content {
+  display: block;
+}
+.y-tab-container .tab-checkbox-input-tab2 + .tab--content {
+  display: none;
+}
+.y-tab-container .tab-checkbox-input-tab2:checked + .tab--content {
+  display: block;
+}
+.y-tab-container .tab2:active {
+  color: red !important;
+}
+.y-tab-container .tab1 {
+  background-color: green;
+}
+.y-tab-container .tab2 {
+  background-color: yellow;
+}
+.y-tab-container .tab3 {
+  background-color: purple;
+}
+.y-tab-container .tab4 {
+  background-color: navy;
+}
+
+/*# sourceMappingURL=tab.css.map */

@@ -1,0 +1,10 @@
+{
+    "email": "The {attribute} must be a valid email address.",
+    "mustAgree" : "You must agree to continue",
+    "minLength": "The {attribute} must be at least {min} characters",
+    "containsUppercase": "Must contain an uppercase (A-Z) character",
+    "containsLowercase": "Must contain a lowercase (a-z) character",
+    "containsNumber": "Must contain a number (0-9)",
+    "containsSpecial": "Must contain a special character",
+    "required": "The {attribute} field is required."
+}

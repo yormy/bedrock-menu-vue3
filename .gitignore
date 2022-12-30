@@ -1,0 +1,8 @@
+node_modules
+dist-ssr
+*.local
+docs/.vuepress/.cache
+docs/.vuepress/.temp
+.idea
+
+dist

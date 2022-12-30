@@ -1,0 +1,136 @@
+:root {
+    --tab-height : 100px;
+}
+.y-tab-container {
+    width:70%;
+
+    .tab {
+        display: flex;
+        //margin-left: 1rem;
+        background-color: #F9FAFB;
+        color: #1F2937;
+        border-radius: 0.5rem;
+
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+
+        //@media (min-width: 768px) {
+        //    margin-left: 1.5rem;
+        //}
+
+        .icon {
+            display: flex;
+            font-size: 4rem;
+
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 5px;
+
+            vertical-align: middle;
+            justify-content: center;
+            border-radius: 0.5rem;
+
+
+            //@media (min-width: 640px) {
+            //    padding: 1rem;
+            //}
+        }
+
+        .content {
+            display: flex;
+            vertical-align: middle;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 15px;
+
+            .title {
+                font-size: 1.875rem;
+                font-weight: 600;
+                line-height: 1;
+
+            }
+        }
+
+    }
+
+    .tab--content {
+        border-radius: 0.5rem;
+        //display:none;
+        height : var(--tab-height);
+
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+
+    .tab-checkbox-input-tab {
+        ~.tab--content {
+            display:none;
+
+        }
+
+        &:checked +.tab--content {
+            display:block
+
+        }
+    }
+
+    .tab-checkbox-input-tab2 {
+        +.tab--content {
+            display:none;
+
+        }
+
+        &:checked +.tab--content {
+            display:block
+
+        }
+    }
+
+    .tab2:active {
+        color:red !important;
+    }
+
+
+    //.tab-checkbox-input-tab2 {
+    //    ~.tab--content {
+    //        display:none;
+    //
+    //    }
+    //
+    //    &:checked ~.tab--content {
+    //        display:block
+    //
+    //    }
+    //}
+
+    //.tab-checkbox-input-tab2 {
+    //    ~.tab--content {
+    //        visibility: hidden;
+    //        width:0;
+    //    }
+    //
+    //    &:checked ~.tab--content {
+    //        visibility: visible;
+    //        width:100%;
+    //    }
+    //}
+
+
+    .tab1 {
+        background-color: green;
+    }
+
+    .tab2 {
+        background-color: yellow;
+    }
+
+    .tab3 {
+        background-color: purple;
+    }
+
+    .tab4 {
+        background-color: navy;
+    }
+}

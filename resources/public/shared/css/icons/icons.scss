@@ -1,0 +1,216 @@
+@use "../vendor/icons/fa/css/all.css";
+@import '_variables.scss';
+
+.field {
+    .p-input-icon-left, .p-input-icon-right {
+        .y-icon {
+            top: 35%;
+        }
+    }
+}
+
+.y-icon {
+
+    &.icon::before {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font: var(--icon-font);
+    }
+
+    &.solid:before {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font: var(--icon-font-solid);
+    }
+
+    .clickable {
+        color: var(--light-link-text-color);
+        cursor:pointer;
+    }
+
+    &.icon:hover {
+        /*color:lime;*/
+    }
+
+    &.icon-normal {
+        font-size:1rem;
+    }
+
+    &.icon-extra-small::before {
+        font-size:0.4rem;
+        vertical-align: super;
+    }
+
+    &.icon-small::before {
+        font-size:0.6rem;
+        vertical-align: middle;
+    }
+
+    &.icon-small-bottom::before {
+        font-size:0.6rem;
+        vertical-align: bottom;
+    }
+
+
+    &.icon-large::before {
+        font-size:1.3rem;
+    }
+
+    &.icon-extra-large::before {
+        font-size:2rem;
+    }
+
+    &.icon {
+        &.is-info {
+            color: var(--light-color-info);
+        }
+
+        &.is-success {
+            color: var(--light-color-success);
+        }
+
+        &.is-warning {
+            color: var(--light-color-warning);
+        }
+
+        &.is-danger {
+            color: var(--light-color-danger);
+        }
+    }
+
+    &.icon-spin                  {@extend .fa-spin;}
+
+    /*---------- Field ----------*/
+    &.icon-calendar              {@extend .fa-calendar-days;}
+    &.icon-password              {@extend .fa-key;}
+    &.icon-password-hide         {@extend .fa-eye-slash;}
+    &.icon-password-show         {@extend .fa-eye;}
+
+    /*---------- Collapse ----------*/
+    &.icon-collapse              {@extend .fa-chevron-up;}
+    &.icon-expand                {@extend .fa-chevron-down;}
+
+    /*---------- Action ----------*/
+    &.icon-attach                {@extend .fa-paperclip;}
+    &.icon-bookmark              {@extend .fa-bookmark;}
+    &.icon-download              {@extend .fa-cloud-arrow-down;}
+    &.icon-export                {@extend .fa-file-export;}
+    &.icon-file-upload           {@extend .fa-cloud-arrow-up;}
+        //&.icon-file-upload           {@extend .fa-file-arrow-up;}
+    &.icon-import                {@extend .fa-file-import;}
+    &.icon-login                 {@extend .fa-arrow-right-to-bracket;}
+    &.icon-logout                {@extend .fa-arrow-right-from-bracket;}
+    &.icon-refresh               {@extend .fa-arrow-rotate-right;}
+    &.icon-unbookmark            {@extend .fa-bookmark-slash;}
+    &.icon-modal-close           {@extend .fa-xmark-large;}
+    &.icon-close                 {@extend .fa-xmark;}
+
+    /*---------- Process ----------*/
+    &.icon-busy                  {@extend .fa-hourglass-clock;}
+    &.icon-completed             {@extend .fa-flag-checkered;}
+    &.icon-new                   {@extend .fa-star;}
+    &.icon-pending               {@extend .fa-clock-five;}
+
+    /*---------- Reactions ----------*/
+    &.icon-comment               {@extend .fa-comment-dots;}
+    &.icon-comment-slash         {@extend .fa-comment-slash;}
+    &.icon-comments              {@extend .fa-comments;}
+    &.icon-message               {@extend .fa-message-dots;}
+    &.icon-messages              {@extend .fa-messages;}
+    &.icon-question-answers      {@extend .fa-comments-question-check;}
+    /*..*/
+    &.icon-best-answer           {@extend .fa-trophy;}
+    &.icon-dislike               {@extend .fa-thumbs-down;}
+    &.icon-like                  {@extend .fa-thumbs-up;}
+    &.icon-love                  {@extend .fa-heart;}
+    &.icon-report                {@extend .fa-flag;}
+    &.icon-spam                  {@extend .fa-bug;}
+
+    /*---------- File ----------*/
+    &.icon-file-audio            {@extend .fa-file-audio;}
+    &.icon-file-check            {@extend .fa-file-check;}
+    &.icon-file-document         {@extend .fa-file-word;}
+    &.icon-file-download         {@extend .fa-file-arrow-down;}
+    &.icon-file-image            {@extend .fa-file-image;}
+    &.icon-file-info             {@extend .fa-file-circle-info;}
+    &.icon-file-locked           {@extend .fa-file-lock;}
+    &.icon-file-pdf              {@extend .fa-file-pdf;}
+    &.icon-file-protected        {@extend .fa-file-shield;}
+    &.icon-file-video            {@extend .fa-file-video;}
+    &.icon-files                 {@extend .fa-files;}
+
+    /*---------- Misc ----------*/
+    &.icon-filter                {@extend .fa-filter;}
+    &.icon-idea                  {@extend .fa-lightbulb-on;}
+    &.icon-loading               {@extend .fa-spinner-third;}
+    &.icon-locked                {@extend .fa-lock;}
+    &.icon-money                 {@extend .fa-money-check-dollar;}
+    &.icon-notification          {@extend .fa-bell;}
+    &.icon-protected             {@extend .fa-shield-exclamation;}
+    &.icon-protected-check       {@extend .fa-shield-check;}
+    &.icon-search                {@extend .fa-magnifying-glass;}
+    &.icon-settings              {@extend .fa-gear;}
+    &.icon-star                  {@extend .fa-star;}
+    &.icon-suggestion            {@extend .fa-lightbulb-on;}
+    &.icon-trophy                {@extend .fa-trophy;}
+    &.icon-unfilter              {@extend .fa-filter-slash;}
+    &.icon-unlock                {@extend .fa-unlock;}
+    &.icon-unlocked              {@extend .fa-lock-open;}
+
+    /*---------- Severity ----------*/
+    &.icon-danger                {@extend .fa-circle-radiation;}
+    &.icon-help                  {@extend .fa-circle-question;}
+    &.icon-info                  {@extend .fa-circle-info;}
+    &.icon-success               {@extend .fa-check;}
+    &.icon-warning               {@extend .fa-triangle-exclamation;}
+
+    /*---------- Menu ----------*/
+    &.icon-breadcrumb-separator  {@extend .fa-angle-right;}
+    &.icon-darkmode              {@extend .fa-moon;}
+    &.icon-dropdown              {@extend .fa-angle-down;}
+    &.icon-lightmode             {@extend .fa-sun;}
+    &.icon-menu-item-expand      {@extend .fa-angle-down;}
+    &.icon-menu-pull-toggle      {@extend .fa-circle-left;}
+    &.icon-menu-toggle           {@extend .fa-bars;}
+
+    /*---------- Link ----------*/
+    &.icon-link                  {@extend .fa-link;}
+    &.icon-link-external         {@extend .fa-arrow-up-right-from-square;}
+    &.icon-unlink                {@extend .fa-link-slash;}
+
+    /*---------- Check ----------*/
+    &.icon-checked               {@extend .fa-check;}
+    &.icon-checked-circle        {@extend .fa-circle-check;}
+    &.icon-checked-double        {@extend .fa-check-double;}
+
+    /*---------- Navigation ----------*/
+    &.icon-dashboard             {@extend .fa-gauge;}
+    &.icon-home                  {@extend .fa-house-blank;}
+    &.icon-next                  {@extend .fa-caret-right;}
+    &.icon-previous              {@extend .fa-caret-left;}
+
+    /*---------- User ----------*/
+    &.icon-administrators        {@extend .fa-people-roof;}
+    /*&.icon-administrators:before {color:red;content: var(--icon-administrators); font: var(--icon-font); font-size:1rem;}*/
+    &.icon-profile               {@extend .fa-id-card;}
+    &.icon-user-blocked          {@extend .fa-user-lock;}
+    &.icon-user-check            {@extend .fa-user-check;}
+    &.icon-users                 {@extend .fa-users;}
+
+    /*---------- Crud ----------*/
+    &.icon-add                   {@extend .fa-plus;}
+    &.icon-clone                 {@extend .fa-copy;}
+    &.icon-copy-clipboard        {@extend .fa-clipboard;}
+    &.icon-delete                {@extend .fa-trash-can;}
+    &.icon-edit                  {@extend .fa-pen;}
+    &.icon-save                  {@extend .fa-floppy-disk;}
+    &.icon-view                  {@extend .fa-eye;}
+
+
+    /*---------- New ----------*/
+    /*
+        ...
+    */
+}

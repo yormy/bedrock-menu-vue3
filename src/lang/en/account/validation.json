@@ -1,0 +1,5 @@
+{
+    "password_incorrect": "The password entered is incorrect",
+    "password_rule": "{attribute} must contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.",
+    "unknown_standby_reason": "Unknown standby reason"
+}

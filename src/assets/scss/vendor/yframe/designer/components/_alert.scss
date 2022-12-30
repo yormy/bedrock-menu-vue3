@@ -1,0 +1,134 @@
+
+    .y-alert {
+        margin-top: 3px;
+        margin-bottom: 3px;
+
+        .icon {
+            padding-top: 0.5rem;
+        }
+
+        .header {
+            font-weight: bold;
+            padding-left: 1rem;
+            padding-top: 0.5rem;
+        }
+
+        .description {
+            padding-left: 1rem;
+            padding-bottom: 1rem;
+
+
+            a {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+
+            ul {
+                list-style-type: disc;
+                list-style-position: inside;
+            }
+        }
+
+
+    }
+
+    .y-alert {
+        border-style: solid;
+        border-radius: 0;
+        border-left-width: 0;
+        border-top-width: 1px;
+        border-bottom-width: 1px;
+        margin-top: 3px;
+        margin-bottom: 3px;
+
+        padding-left: 0.5rem;
+        padding-top: 0.2rem;
+        padding-bottom: 0.2rem;
+
+        &.left {
+            border-width:0;
+            border-style: solid;
+            border-left-width: 8px;
+            border-radius: 5px;
+            padding-left:0;
+            padding-top:0;
+
+            &.with-header {
+                .header {
+                    border-radius: 0 5px 0 0;
+                    padding-bottom: 0.5rem;
+                }
+
+                .description {
+                    padding-top: 1rem;
+                }
+            }
+        }
+
+        &.top {
+            border-style: solid;
+            border-radius: 0;
+            border-width: 0;
+            border-top-width: 10px;
+            margin-top: 3px;
+            margin-bottom: 3px;
+
+            padding-left: 0.5rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+
+            .header {
+                padding-top:0;
+            }
+        }
+
+    }
+
+    .y-alert {
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+        &.is-info {
+            color: var(--color-info);
+            background-color: var(--color-info-light);
+            border-color: var(--color-info);
+
+            &.with-header .header {
+                color: var(--color-info-light);
+                background-color: var(--color-info);
+            }
+        }
+
+        &.is-success {
+            color: var(--alert-success-text-color);
+            background-color: var(--alert-success-color-light);
+            border-color: var(--alert-success-color);
+
+            &.with-header .header {
+                color: var(--alert-success-banner-text-color);
+                background-color: var(--alert-success-banner-color);
+            }
+        }
+
+        &.is-warning {
+            color: var(--alert-warning-text-color);
+            background-color: var(--alert-warning-color-light);
+            border-color: var(--alert-warning-color);
+
+            &.with-header .header {
+                color: var(--alert-warning-banner-text-color);
+                background-color: var(--alert-warning-banner-color);
+            }
+        }
+
+        &.is-danger {
+            color: var(--alert-danger-text-color);
+            background-color: var(--alert-danger-color-light);
+            border-color: var(--alert-danger-color);
+
+            &.with-header .header {
+                color: var(--alert-warning-banner-text-color);
+                background-color: var(--alert-danger-banner-color);
+            }
+        }
+
+    }

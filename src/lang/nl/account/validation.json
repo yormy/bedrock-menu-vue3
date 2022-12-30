@@ -1,0 +1,5 @@
+{
+    "password_incorrect": "Het ingevoerde wachtwoord is onjuist.",
+    "password_rule": "{attribute} moet minimaal 1 hoofdletter, 1 kleine letter, 1 cijfer en 1 speciaal karakter bevatten.",
+    "unknown_standby_reason": "Onbekende standby reden"
+}

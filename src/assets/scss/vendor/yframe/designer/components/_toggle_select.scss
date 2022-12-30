@@ -1,0 +1,67 @@
+.y-content {
+    .y-toggle-select {
+        display: inline-flex;
+        padding: 0.5rem;
+        align-items: center;
+        border-radius: 0.375rem;
+        cursor: pointer;
+
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+        .left {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-top-left-radius: 0.375rem;
+            border-bottom-left-radius: 0.375rem;
+
+            &.on {
+                --toggle-select-left-text-color : white;
+                --toggle-select-left-background-color: var(--color-switch-on);
+            }
+        }
+
+        .right {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            background-color: #374151;
+            border-top-right-radius: 0.375rem;
+            border-bottom-right-radius: 0.375rem;
+
+            &.on {
+                --toggle-select-right-text-color : white;
+                --toggle-select-left-background-color: var(--color-switch-on);
+            }
+        }
+
+        .checkbox-input {
+            ~.left {
+                color: var(--toggle-select-left-text-color);
+                background-color: var(--toggle-select-left-background-color);
+            }
+            ~.right {
+                color: var(--toggle-select-disabled-text-color);
+                background-color: var(--toggle-select-disabled-background-color);
+            }
+        }
+
+        .checkbox-input:checked {
+            ~.left {
+                color: var(--toggle-select-disabled-text-color);
+                background-color: var(--toggle-select-disabled-background-color);
+            }
+            ~.right {
+                color: white;
+                background-color: var(--color-switch-on);
+            }
+        }
+    }
+}

@@ -1,0 +1,115 @@
+.y-content {
+    --table-border-radius : 5px;
+
+    .y-table--container {
+
+        --table-background-color: pink;
+
+        --table-header-background-color: navy;
+        --table-header-text-color: white;
+
+        --table-footer-background-color: gray;
+        --table-footer-text-color: white;
+
+        --table-row-background-color-even: white;
+        --table-row-background-color-odd: #f2f2f2;
+        --table-row-background-color-highlight: #b3b3b3;
+    }
+
+    table.y-table--table {
+        width: 60%;
+        min-width: max-content;
+        table-layout: auto;
+        border-radius: var(--table-border-radius);
+        border-color:pink;
+        background-color: transparent;/*var(--table-background-color);*/
+
+        .y-table--header {
+            color: var(--table-header-text-color);
+            background-color: var(--table-header-background-color);
+            line-height: 1.5;
+            text-transform: uppercase;
+            margin-left:10px;
+            padding-left:10px;
+
+            th {
+                &:first-of-type {
+                    -khtml-border-radius: var(--table-border-radius) 0 0 0;
+                    -moz-border-radius: var(--table-border-radius) 0 0 0;
+                    -ms-border-radius: var(--table-border-radius) 0 0 0;
+                    -o-border-radius: var(--table-border-radius) 0 0 0;
+                    -webkit-border-radius: var(--table-border-radius) 0 0 0;
+                    border-radius: var(--table-border-radius) 0 0 0;
+                }
+
+                &:last-child {
+                    -khtml-border-radius: 0px var(--table-border-radius) 0 0;
+                    -moz-border-radius: 0px var(--table-border-radius) 0 0;
+                    -ms-border-radius: 0px var(--table-border-radius) 0 0;
+                    -o-border-radius: 0px var(--table-border-radius) 0 0;
+                    -webkit-border-radius: 0px var(--table-border-radius) 0 0;
+                    border-radius: 0px var(--table-border-radius) 0 0;
+                }
+            }
+        }
+
+        .y-table--footer {
+            color: var(--table-footer-text-color);
+            background-color: var(--table-footer-background-color);
+
+            th {
+                &:first-of-type {
+                    -khtml-border-radius: 0 0 0 var(--table-border-radius);
+                    -moz-border-radius: 0 0 0 var(--table-border-radius);
+                    -ms-border-radius: 0 0 0 var(--table-border-radius);
+                    -o-border-radius: 0 0 0 var(--table-border-radius);
+                    -webkit-border-radius: 0 0 0 var(--table-border-radius);
+                    border-radius: 0 0 0 var(--table-border-radius);
+                }
+
+                &:last-child {
+                    -khtml-border-radius: 0 0 var(--table-border-radius) 0;
+                    -moz-border-radius: 0 0 var(--table-border-radius) 0;
+                    -ms-border-radius: 0 0 var(--table-border-radius) 0;
+                    -o-border-radius: 0 0 var(--table-border-radius) 0;
+                    -webkit-border-radius: 0 0 var(--table-border-radius) 0;
+                    border-radius: 0 0 var(--table-border-radius) 0;
+                }
+            }
+        }
+
+        tbody.y-table--body {
+            tr {
+                &:nth-child(even) {background: var(--table-row-background-color-even)}
+                &:nth-child(odd) {background: var(--table-row-background-color-odd)}
+
+                border-bottom-width: 1px;
+                border-color: var(--table-row-background-color-odd);
+
+                &:hover {
+                    background-color: var(--table-row-background-color-highlight) !important; /* highlight the row */
+                }
+                /*
+                :hover {
+                    background-color: red !important;  highlight the cell
+                }*/
+            }
+
+            td {
+                padding-top: 0.75rem;
+                padding-bottom: 0.75rem;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                text-align: left;
+
+            }
+
+            tr.y-table--section--header {
+                color: var(--table-header-text-color);
+                background-color: var(--table-header-background-color);
+            }
+        }
+
+    }
+
+}

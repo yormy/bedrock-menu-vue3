@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #checkbox:checked + label .switch-ball{
+            background-color: white;
+            transform: translateX(24px);
+            transition: transform 0.3s linear;
+        }
+    </style>
+</head>
+<body>
+<div class="darkswitch--switch">
+    <span class="">Light </span>
+    <div>
+        <input type="checkbox" name="" id="checkbox" class="hidden" />
+        <label for="checkbox" class="cursor-pointer">
+        </label>
+    </div>
+    <span class="">Dark</span>
+</div>
+
+<!--===============================================================================================================-->
+
+<br>
+<div class="p-4 text-center md:py-7 md:px-5">
+    <h3 class="text-lg font-bold text-gray-800 dark:text-white">
+        Card title
+    </h3>
+    <p class="mt-2 text-gray-800 dark:text-gray-400">
+        With supporting text below as a natural lead-in to additional content.
+    </p>
+    <a class="mt-3 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800" href="#">
+        Go somewhere
+    </a>
+</div>
+<br>
+
+<div class="p-8 bg-amber-300">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+
+    <div class="flex flex-col justify-between p-8 transition-shadow bg-white rounded-sm shadow-xl group hover:shadow-lg">
+        <div>
+            <h5 class="text-5xl font-bold text-indigo-600">100+</h5>
+            <div class="pt-2 mt-4 border-t-2 border-indigo-100">
+                <p class="text-sm font-medium tracking-widest text-gray-500 uppercase">New employees</p>
+            </div>
+        </div>
+
+        <div class="inline-flex items-center mt-16 text-indigo-600">
+            <p class="text-lg font-medium">How we did it</p>
+
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 ml-3 transition-transform transform group-hover:translate-x-3"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+            >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="relative block p-8 pb-24 border-t-4 border-pink-600 rounded-sm shadow-xl">
+        <h5 class="text-4xl font-bold">100+</h5>
+        <p class="mt-4 text-lg font-medium text-gray-500">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, provident.
+        </p>
+
+        <span class="absolute bottom-8 right-8">
+        <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-10 h-10 text-pink-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </span>
+    </div>
+
+    <div class="p-6 bg-white sm:p-8 rounded-xl ring ring-indigo-50">
+        <div class="flex items-start">
+            <div
+                    class="hidden sm:grid sm:h-20 sm:w-20 sm:shrink-0 sm:place-content-center sm:rounded-full sm:border-2 sm:border-indigo-500"
+                    aria-hidden="true"
+            >
+                <div class="flex items-center gap-1">
+                    <span class="h-8 w-0.5 rounded-full bg-indigo-500"></span>
+                    <span class="h-6 w-0.5 rounded-full bg-indigo-500"></span>
+                    <span class="h-4 w-0.5 rounded-full bg-indigo-500"></span>
+                    <span class="h-6 w-0.5 rounded-full bg-indigo-500"></span>
+                    <span class="h-8 w-0.5 rounded-full bg-indigo-500"></span>
+                </div>
+            </div>
+
+            <div class="sm:ml-8">
+                <strong
+                        class="rounded border border-indigo-500 bg-indigo-500 px-3 py-1.5 text-[10px] font-medium text-white"
+                >
+                    Episode #101
+                </strong>
+
+                <h2 class="mt-4 text-lg font-medium sm:text-xl">
+                    <a href="" class="hover:underline"> Some Interesting Podcast Title </a>
+                </h2>
+
+                <p class="mt-1 text-sm text-gray-700">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam nulla
+                    amet voluptatum sit rerum, atque, quo culpa ut necessitatibus eius
+                    suscipit eum accusamus, aperiam voluptas exercitationem facere aliquid
+                    fuga. Sint.
+                </p>
+
+                <div class="mt-4 sm:flex sm:items-center sm:gap-2">
+                    <div class="flex items-center text-gray-500">
+                        <svg
+                                class="w-4 h-4"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                        <p class="ml-1 text-xs font-medium">48:32 minutes</p>
+                    </div>
+
+                    <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+
+                    <p class="mt-2 text-xs font-medium text-gray-500 sm:mt-0">
+                        Featuring <a href="" class="underline hover:text-gray-700">Barry</a>,
+                        <a href="" class="underline hover:text-gray-700">Sandra</a> and
+                        <a href="" class="underline hover:text-gray-700">August</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white border-2 border-gray-100 rounded-xl">
+        <div class="flex items-start p-6">
+            <a href="" class="block shrink-0">
+                <img
+                        src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+                        alt="User Avatar"
+                        class="object-cover rounded-lg h-14 w-14"
+                />
+            </a>
+
+            <div class="ml-4">
+                <strong class="font-medium sm:text-lg">
+                    <a href="" class="hover:underline">
+                        Question about Livewire Rendering and Alpine JS</a
+                    >
+                </strong>
+
+                <p class="text-sm text-gray-700 line-clamp-2">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus,
+                    accusantium temporibus iure delectus ut totam natus nesciunt ex?
+                    Ducimus, enim.
+                </p>
+
+                <div class="mt-2 sm:flex sm:items-center sm:gap-2">
+                    <div class="flex items-center text-gray-500">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="w-4 h-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                stroke-width="2"
+                        >
+                            <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                            />
+                        </svg>
+                        <p class="ml-1 text-xs">14 comments</p>
+                    </div>
+
+                    <span class="hidden sm:block" aria-hidden="true">&middot;</span>
+
+                    <p class="hidden sm:block sm:text-xs sm:text-gray-500">
+                        Posted by
+                        <a href="" class="font-medium underline hover:text-gray-700"
+                        >August</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-end">
+            <strong
+                    class="-mr-[2px] -mb-[2px] inline-flex items-center gap-1 rounded-tl-xl rounded-br-xl bg-green-600 py-1.5 px-3 text-white"
+            >
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="w-4 h-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        stroke-width="2"
+                >
+                    <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                    />
+                </svg>
+
+                <span class="text-[10px] font-medium sm:text-xs">Solved!</span>
+            </strong>
+        </div>
+    </div>
+    </div>
+</div>
+
+<br>
+
+<div class="p-8 bg-amber-300">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+        <div class="relative block p-8 border border-gray-100 shadow-xl rounded-xl" href="">
+  <span class="absolute right-4 top-4 rounded-full px-3 py-1.5 bg-green-100 text-green-600 font-medium text-xs">
+    4.3
+  </span>
+
+    <div class="mt-4 text-gray-500 sm:pr-8">
+        <svg
+                class="w-8 h-8 sm:w-10 sm:h-10"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
+            ></path>
+        </svg>
+
+        <h5 class="mt-4 text-xl font-bold text-gray-900">Science of Chemstry</h5>
+
+        <p class="hidden mt-2 text-sm sm:block">
+            You can manage phone, email and chat conversations all from a single mailbox.
+        </p>
+    </div>
+</div>
+    </div>
+</div>
+
+<br>
+
+
+<script>
+    const checkbox = document.querySelector("#checkbox");
+    const html = document.querySelector("html");
+
+
+    const toggleDarkMode = function () {
+        checkbox.checked
+            ? html.classList.add("dark")
+            : html.classList.remove("dark");
+    }
+
+    //calling the function directly
+
+    toggleDarkMode();
+    checkbox.addEventListener("click",toggleDarkMode);
+
+    //html.classList.add("dark") // force state for development
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../../../public/bounty/shared/css/main.css" rel="stylesheet">
+    <link href="../../../../public/bounty/shared/css/icons.css" rel="stylesheet">
+    <link href="../../darkswitch.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /*#checkbox:checked + label .switch-ball{*/
+        /*    background-color: white;*/
+        /*    transform: translateX(24px);*/
+        /*    transition: transform 0.3s linear;*/
+        /*}*/
+
+        .y-content {
+            min-width: 100vw;
+        }
+    </style>
+</head>
+
+<body class="fullscreen">
+<div class="darkswitch--switch">
+    <label class="" for="darkmodeswitch" >
+        <input id="darkmodeswitch" type="checkbox" checked class="hiden">Darkmode
+    </label>
+
+</div>
+
+<div class="y-content">
+    <div class="grid grid-cols-1 gap-4">
+        <br>
+        <div class="color-box bg-secondary">
+            --brand-color-primary <br>
+            (-contrast)
+            <div class="hover">Hover</div>
+        </div>
+    </div>
+    <div class="grid grid-cols-3 gap-3">
+        <div class="color-box bg-secondary-lighter-100">
+            --brand-color-primary <br>
+            (-contrast)
+            <div class="hover">Hover</div>
+        </div>
+        <div class="color-box bg-secondary-lighter-200">
+            --brand-color-primary <br>
+            (-contrast)
+            <div class="hover">Hover</div>
+        </div>
+        <div class="color-box bg-secondary-lighter-300">
+            --brand-color-primary <br>
+            (-contrast)
+            <div class="hover">Hover</div>
+        </div>
+
+        <div class="color-box bg-secondary-darker-100">
+            --brand-color-primary <br>
+            (-contrast)
+            <div class="hover">Hover</div>
+        </div>
+        <div class="color-box bg-secondary-darker-200">
+            --brand-color-primary <br>
+            (-contrast)
+            <div class="hover">Hover</div>
+        </div>
+        <div class="color-box bg-secondary-darker-300">
+            --brand-color-primary <br>
+            (-contrast)
+            <div class="hover">Hover</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const checkbox = document.querySelector("#darkmodeswitch");
+    const html = document.querySelector("body");
+    const toggleDarkMode = function () {
+
+        if (checkbox.checked) {
+            html.classList.add("dark");
+            html.classList.remove("light");
+        } else {
+            html.classList.add("light");
+            html.classList.remove("dark");
+        }
+    }
+
+    //toggleDarkMode();
+    checkbox.addEventListener("click",toggleDarkMode);
+
+</script>
+
+</body>
+
+</html>
+

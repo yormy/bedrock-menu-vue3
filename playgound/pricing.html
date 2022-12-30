@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #checkbox:checked + label .switch-ball{
+            background-color: white;
+            transform: translateX(24px);
+            transition: transform 0.3s linear;
+        }
+    </style>
+</head>
+<body>
+<div class="darkswitch--switch">
+    <span class="">Light </span>
+    <div>
+        <input type="checkbox" name="" id="checkbox" class="hidden" />
+        <label for="checkbox" class="cursor-pointer">
+        </label>
+    </div>
+    <span class="">Dark</span>
+</div>
+<!--=====================================================================-->
+
+--------------------------------
+<br><section class="py-20 bg-gray-100 text-gray-800">
+    <div class="container px-4 mx-auto">
+        <div class="max-w-2xl mx-auto mb-16 text-center">
+            <span class="font-bold tracking-wider uppercase text-cyan-600">Pricing</span>
+            <h2 class="text-4xl font-bold lg:text-5xl">Choose your best plan</h2>
+        </div>
+        <div class="flex flex-wrap items-stretch -mx-4">
+            <div class="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
+                <div class="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-gray-50">
+                    <div class="space-y-2">
+                        <h4 class="text-2xl font-bold">Beginner</h4>
+                        <span class="text-6xl font-bold">Free</span>
+                    </div>
+                    <p class="mt-3 leading-relaxed text-gray-600">Etiam ac convallis enim, eget euismod dolor.</p>
+                    <ul class="flex-1 mb-6 text-gray-600">
+                        <li class="flex mb-2 space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-cyan-600">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Aenean quis</span>
+                        </li>
+                        <li class="flex mb-2 space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-cyan-600">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Morbi semper</span>
+                        </li>
+                        <li class="flex mb-2 space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-cyan-600">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Tristique enim nec</span>
+                        </li>
+                    </ul>
+                    <button type="button" class="inline-block px-5 py-3 font-semibold tracking-wider text-center rounded bg-cyan-600 text-gray-50">Get Started</button>
+                </div>
+            </div>
+            <div class="flex w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
+                <div class="flex flex-col p-6 space-y-6 rounded shadow sm:p-8 bg-cyan-600 text-gray-50">
+                    <div class="space-y-2">
+                        <h4 class="text-2xl font-bold">Pro</h4>
+                        <span class="text-6xl font-bold">$24
+							<span class="text-sm tracking-wide">/month</span>
+						</span>
+                    </div>
+                    <p class="leading-relaxed">Morbi cursus ut sapien sit amet consectetur.</p>
+                    <ul class="flex-1 space-y-2">
+                        <li class="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Everything in Free</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Phasellus tellus</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Praesent faucibus</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Aenean et lectus blandit</span>
+                        </li>
+                    </ul>
+                    <a rel="noopener noreferrer" href="#" class="inline-block w-full px-5 py-3 font-bold tracking-wider text-center rounded bg-gray-100 text-cyan-600">Get Started</a>
+                </div>
+            </div>
+            <div class="w-full mb-8 sm:px-4 md:w-1/2 lg:w-1/3 lg:mb-0">
+                <div class="p-6 space-y-6 rounded shadow sm:p-8 bg-gray-50">
+                    <div class="space-y-2">
+                        <h4 class="text-2xl font-bold">Team</h4>
+                        <span class="text-6xl font-bold">$72
+							<span class="text-sm tracking-wide">/month</span>
+						</span>
+                    </div>
+                    <p class="leading-relaxed text-gray-600">Phasellus ultrices bibendum nibh in vehicula.</p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-cyan-600">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Everything in Pro</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-cyan-600">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Fusce sem ligula</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-cyan-600">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Curabitur dictum</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-cyan-600">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Duis odio eros</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="flex-shrink-0 w-6 h-6 text-cyan-600">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Vivamus ut lectus ex</span>
+                        </li>
+                    </ul>
+                    <a rel="noopener noreferrer" href="#" class="inline-block w-full px-5 py-3 font-semibold tracking-wider text-center rounded bg-cyan-600 text-gray-50">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+<section class="py-6 bg-gray-100 text-gray-800">
+    <div class="container p-4 mx-auto sm:p-10">
+        <div class="mb-12 space-y-4 text-center">
+            <h1 class="text-4xl font-semibold leading-tight">Pricing</h1>
+            <p class="px-4 sm:px-8 lg:px-24">Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur ipsam, cupiditate aliquid modi?</p>
+            <div>
+                <button class="px-4 py-1 font-semibold border rounded-l-lg bg-cyan-600 border-cyan-600 text-gray-50">Monthly</button>
+                <button class="px-4 py-1 border rounded-r-lg border-cyan-600">Annually</button>
+            </div>
+        </div>
+        <div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:grid-cols-3 lg:max-w-full">
+            <div class="flex flex-col overflow-hidden border-2 rounded-md border-gray-300">
+                <div class="flex flex-col items-center justify-center px-2 py-8 space-y-4 bg-gray-100">
+                    <p class="text-lg font-medium">Personal</p>
+                    <p class="text-5xl font-bold">0€
+                        <span class="text-xl text-gray-600"> /mo</span>
+                    </p>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2 py-8 bg-gray-50">
+                    <ul class="self-stretch flex-1 space-y-2">
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                    </ul>
+                    <button class="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-cyan-600 text-gray-50">Sign up</button>
+                </div>
+            </div>
+            <div class="flex flex-col overflow-hidden border-2 rounded-md border-cyan-600">
+                <div class="flex flex-col items-center justify-center px-2 py-8 space-y-4 bg-gray-100">
+                    <p class="text-lg font-medium">Professional</p>
+                    <p class="text-5xl font-bold">8€
+                        <span class="text-xl text-gray-600"> /mo</span>
+                    </p>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2 py-8 bg-gray-50">
+                    <ul class="self-stretch flex-1 space-y-2">
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                    </ul>
+                    <button class="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-cyan-600 text-gray-50">Sign up</button>
+                </div>
+            </div>
+            <div class="flex flex-col overflow-hidden border-2 rounded-md border-gray-300">
+                <div class="flex flex-col items-center justify-center px-2 py-8 space-y-4 bg-gray-100">
+                    <p class="text-lg font-medium">Enterprise</p>
+                    <p class="text-5xl font-bold">19€
+                        <span class="text-xl text-gray-600"> /mo</span>
+                    </p>
+                </div>
+                <div class="flex flex-col items-center justify-center px-2 py-8 bg-gray-50">
+                    <ul class="self-stretch flex-1 space-y-2">
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                        <li class="flex justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <span>Lumet consectetur adipisicing</span>
+                        </li>
+                    </ul>
+                    <button class="px-8 py-3 mt-6 text-lg font-semibold rounded sm:mt-12 bg-cyan-600 text-gray-50">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+<section class="py-6 bg-gray-100 text-gray-900">
+    <div class="container mx-auto p-4 sm:p-10">
+        <div class="mb-16 space-y-4 text-center">
+            <h1 class="text-4xl font-semibold leading-tight">Pricing</h1>
+            <p class="px-4 sm:px-8 lg:px-24">Sunt suscipit eaque qui iure unde labore numquam iusto alias explicabo, pariatur ipsam, cupiditate aliquid modi?</p>
+            <div>
+                <button class="px-4 py-1 font-semibold border rounded-l-lg bg-cyan-600 border-cyan-600 text-gray-50">Monthly</button>
+                <button class="px-4 py-1 border rounded-r-lg border-cyan-600">Annually</button>
+            </div>
+        </div>
+        <div class="grid max-w-md grid-cols-1 gap-6 mx-auto auto-rows-fr lg:max-w-full lg:gap-2 xl:gap-6 lg:grid-cols-3">
+            <div class="relative z-0 flex flex-col items-center p-8 border rounded-md">
+                <span class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-cyan-600 text-gray-50">Personal</span>
+                <p class="my-6 text-4xl font-bold text-cyan-600">FREE</p>
+                <ul class="flex-1 space-y-2">
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur adipisicing</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur adipisicing</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur adipisicing</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur adipisicing</span>
+                    </li>
+                </ul>
+                <button class="px-4 py-2 mt-4 font-semibold uppercase border rounded-lg md:mt-12 sm:py-3 sm:px-8 border-cyan-600">Subscribe</button>
+            </div>
+            <div class="relative flex flex-col items-center p-8 border-2 rounded-md border-cyan-600 bg-gray-100">
+                <span class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-cyan-600 text-gray-50">Professional</span>
+                <p class="flex items-center justify-center my-6 space-x-2 font-bold">
+                    <span class="text-lg line-through text-gray-700">&nbsp;32€&nbsp;</span>
+                    <span class="pb-2 text-4xl">19€</span>
+                    <span class="text-lg">/mo</span>
+                </p>
+                <ul class="flex-1 space-y-2">
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Consectetur</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Adipisicing</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Aliquam</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur facilis</span>
+                    </li>
+                </ul>
+                <button class="px-8 py-3 mt-12 text-lg font-semibold uppercase rounded bg-cyan-600 text-gray-50">Subscribe</button>
+            </div>
+            <div class="relative z-0 flex flex-col items-center p-8 border rounded-md bg-gray-100">
+                <span class="absolute top-0 px-6 pt-1 pb-2 font-medium rounded-b-lg bg-cyan-600 text-gray-50">Enterprise</span>
+                <p class="flex items-center justify-center my-6 space-x-2 font-bold">
+                    <span class="text-lg line-through text-gray-700">&nbsp;49€&nbsp;</span>
+                    <span class="pb-2 text-4xl">37€</span>
+                    <span class="text-lg">/mo</span>
+                </p>
+                <ul class="flex-1 space-y-2">
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur adipisicing</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur adipisicing</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur adipisicing</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-cyan-600">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                        </svg>
+                        <span>Lumet consectetur adipisicing</span>
+                    </li>
+                </ul>
+                <button class="px-8 py-3 mt-12 text-lg font-semibold uppercase border rounded border-cyan-600">Subscribe</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<script>
+    const checkbox = document.querySelector("#checkbox");
+    const html = document.querySelector("html");
+
+
+    const toggleDarkMode = function () {
+        checkbox.checked
+            ? html.classList.add("dark")
+            : html.classList.remove("dark");
+    }
+
+    //calling the function directly
+
+    toggleDarkMode();
+    checkbox.addEventListener("click",toggleDarkMode);
+
+    //html.classList.add("dark") // force state for development
+
+</script>
+
+</body>
+
+</html>
