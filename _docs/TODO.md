@@ -1,5 +1,11 @@
 # Menu STurcture and partials like dropdown and sidebar
 
+dark
+- mega background
+- right panel background
+
+
+
 - convert to vue3
 - implement vitepress ?
 - copy search item top bar as a notification bar ?

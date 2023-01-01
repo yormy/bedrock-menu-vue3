@@ -1,20 +1,20 @@
 //global
-$textColor:$emphasis-high !default; //#
+$textColor:$emphasis-high !default;
 $textSecondaryColor:$emphasis-medium !default;
-$borderRadius:4px !default; //#
-$transitionDuration:.2s !default; //#
-$actionIconTransition:background-color $transitionDuration, color $transitionDuration, box-shadow $transitionDuration !default; //#
+$borderRadius:4px !default;
+$transitionDuration:.2s !default;
+$actionIconTransition:background-color $transitionDuration, color $transitionDuration, box-shadow $transitionDuration !default;
 
 //panel
-$panelHeaderPadding:1rem !default; //#
-$panelContentBg:#ffffff !default; //#
-$panelContentTextColor:$textColor !default; //#
-$panelContentPadding:1rem !default; //#
+$panelHeaderPadding:1rem !default;
+$panelContentBg:#ffffff !default;
+$panelContentTextColor:$textColor !default;
+$panelContentPadding:1rem !default;
 
 //overlays
-$overlayContentBorder:0 none !default; //#
-$overlayContentBg:$panelContentBg !default; //#
-$overlayContainerShadow:0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12) !default; //#
+$overlayContentBorder:0 none !default;
+$overlayContentBg:$panelContentBg !default;
+$overlayContainerShadow:0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12) !default;
 
 // megamenu
 $horizontalMenuPadding:1rem !default;
@@ -34,32 +34,32 @@ $horizontalMenuRootMenuitemActiveBg:rgba(0,0,0,.04) !default;
 
 //menu (e.g. menu, menubar, tieredmenu)
 $menuWidth:12.5rem !default;
-$menuBg:#ffffff !default; //#
-$menuTextColor:$textColor !default; //#
-$menuitemPadding:1rem 1rem !default;//#
-$menuitemBorderRadius:0 !default;//#
-$menuitemTextColor:$textColor !default;//#
-$menuitemIconColor:$textSecondaryColor !default;//#
-$menuitemTextHoverColor:$textColor !default;//#
-$menuitemIconHoverColor:$textSecondaryColor !default;//#
-$menuitemHoverBg:rgba(0,0,0,.04) !default;//#
-$menuitemTextActiveColor:$textColor !default;//#
-$menuitemIconActiveColor:$textSecondaryColor !default;//#
-$menuitemActiveBg:rgba(0,0,0,.04) !default;//#
-$submenuHeaderMargin:0 !default; //#
-$submenuHeaderPadding:1rem !default;//#
-$submenuHeaderBg:#ffffff !default;//#
-$submenuHeaderTextColor:$textSecondaryColor !default;//#
-$submenuHeaderFontWeight:400 !default;//#
-$overlayMenuBg:$menuBg !default;//#
-$overlayMenuBorder:0 none !default;//#
-$overlayMenuShadow:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12) !default;//#
-$verticalMenuitemMargin:0 !default;//#
-$verticalMenuPadding:.5rem 0 !default;//#
-$menuSeparatorMargin:.5rem 0 !default;//#
+$menuTextColor:$textColor !default;
+$menuitemPadding:1rem 1rem !default;
+$menuitemBorderRadius:0 !default;
+$menuitemTextColor:$textColor !default;
+$menuitemIconColor:$textSecondaryColor !default;
+$menuitemTextHoverColor:$textColor !default;
+$menuitemIconHoverColor:$textSecondaryColor !default;
+$menuitemHoverBg:rgba(0,0,0,.04) !default;
+$menuitemTextActiveColor:$textColor !default;
+$menuitemIconActiveColor:$textSecondaryColor !default;
+$menuitemActiveBg:rgba(0,0,0,.04) !default;
+$submenuHeaderMargin:0 !default;
+$submenuHeaderPadding:1rem !default;
+$submenuHeaderTextColor:$textSecondaryColor !default;
+$submenuHeaderFontWeight:400 !default;
 
-$divider:1px solid rgba(0,0,0,.12) !default;//#
-$inlineSpacing:.5rem !default;//#
+$overlayMenuBg:$menuBg !default;
+
+$overlayMenuBorder:0 none !default;
+$overlayMenuShadow:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12) !default;
+$verticalMenuitemMargin:0 !default;
+$verticalMenuPadding:.5rem 0 !default;
+$menuSeparatorMargin:.5rem 0 !default;
+
+$divider:1px solid rgba(0,0,0,.12) !default;
+$inlineSpacing:.5rem !default;
 
 $tooltipPadding:.5rem !default;
 

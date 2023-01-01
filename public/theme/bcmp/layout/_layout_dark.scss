@@ -94,6 +94,8 @@ $helpButtonFocusShadow:none !default;
 $tooltipBg:#444444 !default;
 $tooltipTextColor:$emphasis-high !default;
 
+$menuBg:#1e1e1e !default;
+$submenuHeaderBg:#1e1e1e !default;
 
 @import './_variables.scss';
 @import '../../../../src/assets/scss/layout/core/_layout_dark';
