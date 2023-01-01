@@ -1,5 +1,5 @@
 //global
-$textColor:$emphasis-high !default;
+//$textColor:$emphasis-high !default;
 $textSecondaryColor:$emphasis-medium !default;
 $borderRadius:4px !default;
 $transitionDuration:.2s !default;
@@ -7,7 +7,6 @@ $actionIconTransition:background-color $transitionDuration, color $transitionDur
 
 //panel
 $panelHeaderPadding:1rem !default;
-$panelContentBg:#ffffff !default;
 $panelContentTextColor:$textColor !default;
 $panelContentPadding:1rem !default;
 
@@ -37,7 +36,9 @@ $menuWidth:12.5rem !default;
 $menuTextColor:$textColor !default;
 $menuitemPadding:1rem 1rem !default;
 $menuitemBorderRadius:0 !default;
+
 $menuitemTextColor:$textColor !default;
+
 $menuitemIconColor:$textSecondaryColor !default;
 $menuitemTextHoverColor:$textColor !default;
 $menuitemIconHoverColor:$textSecondaryColor !default;
