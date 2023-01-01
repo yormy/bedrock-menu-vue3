@@ -1,0 +1,252 @@
+@import "./../_screensizes.scss";
+
+.y-page--right{
+    width:100vw;
+
+    .sections{
+        position: relative;
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+
+        .section--background {
+            display: none;
+            background-size: cover;
+
+            .image{
+                height: 100%;
+                align-items: center;
+            }
+
+            .content{
+                display: flex;
+                height: 100%;
+                align-items: center;
+                background-color: var(--landing-img-overlay-color);
+                color: var(--landing-side-header-font-color);
+
+                .header {
+                    font-family: var(--landing-side-header-font);
+                    font-weight: 800;
+                    padding-bottom:30px;
+                }
+
+                .description {
+                    font-size: var(--landing-side-content-font-size);
+                    line-height: calc(var(--landing-side-content-font-size) * 1);
+                    padding-bottom:100px;
+                }
+
+                .middle--left {
+                    position: fixed;
+                    top: 50%;
+                    left:100px;
+                    .description {
+                        width:50%;
+                    }
+                }
+
+                .middle--center {
+                    position: fixed;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    padding-left:100px;
+                    padding-right:100px;
+
+                    .header {
+                        font-size: 1rem;
+                        line-height: 1rem;
+                    }
+
+                    .description {
+                        font-size: var(--landing-side-center-description-font-size);
+                    }
+
+
+                }
+
+                .middle--bottom {
+                    position: fixed;
+                    top: 95%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    padding-left:100px;
+                    padding-right:100px;
+
+                    .header {
+                        font-size: var(--landing-side-bottom-header-font-size);
+                    }
+
+                    .description {
+                        font-size: var(--landing-side-bottom-description-font-size);
+                    }
+                }
+            }
+        }
+
+        .section--content{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            background-color: var(--page-right-background-color);
+            width:100%;
+
+            .brand--name {
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            .section--title {
+                margin-top:10px;
+                font-size: 2rem;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            .section--subtitle {
+                margin-top:10px;
+                font-size: 1rem;
+                text-align: center;
+            }
+
+            img.brand--logo {
+                height:100px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .footer {
+                text-align: center;
+                font-size: var(--landing-footer-font-size);
+                line-height: var(--landing-footer-font-size);
+                color: var(--landing-side-content-footer-font-color);
+                margin-top:20px;
+                a {
+                    text-decoration: underline;
+                    cursor:pointer;
+                    &:hover {
+                        font-weight:bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.y-page--right .sections {
+    .page-right--footer {
+        width: 30%;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top-width: 1px;
+
+        border-color: inherit;
+
+        font-size: var(--workspace-footer-font-size);
+        line-height: 1;
+
+        position: absolute;
+        bottom: 0;
+        height: var(--workspace-footer-height);
+        justify-content: space-between;
+
+        &nav {
+            margin-left: auto;
+        }
+
+        .divider {
+            margin-left: .5rem;
+            margin-right: .5rem;
+            --tw-text-opacity: 1;
+            color: inherit;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+    }
+}
+
+@media (min-width: $screen-width-small) {
+    .content .middle--center .header {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+}
+
+@media (min-width: $screen-width-medium) {
+    .y-page--right .sections {
+
+        .section--content{
+            width: 50%;
+        }
+
+        .section--background {
+            display: block;
+            width: 50%;
+
+            .content .middle-left .description{
+               width: 50%;
+            }
+
+            .content .middle--center, .content .middle--bottom {
+                left: 25%; /*50% * .section--background  width*/
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: $screen-width-normal) {
+    .y-page--right .sections {
+
+        .section--content{
+            width: 33.333333%;
+        }
+
+        .section--background {
+            display: block;
+            width: 66.666667%;
+
+
+            .content .middle--center .header {
+                font-size: var(--landing-side-center-header-font-size);
+                line-height: var(--landing-side-center-header-font-size);
+            }
+
+
+            .content .middle-left .description{
+                width: 50%;
+            }
+
+            .content .middle--center, .content .middle--bottom {
+                left: 33%; /*50% * .section--background  width*/
+            }
+        }
+    }
+}
+
+.y-page--right {
+    background-color: var(--light-color-background);
+}
+
+.y-page--right .sections {
+    .page-right--footer{
+        color: var(--light-color-greyed);
+    }
+}
+
+.dark .y-page--right .sections {
+    .page-right--footer{
+        color: var(--light-color-greyed);
+    }
+}

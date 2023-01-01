@@ -1,0 +1,11 @@
+@import '../_branding.scss';
+
+.light {
+  --checkbox-icon-color: white;  // fix as scss variables are overwritten, and css variables not
+  @import './theme_light';
+}
+
+.dark {
+  --checkbox-icon-color: navy; // fix as scss variables are overwritten, and css variables not
+  @import './theme_dark';
+}

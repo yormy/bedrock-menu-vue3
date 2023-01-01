@@ -1,0 +1,21 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Handlee&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Rubik+Marker+Hatch&display=swap);
+
+:root {
+    --landing-side-header-font : 'Montserrat', sans-serif;
+
+    --landing-side-header-font-color: white;
+    --landing-side-center-header-font-size: 4rem;
+    --landing-side-center-description-font-size: 2rem;
+
+
+    --landing-side-content-font-size: 2rem;
+
+    --landing-side-bottom-header-font-size: 2rem;
+    --landing-side-bottom-description-font-size: 1rem;
+
+    --landing-side-center-footer-font-color: gray;
+    --landing-side-content-footer-font-color: gray;
+}
+

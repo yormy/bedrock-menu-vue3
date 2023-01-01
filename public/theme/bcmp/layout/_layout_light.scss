@@ -1,0 +1,99 @@
+@import '../_branding.scss';
+
+/* ========== top menu ========== */
+$topbarBgColor: $brandPrimary;
+$topbarLeftBgColor: $brandPrimary;
+$topbarMenuButtonBgColor:$brandSecondary;
+$topbarMenuButtonTextColor:#ffffff;
+$topbarItemTextColor: #ffffff;
+$topbarItemTextHoverBgColor: rgba(255,255,255,.12);
+
+/* ========== left menu ========== */
+$menuBgColor:$brandPrimary;
+$rootMenuTextColor:#ffffff;
+$menuItemTextColor:rgba(255,255,255,.6);
+$menuItemHoverBgColor:rgba(255,255,255,.12);
+$activeMenuItemTextColor:#ffffff;
+$activeMenuItemBgColor: rgba(255,255,255,.24);
+$inlineMenuBorderColor: rgba(255,255,255,.24);
+
+/* ========== ========== */
+$primaryColor:#ff0000;
+$primaryLightestColor: #E0F7FA;
+$primaryMenuTextColor: #00838F;
+$primaryTextColor:#212121;
+$accentColor:#d41900;
+$accentTextColor:#ffffff;
+
+/* ========== ========== */
+$buttonTextColor:$primaryTextColor !default;
+
+$emphasis-high:rgba(255,255,255,.87) !default;
+$emphasis-medium:rgba(255,255,255,.60) !default;
+$emphasis-low:rgba(255,255,255,.38) !default;
+$emphasis-lower:rgba(255,255,255,.12) !default;
+$overlayColor:#ffffff !default;
+
+/* ========== Info Success Warning Danger Help ========== */
+$infoButtonBg:#2196F3 !default;
+$infoButtonTextColor:#ffffff !default;
+$infoButtonBorder:0 none !default;
+$infoButtonHoverBg:rgba(#2196F3, .92) !default;
+$infoButtonTextHoverColor:#ffffff !default;
+$infoButtonHoverBorderColor:transparent !default;
+$infoButtonActiveBg:rgba(#2196F3, .68) !default;
+$infoButtonTextActiveColor:#ffffff !default;
+$infoButtonActiveBorderColor:transparent !default;
+$infoButtonFocusShadow:none !default;
+
+$successButtonBg:#689F38 !default;
+$successButtonTextColor:#ffffff !default;
+$successButtonBorder:0 none !default;
+$successButtonHoverBg:rgba(#689F38, .92) !default;
+$successButtonTextHoverColor:#ffffff !default;
+$successButtonHoverBorderColor:transparent !default;
+$successButtonActiveBg:rgba(#689F38, .68) !default;
+$successButtonTextActiveColor:#ffffff !default;
+$successButtonActiveBorderColor:transparent !default;
+$successButtonFocusShadow:none !default;
+
+$warningButtonBg:#FBC02D !default;
+$warningButtonTextColor:#212529 !default;
+$warningButtonBorder:0 none !default;
+$warningButtonHoverBg:rgba(#FBC02D, .92) !default;
+$warningButtonTextHoverColor:#212529 !default;
+$warningButtonHoverBorderColor:transparent !default;
+$warningButtonActiveBg:rgba(#FBC02D, .68) !default;
+$warningButtonTextActiveColor:#212529 !default;
+$warningButtonActiveBorderColor:transparent !default;
+$warningButtonFocusShadow:none !default;
+
+$dangerButtonBg:#D32F2F !default;
+$dangerButtonTextColor:#ffffff !default;
+$dangerButtonBorder:0 none !default;
+$dangerButtonHoverBg:rgba(#D32F2F, .92) !default;
+$dangerButtonTextHoverColor:#ffffff !default;
+$dangerButtonHoverBorderColor:transparent !default;
+$dangerButtonActiveBg:rgba(#D32F2F, .68) !default;
+$dangerButtonTextActiveColor:#ffffff !default;
+$dangerButtonActiveBorderColor:transparent !default;
+$dangerButtonFocusShadow:none !default;
+
+$helpButtonBg:#9C27B0 !default;
+$helpButtonTextColor:#ffffff !default;
+$helpButtonBorder:0 none !default;
+$helpButtonHoverBg:rgba(#9C27B0, .92) !default;
+$helpButtonTextHoverColor:#ffffff !default;
+$helpButtonHoverBorderColor:transparent !default;
+$helpButtonActiveBg:rgba(#9C27B0, .68) !default;
+$helpButtonTextActiveColor:#ffffff !default;
+$helpButtonActiveBorderColor:transparent !default;
+$helpButtonFocusShadow:none !default;
+
+/* ========== Tooltip ========== */
+$tooltipBg:rgba(97,97,97,.9) !default;
+$tooltipTextColor:#ffffff !default;
+
+@import './_variables.scss';
+@import '../../../../src/assets/scss/layout/core/_layout_light';
+

@@ -1,0 +1,8 @@
+{
+    "logo": {
+        "light" : "../../../../public/theme/bcmp/images/logo-dark.svg",
+        "dark" : "../../../../public/theme/bcmp/images/logo-light.svg",
+        "title" : "Logo Title",
+        "height" : "2rem"
+    }
+}

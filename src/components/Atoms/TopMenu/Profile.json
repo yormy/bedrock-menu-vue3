@@ -1,0 +1,31 @@
+{
+    "button" : {
+        "image":"../../../../public/demo/images/avatar/amyelsner.png",
+        "title": "profile",
+        "style": "width: 32px; height: 32px"
+    },
+
+    "header": {
+        "title" : "You have <b>4</b> new notifications"
+    },
+
+
+    "items": [
+        {
+            "icon": "pi pi-cog",
+            "label" : "settigns"
+        },
+        {
+            "icon": "pi pi-file-o",
+            "label" : "Terms"
+        },
+        {
+            "icon": "pi pi-compass",
+            "label" : "Support"
+        },
+        {
+            "icon": "pi pi-power-off",
+            "label" : "logout"
+        }
+    ]
+}

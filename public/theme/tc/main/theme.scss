@@ -1,0 +1,9 @@
+@import '../_branding.scss';
+
+.light {
+  @import './theme_light';
+}
+
+.dark {
+  @import './theme_dark';
+}

@@ -1,0 +1,100 @@
+//global
+$textColor:$emphasis-high !default; //#
+$textSecondaryColor:$emphasis-medium !default;
+$borderRadius:4px !default; //#
+$transitionDuration:.2s !default; //#
+$actionIconTransition:background-color $transitionDuration, color $transitionDuration, box-shadow $transitionDuration !default; //#
+
+//panel
+$panelHeaderPadding:1rem !default; //#
+$panelContentBg:#ffffff !default; //#
+$panelContentTextColor:$textColor !default; //#
+$panelContentPadding:1rem !default; //#
+
+//overlays
+$overlayContentBorder:0 none !default; //#
+$overlayContentBg:$panelContentBg !default; //#
+$overlayContainerShadow:0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12) !default; //#
+
+// megamenu
+$horizontalMenuPadding:1rem !default;
+$horizontalMenuBg:transparent !default;
+$horizontalMenuBorder:1px solid #e5e5e5 !default;
+$horizontalMenuTextColor:$textColor !default;
+$horizontalMenuRootMenuitemPadding:1rem !default;
+$horizontalMenuRootMenuitemBorderRadius:$borderRadius !default;
+$horizontalMenuRootMenuitemTextColor:$textColor !default;
+$horizontalMenuRootMenuitemIconColor:$textSecondaryColor !default;
+$horizontalMenuRootMenuitemTextHoverColor:$textColor !default;
+$horizontalMenuRootMenuitemIconHoverColor:$textSecondaryColor !default;
+$horizontalMenuRootMenuitemHoverBg:rgba(0,0,0,.04) !default;
+$horizontalMenuRootMenuitemTextActiveColor:$textColor !default;
+$horizontalMenuRootMenuitemIconActiveColor:$textSecondaryColor !default;
+$horizontalMenuRootMenuitemActiveBg:rgba(0,0,0,.04) !default;
+
+//menu (e.g. menu, menubar, tieredmenu)
+$menuWidth:12.5rem !default;
+$menuBg:#ffffff !default; //#
+$menuTextColor:$textColor !default; //#
+$menuitemPadding:1rem 1rem !default;//#
+$menuitemBorderRadius:0 !default;//#
+$menuitemTextColor:$textColor !default;//#
+$menuitemIconColor:$textSecondaryColor !default;//#
+$menuitemTextHoverColor:$textColor !default;//#
+$menuitemIconHoverColor:$textSecondaryColor !default;//#
+$menuitemHoverBg:rgba(0,0,0,.04) !default;//#
+$menuitemTextActiveColor:$textColor !default;//#
+$menuitemIconActiveColor:$textSecondaryColor !default;//#
+$menuitemActiveBg:rgba(0,0,0,.04) !default;//#
+$submenuHeaderMargin:0 !default; //#
+$submenuHeaderPadding:1rem !default;//#
+$submenuHeaderBg:#ffffff !default;//#
+$submenuHeaderTextColor:$textSecondaryColor !default;//#
+$submenuHeaderFontWeight:400 !default;//#
+$overlayMenuBg:$menuBg !default;//#
+$overlayMenuBorder:0 none !default;//#
+$overlayMenuShadow:0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12) !default;//#
+$verticalMenuitemMargin:0 !default;//#
+$verticalMenuPadding:.5rem 0 !default;//#
+$menuSeparatorMargin:.5rem 0 !default;//#
+
+$divider:1px solid rgba(0,0,0,.12) !default;//#
+$inlineSpacing:.5rem !default;//#
+
+$tooltipPadding:.5rem !default;
+
+//
+$listItemTransition:none !default;
+
+//focus
+$focusOutlineColor:transparent !default;
+$focusOutline:0 none !default;
+$focusOutlineOffset:0 !default;
+$focusShadow:none !default;
+
+//
+$inputListItemFocusShadow:none !default;
+
+//badge and tag
+$badgeBg:$primaryColor !default;
+$badgeTextColor:$primaryTextColor !default;
+$badgeMinWidth:1.5rem !default;
+$badgeHeight:1.5rem !default;
+$badgeFontWeight:700 !default;
+$badgeFontSize:.75rem !default;
+
+$secondaryButtonBg:$accentColor !default;
+$secondaryButtonTextColor:$accentTextColor !default;
+$secondaryButtonBorder:0 none !default;
+$secondaryButtonHoverBg:rgba($accentColor, .92) !default;
+$secondaryButtonTextHoverColor:$accentTextColor !default;
+$secondaryButtonHoverBorderColor:transparent !default;
+$secondaryButtonActiveBg:rgba($accentColor, .68) !default;
+$secondaryButtonTextActiveColor:$accentTextColor !default;
+$secondaryButtonActiveBorderColor:transparent !default;
+$secondaryButtonFocusShadow:none !default;
+
+
+
+//inputs with overlays (e.g. autocomplete, dropdown, multiselect)
+$inputOverlayShadow:0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12) !default;

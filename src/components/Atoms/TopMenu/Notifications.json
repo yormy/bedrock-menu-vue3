@@ -1,0 +1,33 @@
+{
+    "button" : {
+        "type":"p-badge-info",
+        "content": "6",
+        "icon": "pi pi-bell fs-large"
+    },
+
+    "header": {
+        "title" : "You have <b>4</b> new notifications"
+    },
+
+
+    "items": [
+        {
+            "avatar": {
+                "image": "../../../../public/demo/images/avatar/amyelsner.png",
+                "title": "profile"
+            },
+            "title": "Jerome Bell",
+            "subtitle" : "How to write content about your photographs?",
+            "date" : "42 mins ago"
+        },
+        {
+            "avatar": {
+                "image": "../../../../public/demo/images/avatar/annafali.png",
+                "title": "profile"
+            },
+            "title": "Cameron Williamson",
+            "subtitle" : "Start a blog to reach your creative peak",
+            "date" : "48 mins ago"
+        }
+    ]
+}

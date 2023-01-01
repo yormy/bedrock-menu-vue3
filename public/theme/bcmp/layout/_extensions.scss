@@ -1,0 +1,71 @@
+$menuFontSizeHeader : 1.4rem;
+$menuFontSizeItem : 1rem;
+
+
+$menuTopActionFontSize : 1rem;
+$menuTopActionMargin : 10px;
+$menuTopActionPadding : 10px;
+
+.menu-wrapper {
+  .layout-menu-container {
+
+    .layout-menu {
+
+      li {
+        .layout-menuitem-text {
+          font-size: $menuFontSizeHeader !important;
+        }
+      }
+
+      li > a {
+        .layout-menuitem-text {
+          font-size: $menuFontSizeItem !important;
+        }
+      }
+    }
+  }
+}
+
+.layout-topbar {
+    .layout-topbar-right {
+        .layout-topbar-actions-right {
+            .layout-topbar-items {
+                .layout-topbar-item {
+                    .layout-topbar-action {
+                        padding-right: $menuTopActionPadding !important;
+                        padding-left: $menuTopActionPadding !important;
+                        margin-right: $menuTopActionMargin !important;
+                        margin-left: $menuTopActionMargin !important;
+                        min-width: auto !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.layout-topbar-actions-right {
+    font-size:$menuTopActionFontSize !important;
+    .pi {
+        font-size:$menuTopActionFontSize !important;
+    }
+}
+
+.p-badge-tiny-topright {
+    min-width: 0 !important;
+    min-height: 0 !important;
+    width: 20px !important;
+    height: 20px !important;
+
+    position:relative;
+    top : -10px !important;
+    right : 5px !important;
+    font-size: 0.8rem !important;
+    line-height: 0.8rem !important;
+
+    .badge-value {
+        position:relative !important;
+        top:0.3rem !important;
+        font-weight: 500 !important;
+    }
+}

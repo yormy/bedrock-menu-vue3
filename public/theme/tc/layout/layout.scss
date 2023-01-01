@@ -1,0 +1,9 @@
+@import '../_branding.scss';
+
+.light {
+  @import './layout_light';
+}
+
+.dark {
+  @import './layout_dark';
+}

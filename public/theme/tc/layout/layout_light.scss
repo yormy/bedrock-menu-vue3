@@ -1,0 +1,21 @@
+/* ========== top menu ========== */
+$topbarBgColor: $brandPrimary;
+$topbarLeftBgColor: $brandPrimary;
+$topbarMenuButtonBgColor:#E64A19;
+$topbarMenuButtonTextColor:#ffffff;
+
+$topbarItemTextColor: #ffffff;
+$topbarItemTextHoverBgColor: rgba(255,255,255,.12);
+
+/* ========== left menu ========== */
+$menuBgColor:$brandPrimary;
+$rootMenuTextColor:#ffffff;
+
+$menuItemTextColor:rgba(255,255,255,.6);
+$menuItemHoverBgColor:rgba(255,255,255,.12);
+$activeMenuItemTextColor:#ffffff;
+$activeMenuItemBgColor: rgba(255,255,255,.24);
+
+$inlineMenuBorderColor: rgba(255,255,255,.24);
+
+@import '../../../../src/assets/scss/layout/core/_layout_light';

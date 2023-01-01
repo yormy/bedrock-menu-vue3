@@ -1,0 +1,31 @@
+{
+    "button" : {
+        "type":"",
+        "content": "",
+        "icon": "pi pi-table fs-large"
+    },
+
+    "header": {
+        "title" : "You have <b>4</b> new notifications"
+    },
+
+
+    "items": [
+        {
+            "icon": "pi pi-image action indigo-bgcolor white-color",
+            "label" : "reports"
+        },
+        {
+            "icon": "pi pi-file-pdf action orange-bgcolor white-color",
+            "label" : "Financials"
+        },
+        {
+            "icon": "pi pi-dollar action teal-bgcolor white-color",
+            "label" : "Balance"
+        },
+        {
+            "icon": "pi pi-cog action pink-bgcolor white-color",
+            "label" : "settings"
+        }
+    ]
+}
