@@ -16,7 +16,7 @@
             @topbaritem-click="onTopbarItemClick"
             :menu-top-app-data="menuTopAppData"
             :branding-data="brandingData"
-            :mega-menu-data="megaMenuData"
+            :menu-top-mega-data="menuTopMegaData"
             :menu-top-notifications-data="menuTopNotificationsData"
             :menu-top-profile-data="menuTopProfileData"
         ></AppTopBar>
@@ -53,7 +53,7 @@ import EventBus from '../../event-bus.js';
 import AppMainMenu from "../Atoms/MainMenu/AppMainMenu.vue";
 import MenuTopAppData from './Data/MenuTopAppData.json'
 import BrandingData from './Data/BrandingData.json'
-import MegaMenuData from './Data/MegaMenuData.json'
+import MenuTopMegaData from './Data/MenuTopMegaData.json'
 import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json'
 import MenuTopProfileData from './Data/MenuTopProfileData.json'
 import MenuLeftProfileData from './Data/MenuLeftProfileData.json'
@@ -82,7 +82,7 @@ export default {
             menuActive: true,
             menuTopAppData: MenuTopAppData,
             brandingData: BrandingData,
-            megaMenuData: MegaMenuData,
+            menuTopMegaData: MenuTopMegaData,
             menuTopNotificationsData: MenuTopNotificationsData,
             menuTopProfileData: MenuTopProfileData,
             menuLeftProfileData: MenuLeftProfileData,

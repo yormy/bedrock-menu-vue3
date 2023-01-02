@@ -1,6 +1,6 @@
 <template>
     <div class="layout-topbar-actions-left">
-        <MegaMenu :model="megaMenuData" class="layout-megamenu"></MegaMenu>
+        <MegaMenu :model="menuTopMegaData" class="layout-megamenu"></MegaMenu>
     </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     },
 
     props: {
-        megaMenuData: Object,
+        menuTopMegaData: Object,
     },
 
     methods: {

@@ -11,7 +11,7 @@
 
         <div class="layout-topbar-right" :class="{ 'layout-topbar-mobile-active': mobileTopbarActive }">
             <topbar-mega
-                :mega-menu-data="megaMenuData">
+                :menu-top-mega-data="menuTopMegaData">
             </topbar-mega>
 
             <div class="layout-topbar-actions-right">
@@ -114,7 +114,7 @@ export default {
 
         menuTopAppData: Object,
         brandingData: Object,
-        megaMenuData: Object,
+        menuTopMegaData: Object,
         menuTopNotificationsData: Object,
         menuTopProfileData: Object,
     },
