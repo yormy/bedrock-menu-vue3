@@ -61,7 +61,7 @@ const props = defineProps({
     },
 
     menuLeftData: {
-        type: Array as PropType<Array<LeftMenuItem>>,
+        type: Array as any,
         default() {
             return [];
         },

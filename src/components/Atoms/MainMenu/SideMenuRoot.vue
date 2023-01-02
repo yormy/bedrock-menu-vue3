@@ -19,7 +19,7 @@ import SideMenuSub from './SideMenuSub.vue';
 
 const props = defineProps({
     items: {
-        type: Array as PropType<Array<LeftMenuItem>>,
+        type: Array as any,
         default() {
             return [];
         },

@@ -59,7 +59,7 @@ import MenuTopMegaData from './Data/MenuTopMegaData.json';
 import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json';
 import MenuTopProfileData from './Data/MenuTopProfileData.json';
 import MenuLeftProfileData from './Data/MenuLeftProfileData.json';
-import MenuLeftData from './Data/MenuLeftWorkingData.json'; // TODO fix dataset
+import MenuLeftData from './Data/MenuLeftData.json';
 
 const mobileTopbarActive = ref(false);
 const mobileMenuActive = ref(false);
