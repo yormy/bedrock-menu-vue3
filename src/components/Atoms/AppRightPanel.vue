@@ -80,40 +80,32 @@
     </Sidebar>
 </template>
 
-<script>
+<script setup lang="ts">
 import Sidebar from 'primevue/sidebar';
+import {ref, watch} from "vue";
 
-export default {
-    name: 'AppRightPanel',
-    emits: ['content-click', 'hide'],
-
-    components: {
-        Sidebar
+const props = defineProps({
+    expanded: {
+        type: Boolean,
+        default: false,
     },
-    props: {
-        expanded: Boolean,
-    },
-    data() {
-        return {
-            d_expanded: null,
-        };
-    },
-    watch: {
-        expanded(value) {
-            this.d_expanded = value;
-        },
+});
 
+const d_expanded = ref(false);
 
-
-    },
-
-    methods: {
-        hideSidebar() {
-            console.log('hide');
-            this.$emit('hide', this.d_expanded)
-        },
+watch(
+    () => props.expanded,
+    (newValue) => {
+        d_expanded.value = newValue;
     }
+);
+
+const emit = defineEmits<{
+    (eventName: 'hide', d_expanded: boolean): void
+
+}>();
+
+const hideSidebar = () => {
+    emit('hide', d_expanded.value)
 };
 </script>
-
-<style scoped></style>
