@@ -74,7 +74,7 @@ const inlineMenuBottomActive = ref(false);
 const overlayMenuActive = ref(false);
 const rotateMenuButton = ref(false);
 const topbarMenuActive = ref(false);
-const activeTopbarItem = ref(null);
+const activeTopbarItem = ref('');
 const isSlimOrHorItemClick = ref(false);
 
 const rightPanelActive = ref(false);
@@ -158,7 +158,7 @@ const onTopbarMenuButtonClick = (event: Event) => {
 const onTopbarItemClick = (event: { originalEvent: Event; item: any }) => {
     topbarItemClick.value = true;
 
-    if (activeTopbarItem.value === event.item) activeTopbarItem.value = null;
+    if (activeTopbarItem.value === event.item) activeTopbarItem.value = '';
     else activeTopbarItem.value = event.item;
 
     event.originalEvent.preventDefault();
@@ -188,7 +188,7 @@ const onMenuClick = () => {
     menuClick.value = true;
 };
 
-const onRootMenuItemClick = (event: { originalEvent: Event; isSameIndex: boolean }) => {
+const onRootMenuItemClick = (event: any) => {
     if (event.isSameIndex) {
         isSlimOrHorItemClick.value = false;
     } else {
@@ -273,7 +273,7 @@ const onDocumentClick = () => {
     }
 
     if (!topbarItemClick.value) {
-        activeTopbarItem.value = null;
+        activeTopbarItem.value = '';
         topbarMenuActive.value = false;
     }
 

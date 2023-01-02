@@ -55,11 +55,11 @@ const onMenuClick = (event: Event) => {
     emit('menu-click', event);
 };
 
-const onMenuItemClick = (event: Event) => {
-    emit('menuitem-click', event);
+const onMenuItemClick = (data: { originalEvent: Event; item: any }) => {
+    emit('menuitem-click', data.originalEvent);
 };
 
-const onRootMenuItemClick = (event: Event) => {
-    emit('root-menuitem-click', event);
+const onRootMenuItemClick = (data: { originalEvent: Event; isSameIndex: boolean }) => {
+    emit('root-menuitem-click', data.originalEvent);
 };
 </script>

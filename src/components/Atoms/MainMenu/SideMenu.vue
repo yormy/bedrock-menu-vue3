@@ -83,7 +83,7 @@ const onMenuClick = () => {
     emit('menu-click');
 };
 
-const onActivateInlineMenu = (e: Event, key: any) => {
+const onActivateInlineMenu = (active: boolean, key: string) => {
     if (key === 'top') {
         if (inlineMenuBottomActive.value) {
             inlineMenuBottomActive.value = false;

@@ -37,9 +37,11 @@ const props = defineProps({
     },
 });
 
-const emit = defineEmits(['topbaritem-click']);
+const emit = defineEmits<{
+    (eventName: 'topbaritem-click', data: { originalEvent: Event; item: any }): void;
+}>();
 
-const onTopbarItemClick = (event: Event, item: Element) => {
+const onTopbarItemClick = (event: Event, item: string) => {
     emit('topbaritem-click', { originalEvent: event, item });
 };
 </script>

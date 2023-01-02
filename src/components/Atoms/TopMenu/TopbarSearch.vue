@@ -1,6 +1,6 @@
 <template>
     <li class="layout-topbar-item layout-search-item">
-        <a v-ripple class="layout-topbar-action rounded-circle p-ripple" @click="onSearchItemClick" @keydown="onSearchItemClick">
+        <a v-ripple class="layout-topbar-action rounded-circle p-ripple" @click="onSearchItemClick" @keydown="onSearchItemKeydown">
             <i class="pi pi-search fs-large"></i>
         </a>
 
@@ -31,8 +31,12 @@ const emit = defineEmits<{
     (eventName: 'search-click', event: Event): void;
 }>();
 
-const onSearchItemClick = (event: Event, item: any) => {
-    emit('search-toggle', event);
+const onSearchItemClick = (payload: MouseEvent) => {
+    emit('search-toggle', payload);
+};
+
+const onSearchItemKeydown = (payload: KeyboardEvent) => {
+    emit('search-toggle', payload);
 };
 
 const onSearchContainerClick = (event: Event) => {
