@@ -45,7 +45,7 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import AppTopBar from '../Blocks/AppTopbar.vue';
 import AppRightPanel from '../Atoms/AppRightPanel.vue';
 import Content from '../Atoms/Content/Content.vue'
@@ -58,257 +58,279 @@ import MenuTopProfileData from './Data/MenuTopProfileData.json'
 import MenuLeftProfileData from './Data/MenuLeftProfileData.json'
 import MenuLeftData from './Data/MenuLeftData.json'
 import SideMenu from "@components/Atoms/MainMenu/SideMenu.vue";
+import {computed, ref, watch} from "vue";
+import {useRouter, useRoute} from "vue-router";
 
-export default {
-    data() {
-        return {
-            mobileTopbarActive: false,
-            mobileMenuActive: false,
-            search: false,
-            searchClick: false,
-            searchActive: false,
-            menuMode: 'static', // static | horizontal | overlay | slim
-            inlineMenuClick: false,
-            inlineMenuPosition: 'bottom', // top || bottom
-            inlineMenuTopActive: false,
-            inlineMenuBottomActive: false,
-            overlayMenuActive: false,
-            rotateMenuButton: false,
-            topbarMenuActive: false,
-            activeTopbarItem: null,
-            isSlimOrHorItemClick: false,
 
-            rightPanelActive: false,
-            menuActive: true,
-            menuTopAppData: MenuTopAppData,
-            brandingData: BrandingData,
-            menuTopMegaData: MenuTopMegaData,
-            menuTopNotificationsData: MenuTopNotificationsData,
-            menuTopProfileData: MenuTopProfileData,
-            menuLeftProfileData: MenuLeftProfileData,
-            menuLeftData: MenuLeftData,
-        };
-    },
-    watch: {
-        $route() {
-            this.menuActive = this.isStatic() && !this.isMobile();
-            // this.$toast.removeAllGroups();
-        },
-    },
-    methods: {
-        onDocumentClick() {
-            if (!this.searchClick && this.searchActive) {
-                this.onSearchHide();
-            }
 
-            if (!this.topbarItemClick) {
-                this.activeTopbarItem = null;
-                this.topbarMenuActive = false;
-            }
+const mobileTopbarActive = ref(false);
+const mobileMenuActive= ref(false);
+const search= ref(false);
+const searchClick= ref(false);
+const searchActive= ref(false);
+const menuMode= ref('static'); // static | horizontal | overlay | slim
+const inlineMenuClick= ref(false);
+const inlineMenuPosition= ref('bottom'); // top || bottom
+const inlineMenuTopActive= ref(false);
+const inlineMenuBottomActive= ref(false);
+const overlayMenuActive= ref(false);
+const rotateMenuButton= ref(false);
+const topbarMenuActive= ref(false);
+const activeTopbarItem= ref(null);
+const isSlimOrHorItemClick= ref(false);
 
-            if (!this.menuClick) {
-                if (this.isHorizontal() || this.isSlim()) {
-                    this.menuActive = false;
-                    this.isSlimOrHorItemClick = false;
-                    EventBus.emit('reset-active-index');
-                }
+const rightPanelActive= ref(false);
+const menuActive= ref(true);
 
-                if (this.isOverlay()) {
-                    this.menuActive = false;
-                }
+const menuTopAppData= MenuTopAppData;
+const brandingData= BrandingData;
+const menuTopMegaData= MenuTopMegaData;
+const menuTopNotificationsData= MenuTopNotificationsData;
+const menuTopProfileData= MenuTopProfileData;
+const menuLeftProfileData= MenuLeftProfileData;
+const menuLeftData= MenuLeftData;
 
-                this.hideOverlayMenu();
-                this.unblockBodyScroll();
-            }
+//TODO : these were undefined ???
+const topbarItemClick = ref(false);
+const rightPanelClick = ref(false);
+const menuClick = ref(false);
+const topbarRightClick = ref(false);
 
-            if (!this.rightPanelClick) {
-                this.rightPanelActive = false;
-            }
+const router = useRouter()
+const route = useRoute()
 
-            if (!this.inlineMenuClick) {
-                this.inlineMenuTopActive = false;
-                this.inlineMenuBottomActive = false;
-            }
+const isMobile = () => {
+    return window.innerWidth <= 991;
+};
 
-            this.topbarItemClick = false;
-            this.menuClick = false;
-            this.rightPanelClick = false;
-            this.searchClick = false;
-            this.inlineMenuClick = false;
-        },
-        onSearchToggle() {
-            this.searchActive = !this.searchActive;
-            this.searchClick = true;
-        },
-        onSearchClick() {
-            this.searchClick = true;
-        },
-        onSearchHide() {
-            this.searchActive = false;
-            this.searchClick = false;
-        },
-        isHorizontal() {
-            return this.menuMode === 'horizontal';
-        },
-        isSlim() {
-            return this.menuMode === 'slim';
-        },
-        isOverlay() {
-            return this.menuMode === 'overlay';
-        },
-        isStatic() {
-            return this.menuMode === 'static';
-        },
-        isDesktop() {
-            return window.innerWidth > 991;
-        },
-        isMobile() {
-            return window.innerWidth <= 991;
-        },
-        hideOverlayMenu() {
-            this.rotateMenuButton = false;
-            this.overlayMenuActive = false;
-            this.mobileMenuActive = false;
-        },
-        onMenuButtonClick(event) {
-            this.menuClick = true;
-            this.menuActive = !this.menuActive;
-            this.topbarMenuActive = false;
-            this.topbarRightClick = true;
-            this.rotateMenuButton = !this.rotateMenuButton;
-            this.topbarMenuActive = false;
+const isStatic = () => {
+    return menuMode.value === 'static';
+};
 
-            if (!this.isDesktop()) {
-                this.mobileMenuActive = !this.mobileMenuActive;
+watch(
+    () => route,
+    (newValue) => {
+        menuActive.value = isStatic() && !isMobile();
+    }
+);
 
-                if (this.mobileMenuActive) {
-                    this.blockBodyScroll();
-                } else {
-                    this.unblockBodyScroll();
-                }
-            }
+const onSearchToggle = () => {
+    searchActive.value = !searchActive.value;
+    searchClick.value = true;
+};
 
-            event.preventDefault();
-        },
-        onTopbarMenuButtonClick(event) {
-            this.topbarItemClick = true;
-            this.topbarMenuActive = !this.topbarMenuActive;
-            this.hideOverlayMenu();
-            event.preventDefault();
-        },
-        onTopbarItemClick(event) {
-            this.topbarItemClick = true;
+const onSearchClick = () => {
+    searchClick.value = true;
+};
 
-            if (this.activeTopbarItem === event.item) this.activeTopbarItem = null;
-            else this.activeTopbarItem = event.item;
+const onSearchHide = () => {
+    searchActive.value = false;
+    searchClick.value = false;
+};
 
-            event.originalEvent.preventDefault();
-        },
-        onTopbarMobileButtonClick(event) {
-            this.mobileTopbarActive = !this.mobileTopbarActive;
-            event.preventDefault();
-        },
-        onRightPanelButtonClick(event) {
-            this.rightPanelClick = true;
-            this.rightPanelActive = !this.rightPanelActive;
+const isHorizontal = () => {
+    return menuMode.value === 'horizontal';
+};
 
-            event.preventDefault();
-        },
-        onRightPanelClick() {
-            this.rightPanelClick = true;
-        },
-        onHideClick(expanded) {
-            this.rightPanelActive = expanded;
-        },
-        onMenuClick() {
-            this.menuClick = true;
-        },
-        onRootMenuItemClick(event) {
-            if (event.isSameIndex) {
-                this.isSlimOrHorItemClick = false;
-            } else {
-                this.isSlimOrHorItemClick = true;
-            }
+const isSlim = () => {
+    return menuMode.value === 'slim';
+};
 
-            this.menuActive = !this.menuActive;
+const isOverlay = () => {
+    return menuMode.value === 'overlay';
+};
+
+const isDesktop = () => {
+    return window.innerWidth > 991;
+};
+
+const hideOverlayMenu = () => {
+    rotateMenuButton.value = false;
+    overlayMenuActive.value = false;
+    mobileMenuActive.value = false;
+};
+
+const onTopbarMenuButtonClick = (event: Event) =>{
+    topbarItemClick.value = true;
+    topbarMenuActive.value = !topbarMenuActive.value;
+    hideOverlayMenu();
+    event.preventDefault();
+};
+
+const onTopbarItemClick = (event: {originalEvent: Event, item: any}) => {
+    topbarItemClick.value = true;
+
+    if (activeTopbarItem.value === event.item) activeTopbarItem.value = null;
+    else activeTopbarItem.value = event.item;
+
+    event.originalEvent.preventDefault();
+};
+
+const onTopbarMobileButtonClick = (event: Event) => {
+    mobileTopbarActive.value = !mobileTopbarActive.value;
+    event.preventDefault();
+};
+
+const onRightPanelButtonClick = (event: Event) => {
+    rightPanelClick.value = true;
+    rightPanelActive.value = !rightPanelActive.value;
+
+    event.preventDefault();
+};
+
+const onRightPanelClick = () => {
+    rightPanelClick.value = true;
+};
+
+const onHideClick = (expanded: any) => {
+    rightPanelActive.value = expanded;
+};
+
+const onMenuClick = () => {
+    menuClick.value = true;
+};
+
+const onRootMenuItemClick = (event: {originalEvent: Event, isSameIndex: boolean}) => {
+    if (event.isSameIndex) {
+        isSlimOrHorItemClick.value = false;
+    } else {
+        isSlimOrHorItemClick.value = true;
+    }
+
+    menuActive.value = !menuActive.value;
+};
+
+const onMenuItemClick = (event: any) => {
+    if (!event.item.items) {
+        isSlimOrHorItemClick.value = false;
+        hideOverlayMenu();
+        EventBus.emit('reset-active-index');
+    }
+
+    if (!event.item.items && (isHorizontal() || isSlim())) {
+        menuActive.value = false;
+    }
+};
+
+const onActivateInlineMenu = (e: Event, key: any) => {
+    if (key === 'top') {
+        if (inlineMenuBottomActive.value) {
+            inlineMenuBottomActive.value = false;
+        }
+
+        inlineMenuTopActive.value = !inlineMenuTopActive.value;
+    }
+
+    if (key === 'bottom') {
+        if (inlineMenuTopActive.value) {
+            inlineMenuTopActive.value = false;
+        }
+
+        inlineMenuBottomActive.value = !inlineMenuBottomActive.value;
+    }
+
+    inlineMenuClick.value = true;
+};
+
+const blockBodyScroll = () => {
+    if (document.body.classList) {
+        document.body.classList.add('blocked-scroll');
+    } else {
+        document.body.className += ' blocked-scroll';
+    }
+};
+
+const unblockBodyScroll = () => {
+    if (document.body.classList) {
+        document.body.classList.remove('blocked-scroll');
+    } else {
+        document.body.className = document.body.className.replace(
+            new RegExp(`(^|\\b)${'blocked-scroll'.split(' ').join('|')}(\\b|$)`, 'gi'),
+            ' '
+        );
+    }
+};
+
+const layoutContainerClass = computed(() => {
+    return [
+        'layout-wrapper',
+        'layout-menu',
+        'layout-topbar-theme',
+        {
+            'layout-menu-static': menuMode.value === 'static',
+            'layout-menu-overlay': menuMode.value === 'overlay',
+            'layout-menu-overlay-active': overlayMenuActive.value,
+            'layout-menu-slim': menuMode.value === 'slim',
+            'layout-menu-horizontal': menuMode.value === 'horizontal',
+            'layout-menu-active': menuActive.value,
+            'layout-menu-mobile-active': mobileMenuActive.value,
+            'layout-topbar-mobile-active': mobileTopbarActive.value,
+            'layout-rightmenu-active': rightPanelActive.value,
+            'p-input-filled': true//this.$primevue.config.inputStyle === 'filled', // todo
+            // 'p-ripple-disabled': true
         },
-        onMenuItemClick(event) {
-            if (!event.item.items) {
-                this.isSlimOrHorItemClick = false;
-                this.hideOverlayMenu();
-                EventBus.emit('reset-active-index');
-            }
+    ];
+})
 
-            if (!event.item.items && (this.isHorizontal() || this.isSlim())) {
-                this.menuActive = false;
-            }
-        },
+const onDocumentClick = () => {
+    if (!searchClick.value && searchActive.value) {
+        onSearchHide();
+    }
 
-        onActivateInlineMenu(e, key) {
-            if (key === 'top') {
-                if (this.inlineMenuBottomActive) {
-                    this.inlineMenuBottomActive = false;
-                }
+    if (!topbarItemClick.value) {
+        activeTopbarItem.value = null;
+        topbarMenuActive.value = false;
+    }
 
-                this.inlineMenuTopActive = !this.inlineMenuTopActive;
-            }
+    if (!menuClick.value) {
+        if (isHorizontal() || isSlim()) {
+            menuActive.value = false;
+            isSlimOrHorItemClick.value = false;
+            EventBus.emit('reset-active-index');
+        }
 
-            if (key === 'bottom') {
-                if (this.inlineMenuTopActive) {
-                    this.inlineMenuTopActive = false;
-                }
+        if (isOverlay()) {
+            menuActive.value = false;
+        }
 
-                this.inlineMenuBottomActive = !this.inlineMenuBottomActive;
-            }
+        hideOverlayMenu();
+        unblockBodyScroll();
+    }
 
-            this.inlineMenuClick = true;
-        },
+    if (!rightPanelClick.value) {
+        rightPanelActive.value = false;
+    }
 
-        blockBodyScroll() {
-            if (document.body.classList) {
-                document.body.classList.add('blocked-scroll');
-            } else {
-                document.body.className += ' blocked-scroll';
-            }
-        },
-        unblockBodyScroll() {
-            if (document.body.classList) {
-                document.body.classList.remove('blocked-scroll');
-            } else {
-                document.body.className = document.body.className.replace(
-                    new RegExp(`(^|\\b)${'blocked-scroll'.split(' ').join('|')}(\\b|$)`, 'gi'),
-                    ' '
-                );
-            }
-        },
-    },
-    computed: {
-        layoutContainerClass() {
-            return [
-                'layout-wrapper',
-                'layout-menu',
-                'layout-topbar-theme',
-                {
-                    'layout-menu-static': this.menuMode === 'static',
-                    'layout-menu-overlay': this.menuMode === 'overlay',
-                    'layout-menu-overlay-active': this.overlayMenuActive,
-                    'layout-menu-slim': this.menuMode === 'slim',
-                    'layout-menu-horizontal': this.menuMode === 'horizontal',
-                    'layout-menu-active': this.menuActive,
-                    'layout-menu-mobile-active': this.mobileMenuActive,
-                    'layout-topbar-mobile-active': this.mobileTopbarActive,
-                    'layout-rightmenu-active': this.rightPanelActive,
-                    'p-input-filled': this.$primevue.config.inputStyle === 'filled',
-                    // 'p-ripple-disabled': true
-                },
-            ];
-        },
-    },
-    components: {
-        SideMenu,
-        AppTopBar,
-        AppRightPanel,
-        Content,
-    },
+    if (!inlineMenuClick.value) {
+        inlineMenuTopActive.value = false;
+        inlineMenuBottomActive.value = false;
+    }
+
+    topbarItemClick.value = false;
+    menuClick.value = false;
+    rightPanelClick.value = false;
+    searchClick.value = false;
+    inlineMenuClick.value = false;
+};
+
+const onMenuButtonClick = (event: Event) => {
+    menuClick.value = true;
+    menuActive.value = !menuActive.value;
+    topbarMenuActive.value = false;
+    topbarRightClick.value = true;
+    rotateMenuButton.value = !rotateMenuButton.value;
+    topbarMenuActive.value = false;
+
+    if (!isDesktop()) {
+        mobileMenuActive.value = !mobileMenuActive.value;
+
+        if (mobileMenuActive.value) {
+            blockBodyScroll();
+        } else {
+            unblockBodyScroll();
+        }
+    }
+
+    event.preventDefault();
 };
 </script>
