@@ -64,7 +64,7 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import TopbarLeft from '../Atoms/TopMenu/TopbarLeft.vue';
 import TopbarSearch from '../Atoms/TopMenu/TopbarSearch.vue';
 import TopbarNotifications from '../Atoms/TopMenu/TopbarNotifications.vue';
@@ -72,80 +72,99 @@ import TopbarApps from '../Atoms/TopMenu/TopbarApps.vue';
 import TopbarProfile from '../Atoms/TopMenu/TopbarProfile.vue';
 import TopbarRightPanel from "../Atoms/TopMenu/TopbarRightPanel.vue";
 import TopbarMega from "../Atoms/TopMenu/TopbarMega.vue";
+import {ref} from "vue";
 
-export default {
-    inheritAttrs: false,
 
-    components : {
-        TopbarRightPanel,
-        TopbarSearch,
-        TopbarLeft,
-        TopbarNotifications,
-        TopbarApps,
-        TopbarProfile,
-        TopbarMega
+const props = defineProps({
+    horizontal: {
+        type: Boolean,
+        default: false,
     },
 
-    emits: [
-        'menubutton-click',
-        'topbar-menubutton-click',
-        'topbaritem-click',
-        'rightpanel-button-click',
-        'topbar-mobileactive',
-        'search-click',
-        'search-toggle',
-    ],
-    props: {
-        horizontal: {
-            type: Boolean,
-            default: false,
-        },
-        topbarMenuActive: {
-            type: Boolean,
-            default: false,
-        },
-        activeTopbarItem: String,
-        mobileTopbarActive: Boolean,
-
-        searchActive: {
-            type : Boolean,
-            default: false,
-        },
-
-        menuTopAppData: Object,
-        brandingData: Object,
-        menuTopMegaData: Object,
-        menuTopNotificationsData: Object,
-        menuTopProfileData: Object,
-    },
-    data() {
-        return {
-            dark: false,
-            searchText: '',
-        };
+    topbarMenuActive: {
+        type: Boolean,
+        default: false,
     },
 
-    methods: {
-        onDarkSwitchClickHandler() {
-            this.dark = !this.dark;
-        },
-
-
-
-
-        onMenuButtonClick(event) {
-            this.$emit('menubutton-click', event);
-        },
-        onTopbarMenuButtonClick(event) {
-            this.$emit('topbar-menubutton-click', event);
-        },
-        onTopbarItemClick(event, item) {
-            if (item === 'search') {
-                this.$emit('search-toggle', event);
-            }
-
-            this.$emit('topbaritem-click', { originalEvent: event, item });
-        },
+    mobileTopbarActive: {
+        type: Boolean,
+        default: false,
     },
+
+    searchActive: {
+        type: Boolean,
+        default: false,
+    },
+
+    activeTopbarItem: {
+        type: String,
+        default: false,
+    },
+
+    menuTopAppData: {
+        type: Object,
+        default() {
+            return {};
+        }
+    },
+
+    brandingData: {
+        type: Object,
+        default() {
+            return {};
+        }
+    },
+
+    menuTopMegaData: {
+        type: Object,
+        default() {
+            return {};
+        }
+    },
+
+    menuTopNotificationsData: {
+        type: Object,
+        default() {
+            return {};
+        }
+    },
+
+    menuTopProfileData: {
+        type: Object,
+        default() {
+            return {};
+        }
+    },
+});
+
+const dark = ref(false);
+const searchText = ref('');
+
+const onDarkSwitchClickHandler = () => {
+    dark.value = !dark.value;
 };
+
+const emit = defineEmits<{
+    (eventName: 'menubutton-click', event: Event): void
+    (eventName: 'topbar-menubutton-click', event: Event): void
+    (eventName: 'search-toggle', event: Event): void
+    (eventName: 'topbaritem-click', data:{originalEvent: Event, item: any}): void
+}>();
+
+const onMenuButtonClick = (event: Event) => {
+    emit('menubutton-click', event);
+};
+
+const onTopbarMenuButtonClick = (event: Event) => {
+    emit('topbar-menubutton-click', event);
+};
+
+const onTopbarItemClick = (event: Event, item: any) => {
+    if (item === 'search') {
+        emit('search-toggle', event);
+    }
+
+    emit('topbaritem-click', { originalEvent: event, item });
+};
+
 </script>
