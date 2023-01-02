@@ -7,10 +7,11 @@
                 inline-menu-key="top"
                 :menu-mode="menuMode"
                 @change-inlinemenu="onActivateInlineMenu"
+                :menu-left-profile-data="menuLeftProfileData"
             ></AppInlineMenu>
 
             <AppMenu
-                :model="menu"
+                :model="menuLeftData"
                 :menu-mode="menuMode"
                 :active="menuActive"
                 :mobile-menu-active="mobileMenuActive"
@@ -25,6 +26,7 @@
                 inline-menu-key="bottom"
                 :menu-mode="menuMode"
                 @change-inlinemenu="onActivateInlineMenu"
+                :menu-left-profile-data="menuLeftProfileData"
             ></AppInlineMenu>
         </div>
     </div>
@@ -34,7 +36,6 @@
 import EventBus from "../../../event-bus";
 import AppInlineMenu from './AppInlineMenu.vue';
 import AppMenu from './AppMenu.vue';
-import menuData from './menu.json';
 
 export default {
     components : {
@@ -46,13 +47,15 @@ export default {
         inlineMenuPosition: String,
         menuMode: String,
         mobileMenuActive: Boolean,
+
+        menuLeftProfileData: Object,
+        menuLeftData: Object,
     },
 
     data() {
         return {
             inlineMenuTopActive: false,
             inlineMenuBottomActive: false,
-            menu: menuData,
             isSlimOrHorItemClick: false,
             menuActive: false,
         }

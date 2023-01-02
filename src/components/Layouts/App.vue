@@ -32,6 +32,8 @@
             @menuitem-click="onMenuItemClick"
             @root-menuitem-click="onRootMenuItemClick"
             @menu-click="onMenuClick"
+            :menu-left-profile-data="menuLeftProfileData"
+            :menu-left-data="menuLeftData"
         >
         </app-main-menu>
 
@@ -54,6 +56,8 @@ import BrandingData from './Data/BrandingData.json'
 import MegaMenuData from './Data/MegaMenuData.json'
 import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json'
 import MenuTopProfileData from './Data/MenuTopProfileData.json'
+import MenuLeftProfileData from './Data/MenuLeftProfileData.json'
+import MenuLeftData from './Data/MenuLeftData.json'
 
 export default {
     data() {
@@ -80,7 +84,9 @@ export default {
             brandingData: BrandingData,
             megaMenuData: MegaMenuData,
             menuTopNotificationsData: MenuTopNotificationsData,
-            menuTopProfileData: MenuTopProfileData
+            menuTopProfileData: MenuTopProfileData,
+            menuLeftProfileData: MenuLeftProfileData,
+            menuLeftData: MenuLeftData,
         };
     },
     watch: {

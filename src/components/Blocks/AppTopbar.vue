@@ -72,8 +72,6 @@ import TopbarApps from '../Atoms/TopMenu/TopbarApps.vue';
 import TopbarProfile from '../Atoms/TopMenu/TopbarProfile.vue';
 import TopbarRightPanel from "../Atoms/TopMenu/TopbarRightPanel.vue";
 import TopbarMega from "../Atoms/TopMenu/TopbarMega.vue";
-import MenuTopProfileData from "@components/Layouts/MenuTopProfileData.json";
-
 
 export default {
     inheritAttrs: false,
