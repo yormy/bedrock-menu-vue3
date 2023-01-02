@@ -18,7 +18,7 @@
 
                     <topbar-notifications
                         :active-topbar-item="activeTopbarItem"
-                        @topbaritem-click="onTopbarNotificationsClick"
+                        @topbaritem-click="onTopbarItemClick"
                         :menu-top-notifications-data="menuTopNotificationsData"
                     ></topbar-notifications>
 
@@ -135,7 +135,7 @@ const emit = defineEmits<{
     (eventName: 'menubutton-click', event: Event): void;
     (eventName: 'topbar-menubutton-click', event: Event): void;
     (eventName: 'search-toggle', event: Event): void;
-    (eventName: 'topbaritem-click', data: { originalEvent: Event; item: any }): void;
+    (eventName: 'topbaritem-click', data: { originalEvent: Event; item: string }): void;
     (eventName: 'menubutton-click', event: Event): void;
     (eventName: 'topbar-mobileactive', event: Event): void;
     (eventName: 'search-toggle', event: Event): void;
@@ -167,11 +167,7 @@ const onTopbarMenuButtonClick = (event: Event) => {
     emit('topbar-menubutton-click', event);
 };
 
-const onTopbarNotificationsClick = (data: { originalEvent: Event; item: any }) => {
-    // emit('topbaritem-click', original, 'notifications')"
-};
-
-const onTopbarItemClick = (data: { originalEvent: Event; item: any }) => {
+const onTopbarItemClick = (data: { originalEvent: Event; item: string }) => {
     // if (type === 'search') {
     //     emit('search-toggle', originalEvent);
     // }

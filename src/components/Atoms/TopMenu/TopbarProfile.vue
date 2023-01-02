@@ -41,7 +41,7 @@ const emit = defineEmits<{
     (eventName: 'topbaritem-click', data: { originalEvent: Event; item: any }): void;
 }>();
 
-const onTopbarItemClick = (event: Event, item: any) => {
+const onTopbarItemClick = (event: Event, item: string) => {
     emit('topbaritem-click', { originalEvent: event, item });
 };
 </script>
