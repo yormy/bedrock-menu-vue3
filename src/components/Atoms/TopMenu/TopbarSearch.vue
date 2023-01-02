@@ -30,44 +30,46 @@
     </li>
 </template>
 
-<script>
+<script setup lang="ts">
 import InputText from 'primevue/inputtext';
-export default {
 
-    components: {
-        InputText
+const props = defineProps({
+    searchActive: {
+        type: Boolean,
+        default: false,
     },
+});
 
-    props: {
-        searchActive: {
-            type : Boolean,
-            default: false,
-        },
-    },
+const emit = defineEmits<{
+    (eventName: 'search-toggle', event: Event): void
+    (eventName: 'search-click', event: Event): void
+}>();
 
-    methods: {
-        onSearchItemClick(event, item) {
-            this.$emit('search-toggle', event);
-        },
 
-        onSearchContainerClick(event) {
-            this.$emit('search-click', event);
-        },
-        changeSearchActive(event) {
-            this.$emit('search-toggle', event);
-        },
 
-        onSearchKeydown(event) {
-            if (event.keyCode === 13) {
-                this.$emit('search-toggle', event);
-            }
-        },
-        onEnter() {
-            if (this.$refs.searchInput) {
-                this.$refs.searchInput.$el.focus();
-            }
-        },
-    }
 
-}
+const onSearchItemClick = (event: Event, item: any) => {
+    emit('search-toggle', event);
+};
+
+const onSearchContainerClick = (event: Event) => {
+    emit('search-click', event);
+};
+
+const changeSearchActive = (event: Event) => {
+    emit('search-toggle', event);
+};
+
+const onSearchKeydown = (event: KeyboardEvent) => {
+    // if (event.keyCode === 13) {
+    //     emit('search-toggle', event);
+    // }
+};
+
+const onEnter = () => {
+    // if (this.$refs.searchInput) {
+    //     this.$refs.searchInput.$el.focus();
+    // }
+};
+
 </script>

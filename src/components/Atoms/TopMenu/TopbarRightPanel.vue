@@ -11,13 +11,13 @@
     </li>
 </template>
 
-<script>
-export default {
-    methods: {
-        onRightPanelButtonClick(event) {
-            this.$emit('rightpanel-button-click', event);
-        },
-    }
+<script setup lang="ts">
 
-}
+const emit = defineEmits<{
+    (eventName: 'rightpanel-button-click', event: Event): void
+}>();
+
+const onRightPanelButtonClick = (event: Event) => {
+    emit('rightpanel-button-click', event);
+};
 </script>
