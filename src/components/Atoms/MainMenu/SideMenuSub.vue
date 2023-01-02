@@ -63,7 +63,7 @@
                     <span class="layout-menuitem-tooltip-text p-tooltip-text">{{ item.label }}</span>
                 </span>
                 <transition name="layout-menu">
-                    <appsubmenu
+                    <SideMenuSub
                         v-show="
                             item.items && (root && (!isSlim() || (isSlim() && (mobileMenuActive || activeIndex !== null))) ? true : activeIndex === i)
                         "
@@ -72,7 +72,7 @@
                         :menu-mode="menuMode"
                         :menu-active="menuActive"
                         :parent-menu-item-active="activeIndex === i"
-                    ></appsubmenu>
+                    ></SideMenuSub>
                 </transition>
             </li>
             <li v-if="visible(item) && item.separator" :key="'separator' + i" class="p-menu-separator" :style="item.style" role="separator"></li>
@@ -81,8 +81,10 @@
 </template>
 
 <script setup lang="ts">
-import EventBus from '../../../event-bus.js';
 import {onMounted, ref} from "vue";
+import EventBus from '../../../event-bus.js';
+import SideMenuSub from './SideMenuSub.vue';
+
 
 const props = defineProps({
     items: {
