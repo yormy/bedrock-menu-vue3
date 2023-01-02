@@ -1,8 +1,8 @@
 <template>
     <Sidebar
-        v-model:visible="d_expanded"
+        v-model:visible="isExpanded"
         @hide="hideSidebar"
-        @click="$emit('content-click', $event)"
+        @click="onSidebarClick"
         position="right"
         :show-close-icon="false"
         :base-z-index="1000"
@@ -91,20 +91,25 @@ const props = defineProps({
     },
 });
 
-const d_expanded = ref(false);
+const isExpanded = ref(false);
 
 watch(
     () => props.expanded,
     (newValue) => {
-        d_expanded.value = newValue;
+        isExpanded.value = newValue;
     }
 );
 
 const emit = defineEmits<{
-    (eventName: 'hide', d_expanded: boolean): void;
+    (eventName: 'hide', value: boolean): void;
+    (eventName: 'content-click', event: Event): void;
 }>();
 
 const hideSidebar = () => {
-    emit('hide', d_expanded.value);
+    emit('hide', isExpanded.value);
+};
+
+const onSidebarClick = (event: Event) => {
+    emit('content-click', event);
 };
 </script>

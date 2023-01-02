@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 const props = defineProps({
     darkMode: {
@@ -50,7 +50,7 @@ const onMenuButtonClick = (event: Event) => {
 };
 
 // {light : String, dark: String, title: String, height: String}
-const { logo } = props.brandingData;
+const logo = ref(props.brandingData.logo);
 
 const applyDarkModeSetting = (darkMode: boolean) => {
     const html = document.querySelector('html');
@@ -66,9 +66,9 @@ const applyDarkModeSetting = (darkMode: boolean) => {
     const logoElement = document.getElementById('logo');
 
     if (darkMode) {
-        logoElement.src = logo.dark;
+        logoElement.src = logo.value.dark;
     } else {
-        logoElement.src = logo.light;
+        logoElement.src = logo.value.light;
     }
 };
 

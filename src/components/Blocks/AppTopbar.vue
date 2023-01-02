@@ -3,8 +3,8 @@
         <topbar-left
             :dark-mode="dark"
             v-bind="$attrs"
-            @menubutton-click="$emit('menubutton-click')"
-            @topbar-mobileactive="$emit('topbar-mobileactive')"
+            @menubutton-click="onMenubuttonClick"
+            @topbar-mobileactive="onTopbarMobileActive"
             :branding-data="brandingData"
         >
         </topbar-left>
@@ -14,8 +14,7 @@
 
             <div class="layout-topbar-actions-right">
                 <ul class="layout-topbar-items">
-                    <topbar-search :search-active="searchActive" @search-toggle="$emit('search-toggle')" @search-click="$emit('search-click')">
-                    </topbar-search>
+                    <topbar-search :search-active="searchActive" @search-toggle="onSearchToggle" @search-click="onSearchClick"> </topbar-search>
 
                     <topbar-notifications
                         :active-topbar-item="activeTopbarItem"
@@ -86,7 +85,7 @@ const props = defineProps({
 
     activeTopbarItem: {
         type: String,
-        default: false,
+        default: '',
     },
 
     menuTopAppData: {
@@ -137,7 +136,29 @@ const emit = defineEmits<{
     (eventName: 'topbar-menubutton-click', event: Event): void;
     (eventName: 'search-toggle', event: Event): void;
     (eventName: 'topbaritem-click', data: { originalEvent: Event; item: any }): void;
+
+    (eventName: 'menubutton-click', event: Event): void;
+    (eventName: 'topbar-mobileactive', event: Event): void;
+    (eventName: 'search-toggle', event: Event): void;
+    (eventName: 'search-click', event: Event): void;
+    (eventName: 'rightpanel-button-click', event: Event): void;
 }>();
+
+const onSearchToggle = (event: Event) => {
+    emit('search-toggle', event);
+};
+
+const onSearchClick = (event: Event) => {
+    emit('search-click', event);
+};
+
+const onMenubuttonClick = (event: Event) => {
+    emit('menubutton-click', event);
+};
+
+const onTopbarMobileActive = (event: Event) => {
+    emit('topbar-mobileactive', event);
+};
 
 const onMenuButtonClick = (event: Event) => {
     emit('menubutton-click', event);

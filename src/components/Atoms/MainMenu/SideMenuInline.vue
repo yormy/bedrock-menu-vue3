@@ -33,7 +33,7 @@
                     { 'layout-inline-menu-action-panel-horizontal': menuMode === 'horizontal' && !isMobile() },
                 ]"
             >
-                <li v-for="(item, index) in menuLeftProfileData.items" class="layout-inline-menu-action-item">
+                <li v-for="(item, index) in menuLeftProfileData.items" :key="index" class="layout-inline-menu-action-item">
                     <a class="flex flex-row align-items-center">
                         <i :class="item.icon"></i>
                         <span>{{ item.label }}</span>

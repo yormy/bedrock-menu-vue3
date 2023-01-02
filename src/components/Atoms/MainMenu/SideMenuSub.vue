@@ -82,8 +82,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import EventBus from '../../../event-bus.js';
-import SideMenuSub from './SideMenuSub.vue';
+import EventBus from '../../../event-bus';
 
 const props = defineProps({
     items: {
@@ -136,6 +135,10 @@ const isMobile = () => {
     return window.innerWidth <= 640;
 };
 
+const isHorizontalOrSlim = () => {
+    return props.menuMode === 'horizontal' || props.menuMode === 'slim';
+};
+
 onMounted(() => {
     EventBus.on('reset-active-index', () => {
         if (isHorizontalOrSlim() && !isMobile()) {
@@ -143,10 +146,6 @@ onMounted(() => {
         }
     });
 });
-
-const isHorizontalOrSlim = () => {
-    return props.menuMode === 'horizontal' || props.menuMode === 'slim';
-};
 
 const getInk = (el: Element) => {
     for (let i = 0; i < el.children.length; i += 1) {

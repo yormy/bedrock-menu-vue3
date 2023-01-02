@@ -34,6 +34,7 @@ export default {
                 this.items = [];
                 const bc = this.$router.currentRoute.value.meta.breadcrumb[0];
 
+                // eslint-disable-next-line
                 for (const pro in bc) {
                     this.items.push({ label: bc[pro] });
                 }

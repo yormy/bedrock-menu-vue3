@@ -21,7 +21,7 @@
                     <span class="px-3 fs-small">{{ menuTopNotificationsData.header.title }}</span>
                 </li>
 
-                <li v-for="(item, index) in menuTopNotificationsData.items" class="layout-topbar-action-item">
+                <li v-for="(item, index) in menuTopNotificationsData.items" :key="index" class="layout-topbar-action-item">
                     <div class="flex flex-row align-items-center">
                         <img :src="item.avatar.image" :alt="item.avatar.title" />
                         <div class="flex flex-column" :class="'ml-3'" style="flex-grow: 1">

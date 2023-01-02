@@ -11,7 +11,7 @@
 
         <transition name="layout-topbar-action-panel">
             <ul v-show="activeTopbarItem === 'profile'" class="layout-topbar-action-panel shadow-6">
-                <li v-for="(item, index) in menuTopProfileData.items" class="layout-topbar-action-item">
+                <li v-for="(item, index) in menuTopProfileData.items" :key="index" class="layout-topbar-action-item">
                     <a v-ripple class="flex flex-row align-items-center p-ripple">
                         <i :class="item.icon" class="mr-2"></i>
                         <span>{{ item.label }}</span>

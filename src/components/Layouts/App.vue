@@ -46,13 +46,13 @@
 </template>
 
 <script setup lang="ts">
-import SideMenu from '@components/Atoms/MainMenu/SideMenu.vue';
 import { computed, ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import SideMenu from '../Atoms/MainMenu/SideMenu.vue';
 import AppTopBar from '../Blocks/AppTopbar.vue';
 import AppRightPanel from '../Atoms/AppRightPanel.vue';
 import Content from '../Atoms/Content/Content.vue';
-import EventBus from '../../event-bus.js';
+import EventBus from '../../event-bus';
 import MenuTopAppData from './Data/MenuTopAppData.json';
 import BrandingData from './Data/BrandingData.json';
 import MenuTopMegaData from './Data/MenuTopMegaData.json';
