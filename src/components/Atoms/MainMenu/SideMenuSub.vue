@@ -81,12 +81,28 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted, PropType, ref } from 'vue';
 import EventBus from '../../../event-bus';
 
 const props = defineProps({
     items: {
-        type: Array,
+        type: Array as PropType<
+            Array<{
+                to: string;
+                badgeStyleClass: string;
+                items: [];
+                class: string;
+                style: string;
+                target: string;
+                url: string;
+                disabled: boolean;
+                badgeStyle: string;
+                label: string;
+                badge: string;
+                icon: string;
+                separator: boolean;
+            }>
+        >,
         default() {
             return [];
         },

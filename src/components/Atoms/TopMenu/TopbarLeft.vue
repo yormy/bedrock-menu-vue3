@@ -55,6 +55,10 @@ const logo = ref(props.brandingData.logo);
 const applyDarkModeSetting = (darkMode: boolean) => {
     const html = document.querySelector('html');
 
+    if (!html) {
+        throw new Error('No HTML element');
+    }
+
     if (darkMode) {
         html.classList.add('dark');
         html.classList.remove('light');
@@ -63,7 +67,11 @@ const applyDarkModeSetting = (darkMode: boolean) => {
         html.classList.remove('dark');
     }
 
-    const logoElement = document.getElementById('logo');
+    const logoElement = document.getElementById('logo') as HTMLImageElement;
+
+    if (!logoElement) {
+        return;
+    }
 
     if (darkMode) {
         logoElement.src = logo.value.dark;

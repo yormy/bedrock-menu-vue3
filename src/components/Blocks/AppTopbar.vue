@@ -24,13 +24,13 @@
 
                     <topbar-apps
                         :active-topbar-item="activeTopbarItem"
-                        @topbaritem-click="(original, item) => $emit('topbaritem-click', original, item)"
+                        @topbaritem-click="onTopbarItemClick"
                         :menu-top-app-data="menuTopAppData"
                     ></topbar-apps>
 
                     <topbar-profile
                         :active-topbar-item="activeTopbarItem"
-                        @topbaritem-click="(original, item) => $emit('topbaritem-click', original, item)"
+                        @topbaritem-click="onTopbarItemClick"
                         :menu-top-profile-data="menuTopProfileData"
                     ></topbar-profile>
 

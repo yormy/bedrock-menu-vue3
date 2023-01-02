@@ -89,7 +89,7 @@ const onActivateInlineMenu = (e: Event, key: any) => {
             inlineMenuBottomActive.value = false;
         }
 
-        inlineMenuTopActive.value = !this.inlineMenuTopActive.value;
+        inlineMenuTopActive.value = !inlineMenuTopActive.value;
     }
 
     if (key === 'bottom') {

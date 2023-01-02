@@ -1,6 +1,6 @@
 <template>
     <li class="layout-topbar-item layout-search-item">
-        <a v-ripple class="layout-topbar-action rounded-circle p-ripple" @click="onSearchItemClick($event)" @keydown="onSearchItemClick($event)">
+        <a v-ripple class="layout-topbar-action rounded-circle p-ripple" @click="onSearchItemClick" @keydown="onSearchItemClick">
             <i class="pi pi-search fs-large"></i>
         </a>
 
