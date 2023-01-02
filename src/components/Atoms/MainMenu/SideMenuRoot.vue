@@ -14,11 +14,12 @@
 </template>
 
 <script setup lang="ts">
+import { PropType } from 'vue';
 import SideMenuSub from './SideMenuSub.vue';
 
 const props = defineProps({
     model: {
-        type: Array,
+        type: Array as PropType<Array<LeftMenuItem>>,
         default() {
             return [];
         },

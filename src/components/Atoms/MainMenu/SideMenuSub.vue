@@ -86,23 +86,7 @@ import EventBus from '../../../event-bus';
 
 const props = defineProps({
     items: {
-        type: Array as PropType<
-            Array<{
-                to: string;
-                badgeStyleClass: string;
-                items: [];
-                class: string;
-                style: string;
-                target: string;
-                url: string;
-                disabled: boolean;
-                badgeStyle: string;
-                label: string;
-                badge: string;
-                icon: string;
-                separator: boolean;
-            }>
-        >,
+        type: Array as PropType<Array<LeftMenuItem>>,
         default() {
             return [];
         },

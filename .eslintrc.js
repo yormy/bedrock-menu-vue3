@@ -51,6 +51,7 @@ module.exports = {
         'vuejs-accessibility/anchor-has-content' : 'off',
         "no-restricted-syntax": ['warn'],
         "guard-for-in": 'off',
+        "no-undef": "off", // let Typescript handle the undefines
         'vue/component-tags-order': [
             'error',
             {
