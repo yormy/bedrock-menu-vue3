@@ -54,6 +54,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import TopbarLeft from '../Atoms/TopMenu/TopbarLeft.vue';
 import TopbarSearch from '../Atoms/TopMenu/TopbarSearch.vue';
 import TopbarNotifications from '../Atoms/TopMenu/TopbarNotifications.vue';
@@ -61,7 +62,6 @@ import TopbarApps from '../Atoms/TopMenu/TopbarApps.vue';
 import TopbarProfile from '../Atoms/TopMenu/TopbarProfile.vue';
 import TopbarRightPanel from '../Atoms/TopMenu/TopbarRightPanel.vue';
 import TopbarMega from '../Atoms/TopMenu/TopbarMega.vue';
-import { ref } from 'vue';
 
 const props = defineProps({
     horizontal: {

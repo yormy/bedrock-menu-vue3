@@ -14,10 +14,6 @@
 import Breadcrumb from 'primevue/breadcrumb';
 
 export default {
-    components: {
-        Breadcrumb,
-    },
-
     data() {
         return {
             home: { icon: 'pi pi-home', to: '/' },
@@ -43,6 +39,9 @@ export default {
                 }
             }
         },
+    },
+    components: {
+        Breadcrumb,
     },
 };
 </script>

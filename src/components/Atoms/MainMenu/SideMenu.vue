@@ -33,9 +33,9 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import SideMenuInline from './SideMenuInline.vue';
 import SideMenuRoot from './SideMenuRoot.vue';
-import { ref } from 'vue';
 
 const props = defineProps({
     inlineMenuPosition: {
@@ -100,7 +100,7 @@ const onActivateInlineMenu = (e: Event, key: any) => {
         inlineMenuBottomActive.value = !inlineMenuBottomActive.value;
     }
 
-    //inlineMenuClick.value = true;
+    // inlineMenuClick.value = true;
 };
 
 const onMenuItemClick = (event: Event) => {

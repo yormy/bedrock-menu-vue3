@@ -49,8 +49,8 @@ const onMenuButtonClick = (event: Event) => {
     emit('menubutton-click', event);
 };
 
-//{light : String, dark: String, title: String, height: String}
-const logo = props.brandingData.logo;
+// {light : String, dark: String, title: String, height: String}
+const { logo } = props.brandingData;
 
 const applyDarkModeSetting = (darkMode: boolean) => {
     const html = document.querySelector('html');

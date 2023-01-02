@@ -46,6 +46,9 @@
 </template>
 
 <script setup lang="ts">
+import SideMenu from '@components/Atoms/MainMenu/SideMenu.vue';
+import { computed, ref, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 import AppTopBar from '../Blocks/AppTopbar.vue';
 import AppRightPanel from '../Atoms/AppRightPanel.vue';
 import Content from '../Atoms/Content/Content.vue';
@@ -57,9 +60,6 @@ import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json';
 import MenuTopProfileData from './Data/MenuTopProfileData.json';
 import MenuLeftProfileData from './Data/MenuLeftProfileData.json';
 import MenuLeftData from './Data/MenuLeftData.json';
-import SideMenu from '@components/Atoms/MainMenu/SideMenu.vue';
-import { computed, ref, watch } from 'vue';
-import { useRouter, useRoute } from 'vue-router';
 
 const mobileTopbarActive = ref(false);
 const mobileMenuActive = ref(false);
@@ -88,7 +88,7 @@ const menuTopProfileData = MenuTopProfileData;
 const menuLeftProfileData = MenuLeftProfileData;
 const menuLeftData = MenuLeftData;
 
-//TODO : these were undefined ???
+// TODO : these were undefined ???
 const topbarItemClick = ref(false);
 const rightPanelClick = ref(false);
 const menuClick = ref(false);
@@ -261,7 +261,7 @@ const layoutContainerClass = computed(() => {
             'layout-menu-mobile-active': mobileMenuActive.value,
             'layout-topbar-mobile-active': mobileTopbarActive.value,
             'layout-rightmenu-active': rightPanelActive.value,
-            'p-input-filled': true, //this.$primevue.config.inputStyle === 'filled', // todo
+            'p-input-filled': true, // this.$primevue.config.inputStyle === 'filled', // todo
             // 'p-ripple-disabled': true
         },
     ];

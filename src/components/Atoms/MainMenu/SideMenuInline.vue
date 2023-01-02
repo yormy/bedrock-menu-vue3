@@ -74,7 +74,7 @@ const props = defineProps({
 });
 
 const emit = defineEmits<{
-    (eventName: 'change-inlinemenu', active: Boolean, key: String): void;
+    (eventName: 'change-inlinemenu', active: boolean, key: string): void;
 }>();
 
 const onClick = (event: Event) => {
