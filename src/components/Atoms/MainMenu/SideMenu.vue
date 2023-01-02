@@ -32,79 +32,93 @@
     </div>
 </template>
 
-<script>
-import EventBus from "../../../event-bus";
+<script setup lang="ts">
 import SideMenuInline from './SideMenuInline.vue';
 import SideMenuRoot from './SideMenuRoot.vue';
+import {ref} from "vue";
 
-export default {
-    components : {
-        SideMenuInline,
-        SideMenuRoot
+const props = defineProps({
+    inlineMenuPosition: {
+        type: String,
+        default: '',
     },
 
-    props :{
-        inlineMenuPosition: String,
-        menuMode: String,
-        mobileMenuActive: Boolean,
-
-        menuLeftProfileData: Object,
-        menuLeftData: Object,
+    menuMode: {
+        type: String,
+        default: '',
     },
 
-    data() {
-        return {
-            inlineMenuTopActive: false,
-            inlineMenuBottomActive: false,
-            isSlimOrHorItemClick: false,
-            menuActive: false,
+    mobileMenuActive: {
+        type: Boolean,
+        default: false,
+    },
+
+    menuLeftProfileData: {
+        type: Object,
+        default() {
+            return {};
+        },
+    },
+
+    menuLeftData: {
+        type: Object,
+        default() {
+            return {};
+        },
+    },
+});
+
+const inlineMenuTopActive = ref(false);
+const inlineMenuBottomActive = ref(false);
+const isSlimOrHorItemClick= ref(false);
+const menuActive = ref(false);
+
+const emit = defineEmits<{
+    (eventName: 'menu-click'): void
+    (eventName: 'menuitem-click', event : Event): void
+    (eventName: 'root-menuitem-click', event: Event): void
+}>();
+
+
+const onMenuClick = () => {
+    emit('menu-click');
+};
+
+const onActivateInlineMenu = (e: Event, key: any) => {
+    if (key === 'top') {
+        if (inlineMenuBottomActive.value) {
+            inlineMenuBottomActive.value = false;
         }
-    },
 
-    methods: {
-        onMenuClick() {
-            this.$emit('menu-click');
-        },
+        inlineMenuTopActive.value = !this.inlineMenuTopActive.value;
+    }
 
-        onActivateInlineMenu(e, key) {
-            if (key === 'top') {
-                if (this.inlineMenuBottomActive) {
-                    this.inlineMenuBottomActive = false;
-                }
+    if (key === 'bottom') {
+        if (inlineMenuTopActive.value) {
+            inlineMenuTopActive.value = false;
+        }
 
-                this.inlineMenuTopActive = !this.inlineMenuTopActive;
-            }
+        inlineMenuBottomActive.value = !inlineMenuBottomActive.value;
+    }
 
-            if (key === 'bottom') {
-                if (this.inlineMenuTopActive) {
-                    this.inlineMenuTopActive = false;
-                }
+    //inlineMenuClick.value = true;
+};
 
-                this.inlineMenuBottomActive = !this.inlineMenuBottomActive;
-            }
+const onMenuItemClick = (event: Event) => {
+    emit('menuitem-click', event);
+};
 
-            this.inlineMenuClick = true;
-        },
+const onRootMenuItemClick = (event: any) => {
+    if (event.isSameIndex) {
+        isSlimOrHorItemClick.value = false;
+    } else {
+        isSlimOrHorItemClick.value = true;
+    }
 
-        onMenuItemClick(event) {
-            this.$emit('menuitem-click', event);
-        },
+    emit('root-menuitem-click',  event);
 
-        onRootMenuItemClick(event) {
-            if (event.isSameIndex) {
-                this.isSlimOrHorItemClick = false;
-            } else {
-                this.isSlimOrHorItemClick = true;
-            }
+    // this.menuActive = !this.menuActive;
+};
 
-            this.$emit('root-menuitem-click',  event);
-
-            // this.menuActive = !this.menuActive;
-        },
-    },
-
-
-
-}
 </script>
 

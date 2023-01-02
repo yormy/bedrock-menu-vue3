@@ -13,34 +13,54 @@
     />
 </template>
 
-<script>
+<script setup lang="ts">
 import SideMenuSub from './SideMenuSub.vue';
 
-export default {
-    name: 'AppMenu',
-    emits: ['menu-click', 'menuitem-click', 'root-menuitem-click'],
-    props: {
-        model: Array,
-        menuMode: String,
-        active: Boolean,
-        mobileMenuActive: Boolean,
-        isSlimOrHorItemClick: Boolean,
-    },
-    methods: {
-        onMenuClick(event) {
-            this.$emit('menu-click', event);
-        },
-        onMenuItemClick(event) {
-            this.$emit('menuitem-click', event);
-        },
-        onRootMenuItemClick(event) {
-            this.$emit('root-menuitem-click', event);
+const props = defineProps({
+    model: {
+        type: Array,
+        default() {
+            return [];
         },
     },
-    components: {
-        SideMenuSub,
-    },
-};
-</script>
 
-<style scoped></style>
+    menuMode: {
+        type: String,
+        default: '',
+    },
+
+    active: {
+        type: Boolean,
+        default: false,
+    },
+
+    mobileMenuActive: {
+        type: Boolean,
+        default: false,
+    },
+
+    isSlimOrHorItemClick: {
+        type: Boolean,
+        default: false,
+    },
+});
+
+const emit = defineEmits<{
+    (eventName: 'menu-click', event: Event): void
+    (eventName: 'menuitem-click', event: Event): void
+    (eventName: 'root-menuitem-click', event: Event): void
+}>();
+
+const onMenuClick = (event: Event) => {
+    emit('menu-click', event);
+};
+
+const onMenuItemClick= (event: Event) => {
+    emit('menuitem-click', event);
+};
+
+const onRootMenuItemClick = (event: Event) => {
+    emit('root-menuitem-click', event);
+};
+
+</script>

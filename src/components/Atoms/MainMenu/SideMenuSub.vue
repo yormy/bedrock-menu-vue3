@@ -79,130 +79,157 @@
         </template>
     </ul>
 </template>
-<script>
+
+<script setup lang="ts">
 import EventBus from '../../../event-bus.js';
+import {onMounted, ref} from "vue";
 
-export default {
-    name: 'Appsubmenu',
-    emits: ['menuitem-click', 'root-menuitem-click'],
-    props: {
-        items: Array,
-        root: {
-            type: Boolean,
-            default: false,
+const props = defineProps({
+    items: {
+        type: Array,
+        default() {
+            return [];
         },
-        menuActive: {
-            type: Boolean,
-            default: true,
-        },
-        parentMenuItemActive: {
-            type: Boolean,
-            default: false,
-        },
-        menuMode: String,
-        mobileMenuActive: Boolean,
-        isSlimOrHorItemClick: Boolean,
     },
-    data() {
-        return {
-            activeIndex: null,
-            hoverMenuActive: false,
-        };
+
+    menuMode: {
+        type: String,
+        default: '',
     },
-    mounted() {
-        EventBus.on('reset-active-index', () => {
-            if (this.isHorizontalOrSlim() && !this.isMobile()) {
-                this.activeIndex = null;
+
+    root: {
+        type: Boolean,
+        default: false,
+    },
+
+    menuActive: {
+        type: Boolean,
+        default: false,
+    },
+
+    parentMenuItemActive: {
+        type: Boolean,
+        default: false,
+    },
+
+    mobileMenuActive: {
+        type: Boolean,
+        default: false,
+    },
+
+    isSlimOrHorItemClick: {
+        type: Boolean,
+        default: false,
+    },
+});
+
+const activeIndex = ref(null);
+const hoverMenuActive = ref(false);
+
+const emit = defineEmits<{
+    (eventName: 'root-menuitem-click', data: {originalEvent: Event, isSameIndex: boolean}): void
+    (eventName: 'menuitem-click', data:{originalEvent: Event, item:any}): void
+
+}>();
+
+const isMobile = () => {
+    return window.innerWidth <= 640;
+};
+
+onMounted(() => {
+    EventBus.on('reset-active-index', () => {
+        if (isHorizontalOrSlim() && !isMobile()) {
+            activeIndex.value = null;
+        }
+    });
+});
+
+const isHorizontalOrSlim = () => {
+    return props.menuMode === 'horizontal' || props.menuMode === 'slim';
+};
+
+const getInk = (el: Element) => {
+    for (let i = 0; i < el.children.length; i += 1) {
+        if (typeof el.children[i].className === 'string' && el.children[i].className.indexOf('p-ink') !== -1) {
+            return el.children[i];
+        }
+    }
+
+    return null;
+};
+
+const removeClass = (element: Element, className: string) => {
+    if (element.classList) element.classList.remove(className);
+    else element.className = element.className.replace(new RegExp(`(^|\\b)${className.split(' ').join('|')}(\\b|$)`, 'gi'), ' ');  // eslint-disable-line
+};
+
+const onMenuItemClick = (event: Event, item: any, index: any) => {
+    if (item.disabled) {
+        event.preventDefault();
+
+        return;
+    }
+
+    // execute command
+    if (item.command) {
+        item.command({ originalEvent: event, item });
+        event.preventDefault();
+    }
+
+    if (item.items) {
+        event.preventDefault();
+    } else {
+        if (isHorizontalOrSlim()) {
+            hoverMenuActive.value = false;
+        }
+
+        if (props.menuMode !== 'static') {
+            const ink = getInk(event.currentTarget as Element);
+
+            if (ink) {
+                removeClass(ink, 'p-ink-active');
             }
+        }
+    }
+
+    if (props.root) {
+        hoverMenuActive.value = !hoverMenuActive.value;
+
+        emit('root-menuitem-click', {
+            originalEvent: event,
+            isSameIndex: index === activeIndex.value,
         });
-    },
-    methods: {
-        onMenuItemClick(event, item, index) {
-            if (item.disabled) {
-                event.preventDefault();
+    }
 
-                return;
-            }
+    if (item.items) {
+        activeIndex.value = index === activeIndex.value ? null : index;
+    }
 
-            // execute command
-            if (item.command) {
-                item.command({ originalEvent: event, item });
-                event.preventDefault();
-            }
+    emit('menuitem-click', {
+        originalEvent: event,
+        item,
+    });
+};
 
-            if (item.items) {
-                event.preventDefault();
-            } else {
-                if (this.isHorizontalOrSlim()) {
-                    this.hoverMenuActive = false;
-                }
+const onMenuItemMouseEnter = (index: any) => {
+    if (props.isSlimOrHorItemClick) {
+        hoverMenuActive.value = true;
+    }
 
-                if (this.menuMode !== 'static') {
-                    const ink = this.getInk(event.currentTarget);
+    if (props.root && hoverMenuActive.value && isHorizontalOrSlim() && !isMobile()) {
+        activeIndex.value = index;
+    }
+};
 
-                    if (ink) {
-                        this.removeClass(ink, 'p-ink-active');
-                    }
-                }
-            }
+const onMenuItemMouseLeave = () => {
+    hoverMenuActive.value = false;
+};
 
-            if (this.root) {
-                this.hoverMenuActive = !this.hoverMenuActive;
+const visible = (item: any) => {
+    return typeof item.visible === 'function' ? item.visible() : item.visible !== false;
+};
 
-                this.$emit('root-menuitem-click', {
-                    originalEvent: event,
-                    isSameIndex: index === this.activeIndex,
-                });
-            }
-
-            if (item.items) {
-                this.activeIndex = index === this.activeIndex ? null : index;
-            }
-
-            this.$emit('menuitem-click', {
-                originalEvent: event,
-                item,
-            });
-        },
-        onMenuItemMouseEnter(index) {
-            if (this.isSlimOrHorItemClick) {
-                this.hoverMenuActive = true;
-            }
-
-            if (this.root && this.hoverMenuActive && this.isHorizontalOrSlim() && !this.isMobile()) {
-                this.activeIndex = index;
-            }
-        },
-        onMenuItemMouseLeave() {
-            this.hoverMenuActive = false;
-        },
-        isHorizontalOrSlim() {
-            return this.menuMode === 'horizontal' || this.menuMode === 'slim';
-        },
-        isMobile() {
-            return window.innerWidth <= 640;
-        },
-        visible(item) {
-            return typeof item.visible === 'function' ? item.visible() : item.visible !== false;
-        },
-        getInk(el) {
-            for (let i = 0; i < el.children.length; i += 1) {
-                if (typeof el.children[i].className === 'string' && el.children[i].className.indexOf('p-ink') !== -1) {
-                    return el.children[i];
-                }
-            }
-
-            return null;
-        },
-        removeClass(element, className) {
-            if (element.classList) element.classList.remove(className);
-            else element.className = element.className.replace(new RegExp(`(^|\\b)${className.split(' ').join('|')}(\\b|$)`, 'gi'), ' ');  // eslint-disable-line
-        },
-        isSlim() {
-            return this.menuMode === 'slim';
-        },
-    },
+const isSlim = () => {
+    return props.menuMode === 'slim';
 };
 </script>
-
-<style scoped></style>

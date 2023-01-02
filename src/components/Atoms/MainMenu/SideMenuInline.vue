@@ -45,30 +45,43 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
 
-export default {
-    name: 'AppInlineMenu',
-    props: {
-        active: {
-            type: Boolean,
-            default: false,
-        },
-        menuMode: String,
-        inlineMenuKey: String,
-        menuLeftProfileData: Object,
+const props = defineProps({
+    active: {
+        type: Boolean,
+        default: false,
     },
 
-    methods: {
-        onClick(event) {
-            this.$emit('change-inlinemenu', !this.active, this.inlineMenuKey); // eslint-disable-line
-            event.preventDefault();
-        },
-        isMobile() {
-            return window.innerWidth <= 991;
-        },
+    menuMode: {
+        type: String,
+        default: '',
     },
+
+    inlineMenuKey: {
+        type: String,
+        default: '',
+    },
+
+    menuLeftProfileData: {
+        type: Object,
+        default() {
+            return {}
+        }
+    },
+});
+
+const emit = defineEmits<{
+    (eventName: 'change-inlinemenu', active: Boolean, key:String): void
+}>();
+
+const onClick = (event: Event) =>{
+    emit('change-inlinemenu', !props.active, props.inlineMenuKey); // eslint-disable-line
+    event.preventDefault();
 };
-</script>
 
-<style scoped></style>
+const isMobile = () => {
+    return window.innerWidth <= 991;
+};
+
+</script>
