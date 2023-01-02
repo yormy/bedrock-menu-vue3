@@ -1,16 +1,16 @@
 <template>
     <div class="menu-wrapper">
         <div class="layout-menu-container" @click="onMenuClick" @keydown="onMenuClick">
-            <AppInlineMenu
+            <SideMenuInline
                 v-if="inlineMenuPosition === 'top'"
                 v-model:active="inlineMenuTopActive"
                 inline-menu-key="top"
                 :menu-mode="menuMode"
                 @change-inlinemenu="onActivateInlineMenu"
                 :menu-left-profile-data="menuLeftProfileData"
-            ></AppInlineMenu>
+            ></SideMenuInline>
 
-            <AppMenu
+            <SideMenuRoot
                 :model="menuLeftData"
                 :menu-mode="menuMode"
                 :active="menuActive"
@@ -18,29 +18,29 @@
                 :is-slim-or-hor-item-click="isSlimOrHorItemClick"
                 @menuitem-click="onMenuItemClick"
                 @root-menuitem-click="onRootMenuItemClick"
-            ></AppMenu>
+            ></SideMenuRoot>
 
-            <AppInlineMenu
+            <SideMenuInline
                 v-if="inlineMenuPosition === 'bottom'"
                 v-model:active="inlineMenuBottomActive"
                 inline-menu-key="bottom"
                 :menu-mode="menuMode"
                 @change-inlinemenu="onActivateInlineMenu"
                 :menu-left-profile-data="menuLeftProfileData"
-            ></AppInlineMenu>
+            ></SideMenuInline>
         </div>
     </div>
 </template>
 
 <script>
 import EventBus from "../../../event-bus";
-import AppInlineMenu from './AppInlineMenu.vue';
-import AppMenu from './AppMenu.vue';
+import SideMenuInline from './SideMenuInline.vue';
+import SideMenuRoot from './SideMenuRoot.vue';
 
 export default {
     components : {
-        AppInlineMenu,
-        AppMenu
+        SideMenuInline,
+        SideMenuRoot
     },
 
     props :{

@@ -1,5 +1,5 @@
 <template>
-    <AppSubmenu
+    <SideMenuSub
         class="layout-menu"
         :items="model"
         :menu-mode="menuMode"
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import AppSubmenu from './AppSubmenu.vue';
+import SideMenuSub from './SideMenuSub.vue';
 
 export default {
     name: 'AppMenu',
@@ -38,7 +38,7 @@ export default {
         },
     },
     components: {
-        AppSubmenu,
+        SideMenuSub,
     },
 };
 </script>

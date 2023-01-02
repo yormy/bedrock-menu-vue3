@@ -21,7 +21,7 @@
             :menu-top-profile-data="menuTopProfileData"
         ></AppTopBar>
 
-        <app-main-menu
+        <side-menu
             :inline-menu-position="inlineMenuPosition"
             :inline-menu-bottom-active="inlineMenuBottomActive"
             :menu-mode="menuMode"
@@ -35,7 +35,7 @@
             :menu-left-profile-data="menuLeftProfileData"
             :menu-left-data="menuLeftData"
         >
-        </app-main-menu>
+        </side-menu>
 
         <content> </content>
 
@@ -50,7 +50,6 @@ import AppTopBar from '../Blocks/AppTopbar.vue';
 import AppRightPanel from '../Atoms/AppRightPanel.vue';
 import Content from '../Atoms/Content/Content.vue'
 import EventBus from '../../event-bus.js';
-import AppMainMenu from "../Atoms/MainMenu/AppMainMenu.vue";
 import MenuTopAppData from './Data/MenuTopAppData.json'
 import BrandingData from './Data/BrandingData.json'
 import MenuTopMegaData from './Data/MenuTopMegaData.json'
@@ -58,6 +57,7 @@ import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json'
 import MenuTopProfileData from './Data/MenuTopProfileData.json'
 import MenuLeftProfileData from './Data/MenuLeftProfileData.json'
 import MenuLeftData from './Data/MenuLeftData.json'
+import SideMenu from "@components/Atoms/MainMenu/SideMenu.vue";
 
 export default {
     data() {
@@ -305,10 +305,10 @@ export default {
         },
     },
     components: {
+        SideMenu,
         AppTopBar,
         AppRightPanel,
         Content,
-        AppMainMenu
     },
 };
 </script>
