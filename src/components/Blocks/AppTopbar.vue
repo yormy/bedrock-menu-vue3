@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { PropType, ref } from 'vue';
 import TopbarLeft from '../Atoms/TopMenu/TopbarLeft.vue';
 import TopbarSearch from '../Atoms/TopMenu/TopbarSearch.vue';
 import TopbarNotifications from '../Atoms/TopMenu/TopbarNotifications.vue';
@@ -103,9 +103,9 @@ const props = defineProps({
     },
 
     menuTopMegaData: {
-        type: Object,
+        type: Array as PropType<Array<LeftMenuItem>>,
         default() {
-            return {};
+            return [];
         },
     },
 
