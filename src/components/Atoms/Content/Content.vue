@@ -3,7 +3,7 @@
         <AppBreadcrumb></AppBreadcrumb>
 
         <div class="layout-content">
-<!--            <router-view />-->
+            <!--            <router-view />-->
         </div>
 
         <AppFooter />
@@ -13,5 +13,4 @@
 <script setup lang="ts">
 import AppBreadcrumb from './AppBreadcrumb.vue';
 import AppFooter from './AppFooter.vue';
-
 </script>

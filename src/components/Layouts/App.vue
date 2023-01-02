@@ -48,47 +48,45 @@
 <script setup lang="ts">
 import AppTopBar from '../Blocks/AppTopbar.vue';
 import AppRightPanel from '../Atoms/AppRightPanel.vue';
-import Content from '../Atoms/Content/Content.vue'
+import Content from '../Atoms/Content/Content.vue';
 import EventBus from '../../event-bus.js';
-import MenuTopAppData from './Data/MenuTopAppData.json'
-import BrandingData from './Data/BrandingData.json'
-import MenuTopMegaData from './Data/MenuTopMegaData.json'
-import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json'
-import MenuTopProfileData from './Data/MenuTopProfileData.json'
-import MenuLeftProfileData from './Data/MenuLeftProfileData.json'
-import MenuLeftData from './Data/MenuLeftData.json'
-import SideMenu from "@components/Atoms/MainMenu/SideMenu.vue";
-import {computed, ref, watch} from "vue";
-import {useRouter, useRoute} from "vue-router";
-
-
+import MenuTopAppData from './Data/MenuTopAppData.json';
+import BrandingData from './Data/BrandingData.json';
+import MenuTopMegaData from './Data/MenuTopMegaData.json';
+import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json';
+import MenuTopProfileData from './Data/MenuTopProfileData.json';
+import MenuLeftProfileData from './Data/MenuLeftProfileData.json';
+import MenuLeftData from './Data/MenuLeftData.json';
+import SideMenu from '@components/Atoms/MainMenu/SideMenu.vue';
+import { computed, ref, watch } from 'vue';
+import { useRouter, useRoute } from 'vue-router';
 
 const mobileTopbarActive = ref(false);
-const mobileMenuActive= ref(false);
-const search= ref(false);
-const searchClick= ref(false);
-const searchActive= ref(false);
-const menuMode= ref('static'); // static | horizontal | overlay | slim
-const inlineMenuClick= ref(false);
-const inlineMenuPosition= ref('bottom'); // top || bottom
-const inlineMenuTopActive= ref(false);
-const inlineMenuBottomActive= ref(false);
-const overlayMenuActive= ref(false);
-const rotateMenuButton= ref(false);
-const topbarMenuActive= ref(false);
-const activeTopbarItem= ref(null);
-const isSlimOrHorItemClick= ref(false);
+const mobileMenuActive = ref(false);
+const search = ref(false);
+const searchClick = ref(false);
+const searchActive = ref(false);
+const menuMode = ref('static'); // static | horizontal | overlay | slim
+const inlineMenuClick = ref(false);
+const inlineMenuPosition = ref('bottom'); // top || bottom
+const inlineMenuTopActive = ref(false);
+const inlineMenuBottomActive = ref(false);
+const overlayMenuActive = ref(false);
+const rotateMenuButton = ref(false);
+const topbarMenuActive = ref(false);
+const activeTopbarItem = ref(null);
+const isSlimOrHorItemClick = ref(false);
 
-const rightPanelActive= ref(false);
-const menuActive= ref(true);
+const rightPanelActive = ref(false);
+const menuActive = ref(true);
 
-const menuTopAppData= MenuTopAppData;
-const brandingData= BrandingData;
-const menuTopMegaData= MenuTopMegaData;
-const menuTopNotificationsData= MenuTopNotificationsData;
-const menuTopProfileData= MenuTopProfileData;
-const menuLeftProfileData= MenuLeftProfileData;
-const menuLeftData= MenuLeftData;
+const menuTopAppData = MenuTopAppData;
+const brandingData = BrandingData;
+const menuTopMegaData = MenuTopMegaData;
+const menuTopNotificationsData = MenuTopNotificationsData;
+const menuTopProfileData = MenuTopProfileData;
+const menuLeftProfileData = MenuLeftProfileData;
+const menuLeftData = MenuLeftData;
 
 //TODO : these were undefined ???
 const topbarItemClick = ref(false);
@@ -96,8 +94,8 @@ const rightPanelClick = ref(false);
 const menuClick = ref(false);
 const topbarRightClick = ref(false);
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
 const isMobile = () => {
     return window.innerWidth <= 991;
@@ -150,14 +148,14 @@ const hideOverlayMenu = () => {
     mobileMenuActive.value = false;
 };
 
-const onTopbarMenuButtonClick = (event: Event) =>{
+const onTopbarMenuButtonClick = (event: Event) => {
     topbarItemClick.value = true;
     topbarMenuActive.value = !topbarMenuActive.value;
     hideOverlayMenu();
     event.preventDefault();
 };
 
-const onTopbarItemClick = (event: {originalEvent: Event, item: any}) => {
+const onTopbarItemClick = (event: { originalEvent: Event; item: any }) => {
     topbarItemClick.value = true;
 
     if (activeTopbarItem.value === event.item) activeTopbarItem.value = null;
@@ -190,7 +188,7 @@ const onMenuClick = () => {
     menuClick.value = true;
 };
 
-const onRootMenuItemClick = (event: {originalEvent: Event, isSameIndex: boolean}) => {
+const onRootMenuItemClick = (event: { originalEvent: Event; isSameIndex: boolean }) => {
     if (event.isSameIndex) {
         isSlimOrHorItemClick.value = false;
     } else {
@@ -244,10 +242,7 @@ const unblockBodyScroll = () => {
     if (document.body.classList) {
         document.body.classList.remove('blocked-scroll');
     } else {
-        document.body.className = document.body.className.replace(
-            new RegExp(`(^|\\b)${'blocked-scroll'.split(' ').join('|')}(\\b|$)`, 'gi'),
-            ' '
-        );
+        document.body.className = document.body.className.replace(new RegExp(`(^|\\b)${'blocked-scroll'.split(' ').join('|')}(\\b|$)`, 'gi'), ' ');
     }
 };
 
@@ -266,11 +261,11 @@ const layoutContainerClass = computed(() => {
             'layout-menu-mobile-active': mobileMenuActive.value,
             'layout-topbar-mobile-active': mobileTopbarActive.value,
             'layout-rightmenu-active': rightPanelActive.value,
-            'p-input-filled': true//this.$primevue.config.inputStyle === 'filled', // todo
+            'p-input-filled': true, //this.$primevue.config.inputStyle === 'filled', // todo
             // 'p-ripple-disabled': true
         },
     ];
-})
+});
 
 const onDocumentClick = () => {
     if (!searchClick.value && searchActive.value) {

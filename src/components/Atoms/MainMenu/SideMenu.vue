@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import SideMenuInline from './SideMenuInline.vue';
 import SideMenuRoot from './SideMenuRoot.vue';
-import {ref} from "vue";
+import { ref } from 'vue';
 
 const props = defineProps({
     inlineMenuPosition: {
@@ -70,15 +70,14 @@ const props = defineProps({
 
 const inlineMenuTopActive = ref(false);
 const inlineMenuBottomActive = ref(false);
-const isSlimOrHorItemClick= ref(false);
+const isSlimOrHorItemClick = ref(false);
 const menuActive = ref(false);
 
 const emit = defineEmits<{
-    (eventName: 'menu-click'): void
-    (eventName: 'menuitem-click', event : Event): void
-    (eventName: 'root-menuitem-click', event: Event): void
+    (eventName: 'menu-click'): void;
+    (eventName: 'menuitem-click', event: Event): void;
+    (eventName: 'root-menuitem-click', event: Event): void;
 }>();
-
 
 const onMenuClick = () => {
     emit('menu-click');
@@ -115,10 +114,8 @@ const onRootMenuItemClick = (event: any) => {
         isSlimOrHorItemClick.value = true;
     }
 
-    emit('root-menuitem-click',  event);
+    emit('root-menuitem-click', event);
 
     // this.menuActive = !this.menuActive;
 };
-
 </script>
-

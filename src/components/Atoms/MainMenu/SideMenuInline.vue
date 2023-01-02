@@ -7,7 +7,11 @@
             @click="onClick($event)"
             @keydown="onClick($event)"
         >
-            <img :src="menuLeftProfileData.button.image.image" :alt="menuLeftProfileData.button.image.title" :style="menuLeftProfileData.button.image.style" />
+            <img
+                :src="menuLeftProfileData.button.image.image"
+                :alt="menuLeftProfileData.button.image.title"
+                :style="menuLeftProfileData.button.image.style"
+            />
             <span class="flex flex-column" :class="'ml-2'">
                 <span class="font-bold">{{ menuLeftProfileData.button.title }}</span>
                 <small>{{ menuLeftProfileData.button.subtitle }}</small>
@@ -39,14 +43,12 @@
                         <span class="layout-inline-menu-tooltip-text p-tooltip-text">{{ item.label }}</span>
                     </span>
                 </li>
-
             </ul>
         </transition>
     </div>
 </template>
 
 <script setup lang="ts">
-
 const props = defineProps({
     active: {
         type: Boolean,
@@ -66,16 +68,16 @@ const props = defineProps({
     menuLeftProfileData: {
         type: Object,
         default() {
-            return {}
-        }
+            return {};
+        },
     },
 });
 
 const emit = defineEmits<{
-    (eventName: 'change-inlinemenu', active: Boolean, key:String): void
+    (eventName: 'change-inlinemenu', active: Boolean, key: String): void;
 }>();
 
-const onClick = (event: Event) =>{
+const onClick = (event: Event) => {
     emit('change-inlinemenu', !props.active, props.inlineMenuKey); // eslint-disable-line
     event.preventDefault();
 };
@@ -83,5 +85,4 @@ const onClick = (event: Event) =>{
 const isMobile = () => {
     return window.innerWidth <= 991;
 };
-
 </script>

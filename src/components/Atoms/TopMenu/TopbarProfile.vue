@@ -11,14 +11,12 @@
 
         <transition name="layout-topbar-action-panel">
             <ul v-show="activeTopbarItem === 'profile'" class="layout-topbar-action-panel shadow-6">
-
                 <li v-for="(item, index) in menuTopProfileData.items" class="layout-topbar-action-item">
                     <a v-ripple class="flex flex-row align-items-center p-ripple">
                         <i :class="item.icon" class="mr-2"></i>
                         <span>{{ item.label }}</span>
                     </a>
                 </li>
-
             </ul>
         </transition>
     </li>
@@ -40,11 +38,10 @@ const props = defineProps({
 });
 
 const emit = defineEmits<{
-    (eventName: 'topbaritem-click', data:{originalEvent: Event, item:any}): void
+    (eventName: 'topbaritem-click', data: { originalEvent: Event; item: any }): void;
 }>();
 
 const onTopbarItemClick = (event: Event, item: any) => {
     emit('topbaritem-click', { originalEvent: event, item });
 };
-
 </script>

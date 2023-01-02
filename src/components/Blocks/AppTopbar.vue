@@ -10,18 +10,11 @@
         </topbar-left>
 
         <div class="layout-topbar-right" :class="{ 'layout-topbar-mobile-active': mobileTopbarActive }">
-            <topbar-mega
-                :menu-top-mega-data="menuTopMegaData">
-            </topbar-mega>
+            <topbar-mega :menu-top-mega-data="menuTopMegaData"> </topbar-mega>
 
             <div class="layout-topbar-actions-right">
                 <ul class="layout-topbar-items">
-
-                    <topbar-search
-                        :search-active="searchActive"
-                        @search-toggle="$emit('search-toggle')"
-                        @search-click="$emit('search-click')"
-                        >
+                    <topbar-search :search-active="searchActive" @search-toggle="$emit('search-toggle')" @search-click="$emit('search-click')">
                     </topbar-search>
 
                     <topbar-notifications
@@ -53,11 +46,7 @@
                         </a>
                     </li>
 
-                    <topbar-right-panel
-                        @rightpanel-button-click="(event) => $emit('rightpanel-button-click', event)"
-                        >
-                    </topbar-right-panel>
-
+                    <topbar-right-panel @rightpanel-button-click="(event) => $emit('rightpanel-button-click', event)"> </topbar-right-panel>
                 </ul>
             </div>
         </div>
@@ -70,10 +59,9 @@ import TopbarSearch from '../Atoms/TopMenu/TopbarSearch.vue';
 import TopbarNotifications from '../Atoms/TopMenu/TopbarNotifications.vue';
 import TopbarApps from '../Atoms/TopMenu/TopbarApps.vue';
 import TopbarProfile from '../Atoms/TopMenu/TopbarProfile.vue';
-import TopbarRightPanel from "../Atoms/TopMenu/TopbarRightPanel.vue";
-import TopbarMega from "../Atoms/TopMenu/TopbarMega.vue";
-import {ref} from "vue";
-
+import TopbarRightPanel from '../Atoms/TopMenu/TopbarRightPanel.vue';
+import TopbarMega from '../Atoms/TopMenu/TopbarMega.vue';
+import { ref } from 'vue';
 
 const props = defineProps({
     horizontal: {
@@ -105,35 +93,35 @@ const props = defineProps({
         type: Object,
         default() {
             return {};
-        }
+        },
     },
 
     brandingData: {
         type: Object,
         default() {
             return {};
-        }
+        },
     },
 
     menuTopMegaData: {
         type: Object,
         default() {
             return {};
-        }
+        },
     },
 
     menuTopNotificationsData: {
         type: Object,
         default() {
             return {};
-        }
+        },
     },
 
     menuTopProfileData: {
         type: Object,
         default() {
             return {};
-        }
+        },
     },
 });
 
@@ -145,10 +133,10 @@ const onDarkSwitchClickHandler = () => {
 };
 
 const emit = defineEmits<{
-    (eventName: 'menubutton-click', event: Event): void
-    (eventName: 'topbar-menubutton-click', event: Event): void
-    (eventName: 'search-toggle', event: Event): void
-    (eventName: 'topbaritem-click', data:{originalEvent: Event, item: any}): void
+    (eventName: 'menubutton-click', event: Event): void;
+    (eventName: 'topbar-menubutton-click', event: Event): void;
+    (eventName: 'search-toggle', event: Event): void;
+    (eventName: 'topbaritem-click', data: { originalEvent: Event; item: any }): void;
 }>();
 
 const onMenuButtonClick = (event: Event) => {
@@ -166,5 +154,4 @@ const onTopbarItemClick = (event: Event, item: any) => {
 
     emit('topbaritem-click', { originalEvent: event, item });
 };
-
 </script>

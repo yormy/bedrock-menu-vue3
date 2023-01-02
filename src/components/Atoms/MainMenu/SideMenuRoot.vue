@@ -46,21 +46,20 @@ const props = defineProps({
 });
 
 const emit = defineEmits<{
-    (eventName: 'menu-click', event: Event): void
-    (eventName: 'menuitem-click', event: Event): void
-    (eventName: 'root-menuitem-click', event: Event): void
+    (eventName: 'menu-click', event: Event): void;
+    (eventName: 'menuitem-click', event: Event): void;
+    (eventName: 'root-menuitem-click', event: Event): void;
 }>();
 
 const onMenuClick = (event: Event) => {
     emit('menu-click', event);
 };
 
-const onMenuItemClick= (event: Event) => {
+const onMenuItemClick = (event: Event) => {
     emit('menuitem-click', event);
 };
 
 const onRootMenuItemClick = (event: Event) => {
     emit('root-menuitem-click', event);
 };
-
 </script>

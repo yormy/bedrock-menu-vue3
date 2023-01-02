@@ -12,9 +12,8 @@
 </template>
 
 <script setup lang="ts">
-
 const emit = defineEmits<{
-    (eventName: 'rightpanel-button-click', event: Event): void
+    (eventName: 'rightpanel-button-click', event: Event): void;
 }>();
 
 const onRightPanelButtonClick = (event: Event) => {

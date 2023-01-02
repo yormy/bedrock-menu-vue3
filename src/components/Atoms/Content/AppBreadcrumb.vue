@@ -15,7 +15,7 @@ import Breadcrumb from 'primevue/breadcrumb';
 
 export default {
     components: {
-        Breadcrumb
+        Breadcrumb,
     },
 
     data() {

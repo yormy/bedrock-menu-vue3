@@ -81,10 +81,9 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
+import { onMounted, ref } from 'vue';
 import EventBus from '../../../event-bus.js';
 import SideMenuSub from './SideMenuSub.vue';
-
 
 const props = defineProps({
     items: {
@@ -129,9 +128,8 @@ const activeIndex = ref(null);
 const hoverMenuActive = ref(false);
 
 const emit = defineEmits<{
-    (eventName: 'root-menuitem-click', data: {originalEvent: Event, isSameIndex: boolean}): void
-    (eventName: 'menuitem-click', data:{originalEvent: Event, item:any}): void
-
+    (eventName: 'root-menuitem-click', data: { originalEvent: Event; isSameIndex: boolean }): void;
+    (eventName: 'menuitem-click', data: { originalEvent: Event; item: any }): void;
 }>();
 
 const isMobile = () => {
@@ -162,7 +160,7 @@ const getInk = (el: Element) => {
 
 const removeClass = (element: Element, className: string) => {
     if (element.classList) element.classList.remove(className);
-    else element.className = element.className.replace(new RegExp(`(^|\\b)${className.split(' ').join('|')}(\\b|$)`, 'gi'), ' ');  // eslint-disable-line
+    else element.className = element.className.replace(new RegExp(`(^|\\b)${className.split(' ').join('|')}(\\b|$)`, 'gi'), ' '); // eslint-disable-line
 };
 
 const onMenuItemClick = (event: Event, item: any, index: any) => {

@@ -4,10 +4,7 @@
             <img id="logo" :src="logo.light" :alt="logo.title" :style="`height: ${logo.height}`" />
         </a>
 
-        <a v-ripple class="layout-menu-button shadow-6 p-ripple"
-           @click="onMenuButtonClick($event)"
-           @keydown="onMenuButtonClick($event)"
-        >
+        <a v-ripple class="layout-menu-button shadow-6 p-ripple" @click="onMenuButtonClick($event)" @keydown="onMenuButtonClick($event)">
             <i class="pi pi-chevron-right"></i>
         </a>
 
@@ -40,8 +37,8 @@ const props = defineProps({
 });
 
 const emit = defineEmits<{
-    (eventName: 'topbar-mobileactive', event: Event): void
-    (eventName: 'menubutton-click', event: Event): void
+    (eventName: 'topbar-mobileactive', event: Event): void;
+    (eventName: 'menubutton-click', event: Event): void;
 }>();
 
 const onTopbarMobileButtonClick = (event: Event) => {

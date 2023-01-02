@@ -82,7 +82,7 @@
 
 <script setup lang="ts">
 import Sidebar from 'primevue/sidebar';
-import {ref, watch} from "vue";
+import { ref, watch } from 'vue';
 
 const props = defineProps({
     expanded: {
@@ -101,11 +101,10 @@ watch(
 );
 
 const emit = defineEmits<{
-    (eventName: 'hide', d_expanded: boolean): void
-
+    (eventName: 'hide', d_expanded: boolean): void;
 }>();
 
 const hideSidebar = () => {
-    emit('hide', d_expanded.value)
+    emit('hide', d_expanded.value);
 };
 </script>

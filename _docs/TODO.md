@@ -1,11 +1,3 @@
-- convert to vue3
-- -- main app
-- content
-- right panel
-- AppTopBar
-
-
-
 - linter
 
 v-ripple to ui ?
