@@ -6,13 +6,13 @@
             @click="onTopbarItemClick($event, 'profile')"
             @keydown="onTopbarItemClick($event, 'profile')"
         >
-            <img :src="profile.button.image" :alt="profile.button.title" :style="profile.button.style" />
+            <img :src="menuTopProfileData.button.image" :alt="menuTopProfileData.button.title" :style="menuTopProfileData.button.style" />
         </a>
 
         <transition name="layout-topbar-action-panel">
             <ul v-show="activeTopbarItem === 'profile'" class="layout-topbar-action-panel shadow-6">
 
-                <li v-for="(item, index) in profile.items" class="layout-topbar-action-item">
+                <li v-for="(item, index) in menuTopProfileData.items" class="layout-topbar-action-item">
                     <a v-ripple class="flex flex-row align-items-center p-ripple">
                         <i :class="item.icon" class="mr-2"></i>
                         <span>{{ item.label }}</span>
@@ -25,19 +25,14 @@
 </template>
 
 <script>
-import ProfileData from './Profile.json';
 
 export default {
 
     props: {
-        activeTopbarItem: String
+        activeTopbarItem: String,
+        menuTopProfileData: Object
     },
 
-    data() {
-        return {
-            profile: ProfileData,
-        }
-    },
 
     methods: {
         onTopbarItemClick(event, item) {

@@ -14,6 +14,11 @@
             @topbar-menubutton-click="onTopbarMenuButtonClick"
             @topbar-mobileactive="onTopbarMobileButtonClick"
             @topbaritem-click="onTopbarItemClick"
+            :menu-top-app-data="menuTopAppData"
+            :branding-data="brandingData"
+            :mega-menu-data="megaMenuData"
+            :menu-top-notifications-data="menuTopNotificationsData"
+            :menu-top-profile-data="menuTopProfileData"
         ></AppTopBar>
 
         <app-main-menu
@@ -44,6 +49,11 @@ import AppRightPanel from '../Atoms/AppRightPanel.vue';
 import Content from '../Atoms/Content/Content.vue'
 import EventBus from '../../event-bus.js';
 import AppMainMenu from "../Atoms/MainMenu/AppMainMenu.vue";
+import MenuTopAppData from './Data/MenuTopAppData.json'
+import BrandingData from './Data/BrandingData.json'
+import MegaMenuData from './Data/MegaMenuData.json'
+import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json'
+import MenuTopProfileData from './Data/MenuTopProfileData.json'
 
 export default {
     data() {
@@ -66,6 +76,11 @@ export default {
 
             rightPanelActive: false,
             menuActive: true,
+            menuTopAppData: MenuTopAppData,
+            brandingData: BrandingData,
+            megaMenuData: MegaMenuData,
+            menuTopNotificationsData: MenuTopNotificationsData,
+            menuTopProfileData: MenuTopProfileData
         };
     },
     watch: {

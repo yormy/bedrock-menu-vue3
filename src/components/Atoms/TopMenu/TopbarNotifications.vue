@@ -7,13 +7,13 @@
             @keydown="onTopbarItemClick($event, 'notifications')"
         >
 <!--            <span v-badge.warning class="p-overlay-badge">-->
-                <i :class="notifications.button.icon"></i>
+                <i :class="menuTopNotificationsData.button.icon"></i>
 <!--            </span>-->
 
             <span
                 class="p-badge p-component p-badge-no-gutter p-badge-tiny-topright"
-                :class="notifications.button.type"
-            ><span class="badge-value">{{notifications.button.content}}</span></span>
+                :class="menuTopNotificationsData.button.type"
+            ><span class="badge-value">{{menuTopNotificationsData.button.content}}</span></span>
 
         </a>
 
@@ -22,11 +22,11 @@
 
 
                 <li class="mb-3">
-                    <span class="px-3 fs-small">{{notifications.header.title}}</span>
+                    <span class="px-3 fs-small">{{menuTopNotificationsData.header.title}}</span>
                 </li>
 
 
-                <li v-for="(item, index) in notifications.items" class="layout-topbar-action-item">
+                <li v-for="(item, index) in menuTopNotificationsData.items" class="layout-topbar-action-item">
                     <div class="flex flex-row align-items-center">
                         <img :src="item.avatar.image" :alt="item.avatar.title" />
                         <div class="flex flex-column" :class="'ml-3'" style="flex-grow: 1">
@@ -45,18 +45,11 @@
 </template>
 
 <script>
-import Notifications from './Notifications.json';
-
 export default {
 
     props: {
-        activeTopbarItem: String
-    },
-
-    data () {
-        return {
-            notifications: Notifications,
-        }
+        activeTopbarItem: String,
+        menuTopNotificationsData: Object,
     },
 
     methods: {

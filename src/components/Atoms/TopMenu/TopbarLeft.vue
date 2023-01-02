@@ -23,8 +23,6 @@
 </template>
 
 <script>
-import Branding from "./Branding.json"
-
 
 export default {
 
@@ -33,12 +31,14 @@ export default {
             type: Boolean,
             default: false,
         },
+
+        brandingData: Object,
     },
 
     data() {
         return {
             //{light : String, dark: String, title: String, height: String}
-            logo: Branding.logo,
+            logo: this.brandingData.logo,
         }
     },
 

@@ -5,11 +5,13 @@
             v-bind="$attrs"
             @menubutton-click="$emit('menubutton-click')"
             @topbar-mobileactive="$emit('topbar-mobileactive')"
+            :branding-data="brandingData"
         >
         </topbar-left>
 
         <div class="layout-topbar-right" :class="{ 'layout-topbar-mobile-active': mobileTopbarActive }">
-            <topbar-mega>
+            <topbar-mega
+                :mega-menu-data="megaMenuData">
             </topbar-mega>
 
             <div class="layout-topbar-actions-right">
@@ -25,16 +27,19 @@
                     <topbar-notifications
                         :active-topbar-item="activeTopbarItem"
                         @topbaritem-click="(original, item) => $emit('topbaritem-click', original, 'notifications')"
+                        :menu-top-notifications-data="menuTopNotificationsData"
                     ></topbar-notifications>
 
                     <topbar-apps
                         :active-topbar-item="activeTopbarItem"
                         @topbaritem-click="(original, item) => $emit('topbaritem-click', original, item)"
+                        :menu-top-app-data="menuTopAppData"
                     ></topbar-apps>
 
                     <topbar-profile
                         :active-topbar-item="activeTopbarItem"
                         @topbaritem-click="(original, item) => $emit('topbaritem-click', original, item)"
+                        :menu-top-profile-data="menuTopProfileData"
                     ></topbar-profile>
 
                     <li class="layout-topbar-item">
@@ -67,6 +72,7 @@ import TopbarApps from '../Atoms/TopMenu/TopbarApps.vue';
 import TopbarProfile from '../Atoms/TopMenu/TopbarProfile.vue';
 import TopbarRightPanel from "../Atoms/TopMenu/TopbarRightPanel.vue";
 import TopbarMega from "../Atoms/TopMenu/TopbarMega.vue";
+import MenuTopProfileData from "@components/Layouts/MenuTopProfileData.json";
 
 
 export default {
@@ -107,6 +113,12 @@ export default {
             type : Boolean,
             default: false,
         },
+
+        menuTopAppData: Object,
+        brandingData: Object,
+        megaMenuData: Object,
+        menuTopNotificationsData: Object,
+        menuTopProfileData: Object,
     },
     data() {
         return {
