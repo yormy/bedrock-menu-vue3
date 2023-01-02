@@ -11,7 +11,7 @@
             ></SideMenuInline>
 
             <SideMenuRoot
-                :model="menuLeftData"
+                :items="menuLeftData"
                 :menu-mode="menuMode"
                 :active="menuActive"
                 :mobile-menu-active="mobileMenuActive"
@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { PropType, ref } from 'vue';
 import SideMenuInline from './SideMenuInline.vue';
 import SideMenuRoot from './SideMenuRoot.vue';
 
@@ -61,9 +61,9 @@ const props = defineProps({
     },
 
     menuLeftData: {
-        type: Object,
+        type: Array as PropType<Array<LeftMenuItem>>,
         default() {
-            return {};
+            return [];
         },
     },
 });

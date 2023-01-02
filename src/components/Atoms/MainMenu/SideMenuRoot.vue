@@ -1,7 +1,7 @@
 <template>
     <SideMenuSub
         class="layout-menu"
-        :items="model"
+        :items="items"
         :menu-mode="menuMode"
         :menu-active="active"
         :is-slim-or-hor-item-click="isSlimOrHorItemClick"
@@ -18,7 +18,7 @@ import { PropType } from 'vue';
 import SideMenuSub from './SideMenuSub.vue';
 
 const props = defineProps({
-    model: {
+    items: {
         type: Array as PropType<Array<LeftMenuItem>>,
         default() {
             return [];
