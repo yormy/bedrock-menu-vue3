@@ -22,68 +22,67 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { onMounted, watch } from 'vue';
 
-export default {
-
-    props: {
-        darkMode: {
-            type: Boolean,
-            default: false,
-        },
-
-        brandingData: Object,
+const props = defineProps({
+    darkMode: {
+        type: Boolean,
+        default: false,
     },
 
-    data() {
-        return {
-            //{light : String, dark: String, title: String, height: String}
-            logo: this.brandingData.logo,
-        }
-    },
-
-    mounted() {
-        this.applyDarkModeSetting(this.dark);
-    },
-
-    watch: {
-        darkMode(value) {
-            console.log('switch', value)
-            this.applyDarkModeSetting(this.darkMode);
+    brandingData: {
+        type: Object,
+        default() {
+            return {};
         },
     },
+});
 
-    methods: {
-        onTopbarMobileButtonClick(event) {
-            console.log('event', "topbar-mobileactive");
-            this.$emit('topbar-mobileactive', event);
-        },
+const emit = defineEmits<{
+    (eventName: 'topbar-mobileactive', event: Event): void
+    (eventName: 'menubutton-click', event: Event): void
+}>();
 
-        onMenuButtonClick(event) {
-            console.log('event', "menubutton");
-            this.$emit('menubutton-click', event);
-        },
+const onTopbarMobileButtonClick = (event: Event) => {
+    emit('topbar-mobileactive', event);
+};
 
-        applyDarkModeSetting(darkMode) {
-            const html = document.querySelector('html');
+const onMenuButtonClick = (event: Event) => {
+    emit('menubutton-click', event);
+};
 
-            if (darkMode) {
-                html.classList.add('dark');
-                html.classList.remove('light');
-            } else {
-                html.classList.add('light');
-                html.classList.remove('dark');
-            }
+//{light : String, dark: String, title: String, height: String}
+const logo = props.brandingData.logo;
 
-            const logoElement = document.getElementById('logo');
+const applyDarkModeSetting = (darkMode: boolean) => {
+    const html = document.querySelector('html');
 
-            if (darkMode) {
-                logoElement.src = this.logo.dark;
-            } else {
-                logoElement.src = this.logo.light;
-            }
-        },
+    if (darkMode) {
+        html.classList.add('dark');
+        html.classList.remove('light');
+    } else {
+        html.classList.add('light');
+        html.classList.remove('dark');
     }
 
-}
+    const logoElement = document.getElementById('logo');
+
+    if (darkMode) {
+        logoElement.src = logo.dark;
+    } else {
+        logoElement.src = logo.light;
+    }
+};
+
+onMounted(() => {
+    applyDarkModeSetting(props.darkMode);
+});
+
+watch(
+    () => props.darkMode,
+    (newValue) => {
+        applyDarkModeSetting(newValue);
+    }
+);
 </script>
