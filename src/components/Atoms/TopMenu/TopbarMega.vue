@@ -4,23 +4,23 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import MegaMenu from "primevue/megamenu";
 
-export default {
-    components: {
-        MegaMenu,
+const props = defineProps({
+    menuTopMegaData: {
+        type: Object,
+        default() {
+            return {};
+        }
     },
+});
 
-    props: {
-        menuTopMegaData: Object,
-    },
+const emit = defineEmits<{
+    (eventName: 'topbaritem-click', data:{originalEvent: Event, item:any}): void
+}>();
 
-    methods: {
-        onTopbarItemClick(event, item) {
-            this.$emit('topbaritem-click', { originalEvent: event, item });
-        },
-    }
-
+const onTopbarItemClick = (event: Event, item: any) => {
+    emit('topbaritem-click', {originalEvent: event, item});
 }
 </script>
