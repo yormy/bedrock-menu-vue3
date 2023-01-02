@@ -20,16 +20,11 @@
     </div>
 </template>
 
-<script>
-export default {
-    name: 'AppFooter',
-    props: {
-        layoutMode: {
-            type: String,
-            default: 'light',
-        },
-    }
-};
+<script setup lang="ts">
+const props = defineProps({
+    layoutMode: {
+        type: String,
+        default: 'light',
+    },
+});
 </script>
-
-<style scoped></style>

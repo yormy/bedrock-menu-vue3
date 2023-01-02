@@ -1,6 +1,6 @@
 <template>
     <div class="layout-main">
-<!--        <AppBreadcrumb></AppBreadcrumb>-->
+        <AppBreadcrumb></AppBreadcrumb>
 
         <div class="layout-content">
 <!--            <router-view />-->
@@ -10,15 +10,8 @@
     </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import AppBreadcrumb from './AppBreadcrumb.vue';
 import AppFooter from './AppFooter.vue';
-
-export default {
-    components: {
-        AppBreadcrumb,
-        AppFooter
-    }
-}
 
 </script>

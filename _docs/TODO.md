@@ -1,4 +1,11 @@
 - convert to vue3
+- -- main app
+- content
+- right panel
+- AppTopBar
+
+
+
 - linter
 
 v-ripple to ui ?
@@ -9,7 +16,8 @@ routerlinks
 
 
 # Menu STurcture and partials like dropdown and sidebar
-
+- breadcrumb not working : router issue ?
+- footer contains not branding image
 
 
 
