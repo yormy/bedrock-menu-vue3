@@ -169,7 +169,6 @@ const onTopbarMenuButtonClick = (event: Event) => {
 
 const onTopbarNotificationsClick = (data: { originalEvent: Event; item: any }) => {
     // emit('topbaritem-click', original, 'notifications')"
-    console.log('dddd');
 };
 
 const onTopbarItemClick = (data: { originalEvent: Event; item: any }) => {
