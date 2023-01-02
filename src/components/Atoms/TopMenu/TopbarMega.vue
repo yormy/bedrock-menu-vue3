@@ -9,10 +9,8 @@ import MegaMenu from 'primevue/megamenu';
 
 const props = defineProps({
     menuTopMegaData: {
-        type: Object,
-        default() {
-            return {};
-        },
+        type: Array as any,
+        required: true,
     },
 });
 
