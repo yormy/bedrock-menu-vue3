@@ -1,0 +1,11 @@
+{
+    "breadcrumb": true,
+    "footer": {
+        "logo": {
+            "enabled" : true,
+            "light": "demo/assets/images/logo-dark.svg",
+            "dark": "demo/assets/images/logo-light.svg"
+        },
+        "text" : "hello world"
+    }
+}

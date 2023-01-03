@@ -20,6 +20,7 @@
             :menu-top-notifications-data="menuTopNotificationsData"
             :menu-top-profile-data="menuTopProfileData"
             :menu-settings="menuSettings"
+            @dark-mode="onDarkModeSwitchHandler"
         ></AppTopBar>
 
         <side-menu
@@ -38,7 +39,10 @@
         >
         </side-menu>
 
-        <content> </content>
+        <content
+            :content-settings="contentSettings"
+            :dark-mode="darkMode"
+        > </content>
 
         <AppRightPanel :expanded="rightPanelActive" @content-click="onRightPanelClick" @hide="onHideClick"></AppRightPanel>
 
@@ -96,6 +100,25 @@ const props = defineProps({
                     "notifications": boolean,
                     "profile": boolean,
                     "rightpanel": boolean
+                }
+            }>,
+        default() {
+            return {};
+        },
+        required: true,
+    },
+
+    contentSettings: {
+        type: Object as PropType<
+            {
+                breadcrumb: boolean,
+                footer : {
+                    logo: {
+                        enabled: boolean,
+                        dark: string,
+                        light: string,
+                    },
+                    text: string,
                 }
             }>,
         default() {
@@ -173,6 +196,12 @@ watch(
         menuActive.value = isStatic() && !isMobile();
     }
 );
+
+const darkMode = ref(false);
+const onDarkModeSwitchHandler = (dark: boolean) =>
+{
+    darkMode.value = dark;
+};
 
 const onSearchToggle = () => {
     searchActive.value = !searchActive.value;

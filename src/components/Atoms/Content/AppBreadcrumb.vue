@@ -2,11 +2,9 @@
     <div class="layout-breadcrumb-container flex justify-content-between align-items-center shadow-1">
         <Breadcrumb :home="home" :model="items" class="layout-breadcrumb pl-4 py-2"></Breadcrumb>
 
-        <div class="layout-breadcrumb-buttons flex align-items-center pr-3">
-            <Button icon="pi pi-cloud-upload" class="p-button-rounded p-button-text p-button-plain mr-1"></Button>
-            <Button icon="pi pi-bookmark" class="p-button-rounded p-button-text p-button-plain mr-1"></Button>
-            <Button icon="pi pi-power-off" class="p-button-rounded p-button-text p-button-plain mr-1"></Button>
-        </div>
+<!--        <div class="layout-breadcrumb-buttons flex align-items-center pr-3">-->
+<!--            <Button icon="pi pi-bookmark" class="p-button-rounded p-button-text p-button-plain mr-1"></Button>-->
+<!--        </div>-->
     </div>
 </template>
 

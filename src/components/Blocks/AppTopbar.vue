@@ -151,9 +151,7 @@ const props = defineProps({
 const dark = ref(false);
 const searchText = ref('');
 
-const onDarkSwitchClickHandler = () => {
-    dark.value = !dark.value;
-};
+
 
 const emit = defineEmits<{
     (eventName: 'menubutton-click', event: Event): void;
@@ -165,7 +163,13 @@ const emit = defineEmits<{
     (eventName: 'search-toggle', event: Event): void;
     (eventName: 'search-click', event: Event): void;
     (eventName: 'rightpanel-button-click', event: Event): void;
+    (eventName: 'dark-mode', dark: Boolean): void;
 }>();
+
+const onDarkSwitchClickHandler = () => {
+    dark.value = !dark.value;
+    emit('dark-mode', dark.value);
+};
 
 const onSearchToggle = (event: Event) => {
     emit('search-toggle', event);
