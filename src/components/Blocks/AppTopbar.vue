@@ -55,7 +55,7 @@
                     </li>
 
                     <topbar-right-panel
-                        v-if="menuSettings.topbar.rightPanel"
+                        v-if="menuSettings.topbar.rightpanel"
                         @rightpanel-button-click="(event) => $emit('rightpanel-button-click', event)"
                     >
                     </topbar-right-panel>

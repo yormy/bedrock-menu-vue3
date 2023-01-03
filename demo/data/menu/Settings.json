@@ -5,7 +5,7 @@
         "megamenu": true,
         "search": true,
         "notifications": true,
-        "app": true,
+        "apps": true,
         "profile":true,
         "rightpanel": true
     }
