@@ -26,11 +26,7 @@ module.exports = defineConfig({
     viteStaticCopy({
         targets: [
             {
-                src: 'src/config/*',
-                dest: 'config'
-            },
-            {
-                src: 'src/lang/*',
+                src: 'src/assets/lang/*',
                 dest: 'lang'
             }
         ]

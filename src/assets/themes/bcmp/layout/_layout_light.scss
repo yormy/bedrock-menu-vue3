@@ -118,7 +118,7 @@ $submenuHeaderBg:#ffffff !default;
 $panelContentBg : #ffffff;
 
 @import './_variables.scss';
-@import '../../../../src/assets/scss/layout/core/_layout_light';
+@import '../../../../../resources/scss/vendor/prime/layout/core/_layout_light';
 
 .p-megamenu {
     .p-menuitem-link {
