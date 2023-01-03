@@ -10,25 +10,37 @@
         </topbar-left>
 
         <div class="layout-topbar-right" :class="{ 'layout-topbar-mobile-active': mobileTopbarActive }">
-            <topbar-mega :menu-top-mega-data="menuTopMegaData"> </topbar-mega>
+            <topbar-mega
+                v-if="menuSettings.topbar.megamenu"
+                :menu-top-mega-data="menuTopMegaData"
+            > </topbar-mega>
 
             <div class="layout-topbar-actions-right">
                 <ul class="layout-topbar-items">
-                    <topbar-search :search-active="searchActive" @search-toggle="onSearchToggle" @search-click="onSearchClick"> </topbar-search>
+                    <topbar-search
+                        v-if="menuSettings.topbar.search"
+                        :search-active="searchActive"
+                        @search-toggle="onSearchToggle"
+                        @search-click="onSearchClick"
+                    >
+                    </topbar-search>
 
                     <topbar-notifications
+                        v-if="menuSettings.topbar.notifications"
                         :active-topbar-item="activeTopbarItem"
                         @topbaritem-click="onTopbarItemClick"
                         :menu-top-notifications-data="menuTopNotificationsData"
                     ></topbar-notifications>
 
                     <topbar-apps
+                        v-if="menuSettings.topbar.apps"
                         :active-topbar-item="activeTopbarItem"
                         @topbaritem-click="onTopbarItemClick"
                         :menu-top-app-data="menuTopAppData"
                     ></topbar-apps>
 
                     <topbar-profile
+                        v-if="menuSettings.topbar.profile"
                         :active-topbar-item="activeTopbarItem"
                         @topbaritem-click="onTopbarItemClick"
                         :menu-top-profile-data="menuTopProfileData"
@@ -45,7 +57,11 @@
                         </a>
                     </li>
 
-                    <topbar-right-panel @rightpanel-button-click="(event) => $emit('rightpanel-button-click', event)"> </topbar-right-panel>
+                    <topbar-right-panel
+                        v-if="menuSettings.topbar.rightPanel"
+                        @rightpanel-button-click="(event) => $emit('rightpanel-button-click', event)"
+                    >
+                    </topbar-right-panel>
                 </ul>
             </div>
         </div>
@@ -63,6 +79,14 @@ import TopbarRightPanel from '../Atoms/TopMenu/TopbarRightPanel.vue';
 import TopbarMega from '../Atoms/TopMenu/TopbarMega.vue';
 
 const props = defineProps({
+
+    menuSettings: {
+        type: Object,
+        default() {
+            return {}
+        },
+    },
+
     horizontal: {
         type: Boolean,
         default: false,

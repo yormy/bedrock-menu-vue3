@@ -1,4 +1,12 @@
 {
-    "menuType": "slim",
-    "inlineMenuPosition": "bottom"
+    "menuType": "static",
+    "inlineMenuPosition": "bottom",
+    "topbar" : {
+        "megamenu": true,
+        "search": true,
+        "notifications": true,
+        "app": true,
+        "profile":true,
+        "rightpanel": true
+    }
 }

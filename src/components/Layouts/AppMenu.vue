@@ -19,6 +19,7 @@
             :menu-top-mega-data="menuTopMegaData"
             :menu-top-notifications-data="menuTopNotificationsData"
             :menu-top-profile-data="menuTopProfileData"
+            :menu-settings="menuSettings"
         ></AppTopBar>
 
         <side-menu
@@ -46,7 +47,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import {computed, PropType, ref, watch} from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import SideMenu from '../Atoms/MainMenu/SideMenu.vue';
 import AppTopBar from '../Blocks/AppTopbar.vue';
@@ -85,7 +86,18 @@ const route = useRoute();
 
 const props = defineProps({
     menuSettings: {
-        type: Object,
+        type: Object as PropType<
+            {
+                "menuType": string,
+                "inlineMenuPosition": string,
+                "topbar" : {
+                    "megamenu": boolean,
+                    "search": boolean,
+                    "notifications": boolean,
+                    "profile": boolean,
+                    "rightpanel": boolean
+                }
+            }>,
         default() {
             return {};
         },

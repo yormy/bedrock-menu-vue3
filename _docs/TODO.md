@@ -1,6 +1,4 @@
-type of menu naar data
-
-content data / serachbar/footer
+content data / /footer
 
 splits router data in separate files / namespaces / member/admin
 
