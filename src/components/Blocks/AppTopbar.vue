@@ -10,10 +10,7 @@
         </topbar-left>
 
         <div class="layout-topbar-right" :class="{ 'layout-topbar-mobile-active': mobileTopbarActive }">
-            <topbar-mega
-                v-if="menuSettings.topbar.megamenu"
-                :menu-top-mega-data="menuTopMegaData"
-            > </topbar-mega>
+            <topbar-mega v-if="menuSettings.topbar.megamenu" :menu-top-mega-data="menuTopMegaData"> </topbar-mega>
 
             <div class="layout-topbar-actions-right">
                 <ul class="layout-topbar-items">
@@ -79,11 +76,10 @@ import TopbarRightPanel from '../Atoms/TopMenu/TopbarRightPanel.vue';
 import TopbarMega from '../Atoms/TopMenu/TopbarMega.vue';
 
 const props = defineProps({
-
     menuSettings: {
         type: Object,
         default() {
-            return {}
+            return {};
         },
     },
 
@@ -151,8 +147,6 @@ const props = defineProps({
 const dark = ref(false);
 const searchText = ref('');
 
-
-
 const emit = defineEmits<{
     (eventName: 'menubutton-click', event: Event): void;
     (eventName: 'topbar-menubutton-click', event: Event): void;
@@ -163,7 +157,7 @@ const emit = defineEmits<{
     (eventName: 'search-toggle', event: Event): void;
     (eventName: 'search-click', event: Event): void;
     (eventName: 'rightpanel-button-click', event: Event): void;
-    (eventName: 'dark-mode', dark: Boolean): void;
+    (eventName: 'dark-mode', value: boolean): void;
 }>();
 
 const onDarkSwitchClickHandler = () => {

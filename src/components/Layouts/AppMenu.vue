@@ -39,10 +39,7 @@
         >
         </side-menu>
 
-        <content
-            :content-settings="contentSettings"
-            :dark-mode="darkMode"
-        > </content>
+        <content :content-settings="contentSettings" :dark-mode="darkMode"> </content>
 
         <AppRightPanel :expanded="rightPanelActive" @content-click="onRightPanelClick" @hide="onHideClick"></AppRightPanel>
 
@@ -51,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed, PropType, ref, watch} from 'vue';
+import { computed, PropType, ref, watch } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import SideMenu from '../Atoms/MainMenu/SideMenu.vue';
 import AppTopBar from '../Blocks/AppTopbar.vue';
@@ -87,21 +84,19 @@ const topbarRightClick = ref(false);
 const router = useRouter();
 const route = useRoute();
 
-
 const props = defineProps({
     menuSettings: {
-        type: Object as PropType<
-            {
-                "menuType": string,
-                "inlineMenuPosition": string,
-                "topbar" : {
-                    "megamenu": boolean,
-                    "search": boolean,
-                    "notifications": boolean,
-                    "profile": boolean,
-                    "rightpanel": boolean
-                }
-            }>,
+        type: Object as PropType<{
+            menuType: string;
+            inlineMenuPosition: string;
+            topbar: {
+                megamenu: boolean;
+                search: boolean;
+                notifications: boolean;
+                profile: boolean;
+                rightpanel: boolean;
+            };
+        }>,
         default() {
             return {};
         },
@@ -109,21 +104,18 @@ const props = defineProps({
     },
 
     contentSettings: {
-        type: Object as PropType<
-            {
-                breadcrumb: boolean,
-                footer : {
-                    logo: {
-                        enabled: boolean,
-                        dark: string,
-                        light: string,
-                    },
-                    right : [{
-                        label: string,
-                    }],
-                    text: string,
-                }
-            }>,
+        type: Object as PropType<{
+            breadcrumb: boolean;
+            footer: {
+                logo: {
+                    enabled: boolean;
+                    dark: string;
+                    light: string;
+                };
+                right?: any;
+                text?: string;
+            };
+        }>,
         default() {
             return {};
         },
@@ -178,12 +170,10 @@ const props = defineProps({
             return [];
         },
     },
-
 });
 
 const menuMode = ref(props.menuSettings.menuType); // static | horizontal | overlay | slim
 const inlineMenuPosition = ref(props.menuSettings.inlineMenuPosition); // top || bottom
-
 
 const isMobile = () => {
     return window.innerWidth <= 991;
@@ -201,8 +191,8 @@ watch(
 );
 
 const darkMode = ref(false);
-const onDarkModeSwitchHandler = (dark: boolean) =>
-{
+
+const onDarkModeSwitchHandler = (dark: boolean) => {
     darkMode.value = dark;
 };
 
