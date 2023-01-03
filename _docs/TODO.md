@@ -1,5 +1,3 @@
-strip data into props
-add data to demo vite run
 type of menu naar data
 
 content data / serachbar/footer

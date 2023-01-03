@@ -59,9 +59,9 @@ const mobileMenuActive = ref(false);
 const search = ref(false);
 const searchClick = ref(false);
 const searchActive = ref(false);
-const menuMode = ref('static'); // static | horizontal | overlay | slim
+
 const inlineMenuClick = ref(false);
-const inlineMenuPosition = ref('bottom'); // top || bottom
+
 const inlineMenuTopActive = ref(false);
 const inlineMenuBottomActive = ref(false);
 const overlayMenuActive = ref(false);
@@ -84,6 +84,14 @@ const route = useRoute();
 
 
 const props = defineProps({
+    menuSettings: {
+        type: Object,
+        default() {
+            return {};
+        },
+        required: true,
+    },
+
     menuTopAppData: {
         type: Array as any,
         default() {
@@ -134,6 +142,10 @@ const props = defineProps({
     },
 
 });
+
+const menuMode = ref(props.menuSettings.menuType); // static | horizontal | overlay | slim
+const inlineMenuPosition = ref(props.menuSettings.inlineMenuPosition); // top || bottom
+
 
 const isMobile = () => {
     return window.innerWidth <= 991;

@@ -14,6 +14,7 @@
         :menu-top-profile-data="MenuTopProfileData"
         :menu-left-profile-data="MenuLeftProfileData"
         :menu-left-data="MenuLeftData"
+        :menu-settings="menuSettings"
     />
 </template>
 
@@ -26,6 +27,7 @@ import MenuTopNotificationsData from './data/menu/MenuTopNotificationsData.json'
 import MenuTopProfileData from './data/menu/MenuTopProfileData.json';
 import MenuLeftProfileData from './data/menu/MenuLeftProfileData.json';
 import MenuLeftData from './data/menu/MenuLeftData.json';
+import MenuSettings from './data/menu/Settings.json';
 
 const menuTopAppData = MenuTopAppData;
 const brandingData = BrandingData;
@@ -34,6 +36,7 @@ const menuTopNotificationsData = MenuTopNotificationsData;
 const menuTopProfileData = MenuTopProfileData;
 const menuLeftProfileData = MenuLeftProfileData;
 const menuLeftData = MenuLeftData;
+const menuSettings = MenuSettings;
 
 // import Error from './pages/Error.vue';
 // import Access from './pages/Access.vue';
