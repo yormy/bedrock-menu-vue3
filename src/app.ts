@@ -1,6 +1,6 @@
 import { createApp, h } from 'vue';
 import { reactive } from 'vue';
-import App from './components/Layouts/App.vue';
+import App from './components/Layouts/AppMenu.vue';
 import PrimeVue from 'primevue/config';
 
 import Ripple from 'primevue/ripple';

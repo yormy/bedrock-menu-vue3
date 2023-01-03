@@ -1,6 +1,6 @@
 {
     "button" : {
-        "image":"../../../../public/demo/images/avatar/amyelsner.png",
+        "image":"demoimg/avatar_1.png",
         "title": "profile",
         "style": "width: 32px; height: 32px"
     },

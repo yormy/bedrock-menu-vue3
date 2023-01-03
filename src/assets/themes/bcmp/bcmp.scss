@@ -1,0 +1,12 @@
+@import '../../../../resources/scss/vendor/prime/layout/core/_layout_fonts.scss';
+
+.light {
+  @import './layout/_layout_light';
+}
+
+.dark {
+  @import './layout/_layout_dark';
+}
+
+@import './layout/_extensions.scss';
+

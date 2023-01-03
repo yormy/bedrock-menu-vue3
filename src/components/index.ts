@@ -3,6 +3,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
 // @ts-ignore
-import AppMenu from './Layouts/App.vue';
+import AppMenu from './Layouts/AppMenu.vue';
 
 export { AppMenu }

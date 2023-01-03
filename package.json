@@ -17,9 +17,9 @@
         "format:check": "prettier --check \"src/components/**/*.{js,vue,d.ts}\"",
         "format:fix": "prettier --write \"src/components/**/*.{js,vue,d.ts}\"",
         "---SCSS---": "-------------------------------------------------------",
-        "sass:dev": "sass --watch --update --style=expanded src/assets/themes:dist/resources",
-        "sass:debug": "sass src/assets/themes:dist/resources",
-        "sass:prod": "sass --no-source-map --style=compressed src/assets/themes:dist/resources",
+        "sass:dev": "sass --watch --update --style=expanded src/assets:dist/resources",
+        "sass:debug": "sass src/assets:dist/resources",
+        "sass:prod": "sass --no-source-map --style=compressed src/assets:dist/resources",
         "---DOCS---": "-------------------------------------------------------",
         "docs:dev": "vitepress dev docs",
         "docs:build": "vitepress build docs",
@@ -90,6 +90,6 @@
         },
         "./dist/style.css": "./dist/style.css",
         "./lang/translations.js": "./dist/lang/translations.js",
-        "./resources/themes/ds-indigo/theme.css": "./dist/resources/themes/ds-indigo/theme.css"
+        "./resources/themes/bcmp/bcmp.css": "./dist/resources/themes/bcmp/bcmp.css"
     }
 }

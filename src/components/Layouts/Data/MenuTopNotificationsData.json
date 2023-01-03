@@ -13,7 +13,7 @@
     "items": [
         {
             "avatar": {
-                "image": "../../../../public/demo/images/avatar/amyelsner.png",
+                "image": "demoimg/avatar_1.png",
                 "title": "profile"
             },
             "title": "Jerome Bell",
@@ -22,7 +22,7 @@
         },
         {
             "avatar": {
-                "image": "../../../../public/demo/images/avatar/annafali.png",
+                "image": "demoimg/avatar_2.png",
                 "title": "profile"
             },
             "title": "Cameron Williamson",

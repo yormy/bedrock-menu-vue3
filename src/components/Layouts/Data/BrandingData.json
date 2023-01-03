@@ -1,7 +1,7 @@
 {
     "logo": {
-        "light" : "../../../../public/theme/bcmp/images/logo-dark.svg",
-        "dark" : "../../../../public/theme/bcmp/images/logo-light.svg",
+        "light" : "demoimg/logo-dark.svg",
+        "dark" : "demoimg/logo-light.svg",
         "title" : "Logo Title",
         "height" : "2rem"
     }
