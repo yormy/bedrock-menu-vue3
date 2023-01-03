@@ -118,6 +118,9 @@ const props = defineProps({
                         dark: string,
                         light: string,
                     },
+                    right : [{
+                        label: string,
+                    }],
                     text: string,
                 }
             }>,
