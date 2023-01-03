@@ -66,7 +66,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { PropType, ref } from 'vue';
 import TopbarLeft from '../Atoms/TopMenu/TopbarLeft.vue';
 import TopbarSearch from '../Atoms/TopMenu/TopbarSearch.vue';
 import TopbarNotifications from '../Atoms/TopMenu/TopbarNotifications.vue';
@@ -116,7 +116,14 @@ const props = defineProps({
     },
 
     brandingData: {
-        type: Object,
+        type: Object as PropType<{
+            logo: {
+                light: string;
+                dark: string;
+                title: string;
+                height: string;
+            };
+        }>,
         default() {
             return {};
         },

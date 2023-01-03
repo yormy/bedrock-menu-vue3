@@ -1,13 +1,12 @@
 <template>
     <div class="layout-topbar-left">
         <a href="/" class="layout-topbar-logo">
-            <img id="logo" :src="logo.light" :alt="logo.title" :style="`height: ${logo.height}`" />
+            <img id="logo" :src="''" :alt="logo.title" :style="`height: ${logo.height}`" />
         </a>
 
         <a v-ripple class="layout-menu-button shadow-6 p-ripple" @click="onMenuButtonClick($event)" @keydown="onMenuButtonClick($event)">
             <i class="pi pi-chevron-right"></i>
         </a>
-
         <a
             v-ripple
             class="layout-topbar-mobile-button p-ripple"
@@ -20,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, PropType, ref, watch } from 'vue';
 
 const props = defineProps({
     darkMode: {
@@ -29,7 +28,14 @@ const props = defineProps({
     },
 
     brandingData: {
-        type: Object,
+        type: Object as PropType<{
+            logo: {
+                light: string;
+                dark: string;
+                title: string;
+                height: string;
+            };
+        }>,
         default() {
             return {};
         },
@@ -74,9 +80,9 @@ const applyDarkModeSetting = (darkMode: boolean) => {
     }
 
     if (darkMode) {
-        logoElement.src = logo.value.dark;
+        logoElement.src = props.brandingData.logo.dark;
     } else {
-        logoElement.src = logo.value.light;
+        logoElement.src = props.brandingData.logo.light;
     }
 };
 

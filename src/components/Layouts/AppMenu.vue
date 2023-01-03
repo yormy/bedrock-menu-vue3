@@ -130,7 +130,14 @@ const props = defineProps({
     },
 
     brandingData: {
-        type: Object,
+        type: Object as PropType<{
+            logo: {
+                light: string;
+                dark: string;
+                title: string;
+                height: string;
+            };
+        }>,
         default() {
             return {};
         },
