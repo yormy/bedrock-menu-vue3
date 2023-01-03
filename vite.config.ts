@@ -28,6 +28,14 @@ module.exports = defineConfig({
             {
                 src: 'src/assets/lang/*',
                 dest: 'lang'
+            },
+            {
+                src: 'resources/scss/vendor/fonts/*',
+                dest: 'resources/themes/fonts'
+            },
+            {
+                src: 'src/assets/themes/core/images/*',
+                dest: 'resources/themes/core/images'
             }
         ]
     }),
