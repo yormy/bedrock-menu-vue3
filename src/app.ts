@@ -1,10 +1,10 @@
 import { createApp, h } from 'vue';
 import { reactive } from 'vue';
-import App from './components/Layouts/AppMenu.vue';
+import AppWrapper from '../demo/AppWrapper.vue';
 import PrimeVue from 'primevue/config';
 
 import Ripple from 'primevue/ripple';
-import router from './router';
+import router from '../demo/router';
 
 import 'primevue/resources/primevue.min.css';
 import 'primeicons/primeicons.css';
@@ -13,7 +13,7 @@ import 'prismjs/themes/prism-coy.css';
 // import './assets/demo/flags/flags.css';
 
 const app = createApp({
-    render () { return h(App); }
+    render () { return h(AppWrapper); }
 });
 
 app.use(router);

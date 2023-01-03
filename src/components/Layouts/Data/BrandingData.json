@@ -1,8 +1,0 @@
-{
-    "logo": {
-        "light" : "demoimg/logo-dark.svg",
-        "dark" : "demoimg/logo-light.svg",
-        "title" : "Logo Title",
-        "height" : "2rem"
-    }
-}

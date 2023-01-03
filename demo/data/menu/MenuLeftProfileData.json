@@ -3,7 +3,7 @@
         "title": "profile",
         "subtitle": "webmasterie",
         "image" : {
-            "image":"demoimg/avatar_1.png",
+            "image":"demo/assets/images/avatar/avatar_1.png",
             "title": "profile",
             "style": "width: 32px; height: 32px"
         }

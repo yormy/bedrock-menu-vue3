@@ -1,4 +1,11 @@
-- linter
+strip data into props
+add data to demo vite run
+type of menu naar data
+
+content data / serachbar/footer
+
+splits router data in separate files / namespaces / member/admin
+
 
 v-ripple to ui ?
 ui imports bij menu

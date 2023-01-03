@@ -1,6 +1,15 @@
 import {createRouter, createWebHashHistory} from 'vue-router';
 
-const routes = [];
+const routes = [
+    {
+        path: '/floatlabel',
+        name: 'floatlabel',
+        component: () => import('./components/Dummy.vue'),
+        meta: {
+            breadcrumb: [{parent: 'UI Kit', label: 'Float Label'}],
+        }
+    }
+];
 
 // const routes = [
 //     {

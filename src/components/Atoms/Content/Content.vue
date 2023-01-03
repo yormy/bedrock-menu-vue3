@@ -3,7 +3,7 @@
         <AppBreadcrumb></AppBreadcrumb>
 
         <div class="layout-content">
-            <!--            <router-view />-->
+            <router-view />
         </div>
 
         <AppFooter />

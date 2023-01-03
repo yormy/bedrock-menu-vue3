@@ -53,13 +53,6 @@ import AppTopBar from '../Blocks/AppTopbar.vue';
 import AppRightPanel from '../Atoms/AppRightPanel.vue';
 import Content from '../Atoms/Content/Content.vue';
 import EventBus from '../../event-bus';
-import MenuTopAppData from './Data/MenuTopAppData.json';
-import BrandingData from './Data/BrandingData.json';
-import MenuTopMegaData from './Data/MenuTopMegaData.json';
-import MenuTopNotificationsData from './Data/MenuTopNotificationsData.json';
-import MenuTopProfileData from './Data/MenuTopProfileData.json';
-import MenuLeftProfileData from './Data/MenuLeftProfileData.json';
-import MenuLeftData from './Data/MenuLeftData.json';
 
 const mobileTopbarActive = ref(false);
 const mobileMenuActive = ref(false);
@@ -80,14 +73,6 @@ const isSlimOrHorItemClick = ref(false);
 const rightPanelActive = ref(false);
 const menuActive = ref(true);
 
-const menuTopAppData = MenuTopAppData;
-const brandingData = BrandingData;
-const menuTopMegaData = MenuTopMegaData;
-const menuTopNotificationsData = MenuTopNotificationsData;
-const menuTopProfileData = MenuTopProfileData;
-const menuLeftProfileData = MenuLeftProfileData;
-const menuLeftData = MenuLeftData;
-
 // TODO : these were undefined ???
 const topbarItemClick = ref(false);
 const rightPanelClick = ref(false);
@@ -96,6 +81,59 @@ const topbarRightClick = ref(false);
 
 const router = useRouter();
 const route = useRoute();
+
+
+const props = defineProps({
+    menuTopAppData: {
+        type: Array as any,
+        default() {
+            return [];
+        },
+    },
+
+    brandingData: {
+        type: Object,
+        default() {
+            return {};
+        },
+    },
+
+    menuTopMegaData: {
+        type: Array as any,
+        default() {
+            return [];
+        },
+    },
+
+    menuTopNotificationsData: {
+        type: Array as any,
+        default() {
+            return [];
+        },
+    },
+
+    menuTopProfileData: {
+        type: Array as any,
+        default() {
+            return [];
+        },
+    },
+
+    menuLeftProfileData: {
+        type: Array as any,
+        default() {
+            return [];
+        },
+    },
+
+    menuLeftData: {
+        type: Array as any,
+        default() {
+            return [];
+        },
+    },
+
+});
 
 const isMobile = () => {
     return window.innerWidth <= 991;

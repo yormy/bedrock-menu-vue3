@@ -1,0 +1,8 @@
+{
+    "logo": {
+        "light" : "demo/assets/images/logo-dark.svg",
+        "dark" : "demo/assets/images/logo-light.svg",
+        "title" : "Logo Title",
+        "height" : "2rem"
+    }
+}
