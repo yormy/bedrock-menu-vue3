@@ -104,18 +104,7 @@ const props = defineProps({
     },
 
     contentSettings: {
-        type: Object as PropType<{
-            breadcrumb: boolean;
-            footer: {
-                logo: {
-                    enabled: boolean;
-                    dark: string;
-                    light: string;
-                };
-                right?: any;
-                text?: string;
-            };
-        }>,
+        type: Object as PropType<ContentSettingsDataType>,
         default() {
             return {};
         },
@@ -130,14 +119,7 @@ const props = defineProps({
     },
 
     brandingData: {
-        type: Object as PropType<{
-            logo: {
-                light: string;
-                dark: string;
-                title: string;
-                height: string;
-            };
-        }>,
+        type: Object as PropType<BradingDataType>,
         default() {
             return {};
         },
