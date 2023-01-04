@@ -1,8 +1,17 @@
-// type Nullable<T> = T | undefined | null;
+type ContentSettingsDataType = {
+    breadcrumb: boolean;
+    footer: {
+        logo: {
+            enabled: boolean;
+            dark: string;
+            light: string;
+        };
+        right?: any;
+        text?: string;
+    };
+}
 
-import {PropType} from "vue";
-
-class BrandingData {
+type BradingDataType = {
     logo: {
         light: string;
         dark: string;
@@ -10,4 +19,3 @@ class BrandingData {
         height: string;
     };
 }
-
