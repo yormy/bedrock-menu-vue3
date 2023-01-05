@@ -4,25 +4,17 @@
             <div class="section--background">
                 <div
                     class="image"
-                    style="
-                        background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
-                            url(https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)
-                                no-repeat top fixed;
-                        -webkit-background-size: cover;
-                        -moz-background-size: cover;
-                        -o-background-size: cover;
-                        background-size: cover;
-                    "
+                    :style="backgroundStyle"
                 >
                     <div class="content">
                         <div class="middle--center">
-                            <h2 class="header">Awesome Brand</h2>
-                            <div class="description">The best in class</div>
+                            <h2 class="header">{{ landingSettings.branding.main.title}}</h2>
+                            <div class="description">{{ landingSettings.branding.main.subtitle }}</div>
                         </div>
 
                         <div class="middle--bottom">
-                            <h2 class="header">Supported by</h2>
-                            <div class="description">Awesome client in daily life</div>
+                            <h2 class="header">{{ landingSettings.branding.footer.title }}</h2>
+                            <div class="description">{{ landingSettings.branding.footer.subtitle }}</div>
                         </div>
                     </div>
                 </div>
@@ -33,8 +25,8 @@
 
                 <footer class="" style="margin-top: 100px">
                     <div class="page-right--footer flex flex-column">
-                        <div>Copyright © 2022 . All rights reserved</div>
-                        <div><a>Terms and conditions more condi</a></div>
+                        <div>{{ landingSettings.content.copyright.statement}}</div>
+                        <div><a>{{ landingSettings.content.copyright.terms}}</a></div>
                     </div>
                 </footer>
             </div>
@@ -42,15 +34,32 @@
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            username: '',
-            password: '',
-        };
-    },
-};
-</script>
+<script setup lang="ts">
+import {computed, PropType} from "vue";
 
-<style scoped></style>
+const props = defineProps({
+    landingSettings: {
+        type: Object as PropType<LandingSettings>,
+        default() {
+            return {};
+        },
+        required: true,
+    },
+});
+
+const backgroundStyle = computed(() => {
+
+    const style = `
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+    url(${props.landingSettings.branding.background})
+    no-repeat top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    `;
+
+    return style;
+});
+
+</script>

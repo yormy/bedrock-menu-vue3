@@ -8,7 +8,17 @@ const routes = [
         meta: {
             breadcrumb: [{parent: 'UI Kit', label: 'Float Label'}],
         }
-    }
+    },
+    {
+        path: '/login-user',
+        name: 'login User',
+        component: () => import('../src/components/Pages/LoginUser.vue')
+    },
+    {
+        path: '/login-admin',
+        name: 'login Admin',
+        component: () => import('../src/components/Pages/LoginAdmin.vue')
+    },
 ];
 
 // const routes = [
@@ -312,16 +322,7 @@ const routes = [
 //             breadcrumb: [{ parent: 'Pages', label: 'Documentation' }],
 //         },
 //     },
-//     {
-//         path: '/login-user',
-//         name: 'login User',
-//         component: () => import('./pages/LoginUser.vue')
-//     },
-//     {
-//         path: '/login-admin',
-//         name: 'login Admin',
-//         component: () => import('./pages/LoginAdmin.vue')
-//     },
+
 //     {
 //         path: '/error',
 //         name: 'error',

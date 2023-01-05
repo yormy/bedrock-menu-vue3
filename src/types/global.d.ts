@@ -19,3 +19,27 @@ type BradingDataType = {
         height: string;
     };
 }
+
+type LandingSettings = {
+    branding: {
+        background: string;
+        logo?: {
+            light?: string;
+            dark: string;
+        };
+        main: {
+            title: string;
+            subtitle: string;
+        };
+        footer: {
+            title: string;
+            subtitle: string;
+        }
+    };
+    content?: {
+        copyright?: {
+            statement?: string;
+            terms?: string;
+        }
+    };
+};
