@@ -8,6 +8,10 @@
         "main": {
             "title": "Admin Section",
             "subtitle": "subtitle"
+        },
+        "footer" : {
+            "title" : "Supported by",
+            "subtitle": "subbie"
         }
     },
     "content" : {

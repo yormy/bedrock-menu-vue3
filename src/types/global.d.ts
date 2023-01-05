@@ -36,10 +36,10 @@ type LandingSettings = {
             subtitle: string;
         }
     };
-    content?: {
-        copyright?: {
-            statement?: string;
-            terms?: string;
+    content: {
+        copyright: {
+            statement: string;
+            terms: string;
         }
     };
 };

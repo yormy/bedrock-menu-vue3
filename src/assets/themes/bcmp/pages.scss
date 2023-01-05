@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+* {
+    --page-center-background-color: pink;
+    --page-right-background-color: red;
+}
+
+@import "./pages//variables/__main_pages.scss";
+
+@import "./pages/scss/__main_pages.scss";

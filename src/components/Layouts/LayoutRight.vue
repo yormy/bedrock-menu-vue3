@@ -2,13 +2,10 @@
     <div class="y-page--right">
         <div class="sections">
             <div class="section--background">
-                <div
-                    class="image"
-                    :style="backgroundStyle"
-                >
+                <div class="image" :style="backgroundStyle">
                     <div class="content">
                         <div class="middle--center">
-                            <h2 class="header">{{ landingSettings.branding.main.title}}</h2>
+                            <h2 class="header">{{ landingSettings.branding.main.title }}</h2>
                             <div class="description">{{ landingSettings.branding.main.subtitle }}</div>
                         </div>
 
@@ -25,8 +22,10 @@
 
                 <footer class="" style="margin-top: 100px">
                     <div class="page-right--footer flex flex-column">
-                        <div>{{ landingSettings.content.copyright.statement}}</div>
-                        <div><a>{{ landingSettings.content.copyright.terms}}</a></div>
+                        <div>{{ landingSettings.content.copyright.statement }}</div>
+                        <div>
+                            <a>{{ landingSettings.content.copyright.terms }}</a>
+                        </div>
                     </div>
                 </footer>
             </div>
@@ -35,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed, PropType} from "vue";
+import { computed, PropType } from 'vue';
 
 const props = defineProps({
     landingSettings: {
@@ -48,7 +47,6 @@ const props = defineProps({
 });
 
 const backgroundStyle = computed(() => {
-
     const style = `
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
     url(${props.landingSettings.branding.background})
@@ -61,5 +59,4 @@ const backgroundStyle = computed(() => {
 
     return style;
 });
-
 </script>
