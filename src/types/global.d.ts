@@ -11,7 +11,7 @@ type ContentSettingsDataType = {
     };
 }
 
-type BradingDataType = {
+type BrandingDataType = {
     logo: {
         light: string;
         dark: string;
