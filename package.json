@@ -93,6 +93,7 @@
         "./dist/style.css": "./dist/style.css",
         "./lang/translations.js": "./dist/lang/translations.js",
         "./resources/themes/core/primevue.min.css": "./dist/resources/themes/core/primevue.min.css",
-        "./resources/themes/bcmp/bcmp.css": "./dist/resources/themes/bcmp/bcmp.css"
+        "./resources/themes/bcmp/menu.css": "./dist/resources/themes/bcmp/menu.css",
+        "./resources/themes/bcmp/pages.css": "./dist/resources/themes/bcmp/pages.css"
     }
 }

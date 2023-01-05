@@ -18,7 +18,9 @@
             </div>
 
             <div class="section--content">
-                <div class="content"><br /><br /><br />ssaddsadsadsa<br /><br /><br />ssaddsadsadsa<br /><br /><br />ssaddsadsadsa</div>
+                <div class="content">
+                    <router-view />
+                </div>
 
                 <footer class="" style="margin-top: 100px">
                     <div class="page-right--footer flex flex-column">
