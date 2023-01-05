@@ -39,7 +39,7 @@
         >
         </side-menu>
 
-        <content :content-settings="contentSettings" :dark-mode="darkMode"> </content>
+        <content :content-settings="contentSettings" :dark-mode="darkMode"><slot></slot></content>
 
         <AppRightPanel :expanded="rightPanelActive" @content-click="onRightPanelClick" @hide="onHideClick"></AppRightPanel>
 

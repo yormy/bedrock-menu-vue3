@@ -3,7 +3,7 @@
         <AppBreadcrumb v-if="contentSettings.breadcrumb"></AppBreadcrumb>
 
         <div class="layout-content">
-            <router-view />
+            <slot />
         </div>
 
         <AppFooter :content-settings="contentSettings" :dark-mode="darkMode" />

@@ -7,7 +7,7 @@
 
                     <div class="section--content">
                         <div class="content">
-                            <router-view />
+                            <slot />
                         </div>
                     </div>
 

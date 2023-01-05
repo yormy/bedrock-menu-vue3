@@ -19,7 +19,7 @@
 
             <div class="section--content">
                 <div class="content">
-                    <router-view />
+                    <slot />
                 </div>
 
                 <footer class="" style="margin-top: 100px">
