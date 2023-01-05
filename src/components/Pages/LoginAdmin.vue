@@ -3,18 +3,10 @@
         <div class="y-page--center">
             <div
                 class="image"
-                style="
-                    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
-                        url(https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)
-                            no-repeat top fixed;
-                    -webkit-background-size: cover;
-                    -moz-background-size: cover;
-                    -o-background-size: cover;
-                    background-size: cover;
-                "
+                :style="backgroundStyle"
             >
                 <div class="middle--center">
-                    <div class="header">Admin</div>
+                    <div class="header">{{ landingSettings.branding.main.title }}</div>
                     <div class="section--content">
                         <div class="content">
                             <br /><br /><br /><br /><br /><br />
@@ -60,22 +52,40 @@
                             <!--                        </div>-->
                         </div>
                     </div>
-                    <div class="footer">Copyright © 2022 . All rights reserved <br /><a>Terms and conditions</a></div>
+                    <div class="footer">{{ landingSettings.content.copyright.statement}} <br /><a>{{ landingSettings.content.copyright.terms}}</a></div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            username: '',
-            password: '',
-        };
-    },
-};
-</script>
 
-<style scoped></style>
+<script setup lang="ts">
+import {computed, PropType} from "vue";
+
+const props = defineProps({
+    landingSettings: {
+        type: Object ,//as PropType<LandingSettings>,
+        default() {
+            return {};
+        },
+        required: true,
+    },
+});
+
+const backgroundStyle = computed(() => {
+
+    const style = `
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+    url(${props.landingSettings.branding.background})
+    no-repeat top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    `;
+
+    return style;
+});
+
+</script>
