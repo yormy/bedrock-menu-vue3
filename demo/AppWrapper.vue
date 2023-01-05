@@ -1,8 +1,8 @@
 <template>
-    <LoginUser v-if="$route.path === '/login-user'"
+    <LayoutRight v-if="$route.path === '/login-user'"
         :landing-settings="landingMemberSettings"
     />
-    <LoginAdmin v-else-if="$route.path === '/login-admin'"
+    <LayoutCenter v-else-if="$route.path === '/login-admin'"
                 :landing-settings="landingAdminSettings"
     />
     <Error v-else-if="$route.path === '/error'" />
@@ -25,8 +25,8 @@
 
 <script setup lang="ts">
 import AppMenu from '../src/components/Layouts/AppMenu.vue';
-import LoginUser from '../src/components/Pages/LoginUser.vue';
-import LoginAdmin from '../src/components/Pages/LoginAdmin.vue';
+import LayoutRight from '../src/components/Layouts/LayoutRight.vue';
+import LayoutCenter from '../src/components/Layouts/LayoutCenter.vue';
 
 
 

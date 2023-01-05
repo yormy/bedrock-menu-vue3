@@ -12,12 +12,12 @@ const routes = [
     {
         path: '/login-user',
         name: 'login User',
-        component: () => import('../src/components/Pages/LoginUser.vue')
+        component: () => import('../src/components/Layouts/LayoutRight.vue')
     },
     {
         path: '/login-admin',
         name: 'login Admin',
-        component: () => import('../src/components/Pages/LoginAdmin.vue')
+        component: () => import('../src/components/Layouts/LayoutCenter.vue')
     },
 ];
 
