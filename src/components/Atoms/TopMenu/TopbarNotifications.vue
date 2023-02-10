@@ -14,8 +14,7 @@
                 ><span class="badge-value">{{ menuTopNotificationsData.button.content }}</span></span
             >
         </a>
-
-        <transition name="layout-topbar-action-panel">
+        <transition v-if="hasNotificationItems" name="layout-topbar-action-panel">
             <ul v-show="activeTopbarItem === 'notifications'" class="layout-topbar-action-panel shadow-6">
                 <li class="mb-3">
                     <span class="px-3 fs-small">{{ menuTopNotificationsData.header.title }}</span>
@@ -39,6 +38,8 @@
 </template>
 
 <script setup lang="ts">
+import {computed} from "vue";
+
 const props = defineProps({
     activeTopbarItem: {
         type: String,
@@ -60,4 +61,8 @@ const emit = defineEmits<{
 const onTopbarItemClick = (event: Event, item: string) => {
     emit('topbaritem-click', { originalEvent: event, item });
 };
+
+const hasNotificationItems = computed(() => {
+    return props.menuTopNotificationsData.items && props.menuTopNotificationsData.items.length > 0
+});
 </script>

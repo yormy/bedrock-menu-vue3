@@ -31,9 +31,9 @@
                     <span
                         v-if="item.badge && !root"
                         class="p-badge p-component p-badge-no-gutter"
-                        :class="item.badgeStyleClass"
-                        :style="item.badgeStyle"
-                        >{{ item.badge }}</span
+                        :class="item.badge.style"
+                        :style="item.badge.style"
+                        >{{ item.badge.content }}</span
                     >
                     <i v-if="item.items" class="pi pi-fw pi-angle-down layout-submenu-toggler"></i>
                 </router-link>
@@ -53,8 +53,8 @@
                 >
                     <i :class="['layout-menuitem-icon', item.icon]"></i>
                     <span class="layout-menuitem-text">{{ item.label }}</span>
-                    <span v-if="item.badge && !root" class="p-badge p-component p-badge-no-gutter" :class="item.badgeStyleClass">{{
-                        item.badge
+                    <span v-if="item.badge && !root" class="p-badge p-component p-badge-no-gutter" :class="item.badge.style">{{
+                        item.badge.content
                     }}</span>
                     <i v-if="item.items" class="pi pi-fw pi-angle-down layout-submenu-toggler"></i>
                 </a>
@@ -83,6 +83,13 @@
 <script setup lang="ts">
 import { onMounted, PropType, ref } from 'vue';
 import EventBus from '../../../event-bus';
+
+// const localAuthStore = localStorage.getItem('authStore');
+// const auth = JSON.parse(localAuthStore);
+// if (auth) {
+//     console.log("menu", auth.permissions);
+// }
+
 
 const props = defineProps({
     items: {
