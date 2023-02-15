@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
-@import "./pages//variables/__main_pages.scss";
+@import "./pages/variables/__main_pages.scss";
 
 @import "./pages/scss/__main_pages.scss";
+
+.y-page--center .middle--center .section--content {
+    background-color: white !important;
+}

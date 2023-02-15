@@ -306,4 +306,8 @@
   margin: 0;
 }
 
+.y-page--center .middle--center .section--content {
+  background-color: white !important;
+}
+
 /*# sourceMappingURL=pages.css.map */

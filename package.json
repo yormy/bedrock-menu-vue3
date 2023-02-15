@@ -9,7 +9,7 @@
         "build:dev": "rimraf dist && npm run sass:debug && vite build",
         "watch": "vite build --watch",
         "build:check": "npm run lint:check && npm run format:check && npm run security:check && npm run test",
-        "build:fix": "npm run lint:fix && npm format:fix",
+        "build:fix": "npm run lint:fix && npm run format:fix",
         "---LINT---": "-------------------------------------------------------",
         "lint:check": "eslint --ext .js,.vue --ignore-path .gitignore src/components",
         "lint:fix": "eslint --ext .js,.vue --ignore-path .gitignore --fix src/components",

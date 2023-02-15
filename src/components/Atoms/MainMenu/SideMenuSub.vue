@@ -84,13 +84,6 @@
 import { onMounted, PropType, ref } from 'vue';
 import EventBus from '../../../event-bus';
 
-// const localAuthStore = localStorage.getItem('authStore');
-// const auth = JSON.parse(localAuthStore);
-// if (auth) {
-//     console.log("menu", auth.permissions);
-// }
-
-
 const props = defineProps({
     items: {
         type: Array as any,
