@@ -5,5 +5,6 @@
 import AppMenu from './Layouts/AppMenu.vue';
 import LayoutCenter from './Layouts/LayoutCenter.vue';
 import LayoutRight from './Layouts/LayoutRight.vue';
+import AppBreadcrumb from './Atoms/Content/AppBreadcrumb.vue';
 
-export { AppMenu, LayoutCenter, LayoutRight };
+export { AppMenu, LayoutCenter, LayoutRight, AppBreadcrumb };
