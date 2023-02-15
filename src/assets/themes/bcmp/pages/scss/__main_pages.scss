@@ -6,3 +6,22 @@
     margin :0;
 }
 
+.form-tiny {
+    max-width:200px;
+}
+
+.form-small {
+    max-width:400px;
+}
+
+.form-medium {
+    max-width:800px;
+}
+
+.form-large {
+    max-width:1000px;
+}
+
+.form-max {
+    max-width:unset;
+}
