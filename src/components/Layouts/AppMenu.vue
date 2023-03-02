@@ -112,9 +112,9 @@ const props = defineProps({
     },
 
     menuTopAppData: {
-        type: Array as any,
+        type: Object as any,
         default() {
-            return [];
+            return {};
         },
     },
 
@@ -126,37 +126,37 @@ const props = defineProps({
     },
 
     menuTopMegaData: {
-        type: Array as any,
+        type: Object as any,
         default() {
-            return [];
+            return {};
         },
     },
 
     menuTopNotificationsData: {
-        type: Array as any,
+        type: Object as any,
         default() {
-            return [];
+            return {};
         },
     },
 
     menuTopProfileData: {
-        type: Array as any,
+        type: Object as any,
         default() {
-            return [];
+            return {};
         },
     },
 
     menuLeftProfileData: {
-        type: Array as any,
+        type: Object as any,
         default() {
-            return [];
+            return {};
         },
     },
 
     menuLeftData: {
-        type: Array as any,
+        type: Object as any,
         default() {
-            return [];
+            return {};
         },
     },
 });
