@@ -165,6 +165,7 @@
     &.icon-info                  {@extend .fa-circle-info;}
     &.icon-success               {@extend .fa-check;}
     &.icon-warning               {@extend .fa-triangle-exclamation;}
+    &.icon-failed                {@extend .fa-xmark;}
 
     /*---------- Menu ----------*/
     &.icon-breadcrumb-separator  {@extend .fa-angle-right;}

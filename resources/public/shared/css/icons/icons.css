@@ -16906,7 +16906,7 @@ readers do not read off random characters that represent icons */
   content: "\f497";
 }
 
-.fa-xmark::before, .y-icon.icon-close::before {
+.fa-xmark::before, .y-icon.icon-close::before, .y-icon.icon-failed::before {
   content: "\f00d";
 }
 
@@ -35302,7 +35302,7 @@ readers do not read off random characters that represent icons */
   content: "\f497\f497";
 }
 
-.fad.fa-xmark::after, .fad.y-icon.icon-close::after, .fa-duotone.fa-xmark::after, .fa-duotone.y-icon.icon-close::after {
+.fad.fa-xmark::after, .fad.y-icon.icon-close::after, .fad.y-icon.icon-failed::after, .fa-duotone.fa-xmark::after, .fa-duotone.y-icon.icon-close::after, .fa-duotone.y-icon.icon-failed::after {
   content: "\f00d\f00d";
 }
 
